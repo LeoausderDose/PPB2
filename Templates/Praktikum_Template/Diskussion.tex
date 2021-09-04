@@ -1,0 +1,261 @@
+% "Diskussion.tex" --- Kapitel 4 für das Template "Auswertung.tex"
+%
+% Wolfgang Schöpf, Januar 2013
+% letzte Änderung: 
+
+\chapter{Auswertung und Diskussion}
+\label{chap:diskussion}
+%
+\section{Die mathematischen Umgebungen}
+\label{sec:mathe}
+%
+Mathematische Formeln werden durch einen die Formel beschreibenden Text erzeugt. Hierzu dienen
+die \emph{mathematischen Umgebungen}. Alles was innerhalb dieser Umgebungen steht, wird von
+\LaTeX\ als Formel interpretiert. Der Vorteil von \LaTeX\ besteht darin, dass auch sehr komplizierte
+Formeln und Gleichungen recht einfach und übersichtlich geschrieben werden können.
+
+Formeln können innerhalb von Textzeilen auftreten, wie $y = f(x) = x^2$, oder als abgesetzte 
+Formeln, wie
+%
+\begin{equation}
+\label{eq:abg}
+\lim_{x \to 0} \frac{\ln \sin \pi x}{\ln \sin x} = 
+     \lim_{x \to 0} \frac{\pi \frac{\cos \pi x}{\sin \pi x} }{ \frac{\cos x}{\sin x} } =
+     \lim_{x \to 0} \frac{\pi \tan x}{\tan \pi x} = \quad \ldots \quad = 1 \, .
+\end{equation}
+%
+Im ersten Fall wird die Formel zwischen zwei \verb+$+--Zeichen gesetzt, hier also
+
+\verb+  $y = f(x) = x^2$+. 
+
+Für abgesetzte Formeln gibt es die \verb+equation+--Um\-gebung für einzeilige Formeln und die  
+\verb+eqnarray+-- oder die \verb+align+--Umgebung für mehrzeilige Formeln.%
+%
+\footnote{Die \verb+align+--Umgebung wird anstelle der vielleicht bekannteren \verb+eqnarray+--Umgebung 
+%
+empfohlen, da letztere einige Nachteile hat \citetext{siehe z.\,B.~\citealp{Madsen2006}}.} 
+Abgesetzte Formeln werden automatisch nummeriert und sollten immer mit einem Label zur 
+Referenzierung versehen werden, wie dies in Gl.~(\ref{eq:abg}) und auch allen anderen geschehen ist.
+
+\section{Beispiele für die Gestaltung von Formeln}
+\label{sec:formeln}
+%
+Es gibt eine Vielzahl von mathematischen Befehlen und Gestaltungsmöglichkeiten, auf die hier nicht
+alle eingegangen werden kann. Stattdessen werden einige Beispiele gezeigt, anhand deren Quelltext
+sich die Bedeutung einiger Möglichkeiten erschließen lässt. Gleichung~(\ref{eq:abg}) zeigt z.\,B.\
+die Verwendung von ineinander geschachtelten Brüchen und verschiedener Funktionen, während in
+Gl.~(\ref{eq:gauss}) eine Wurzel und auch Text (s. Abschnitt~\ref{subsec:variable}) innerhalb der 
+Formel vorkommt:
+%
+\begin{equation}
+\label{eq:gauss}
+W_\text{G}(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot \text{e}^{- \frac{(x - \bar{x})^2}{2 \sigma^2}}
+\qquad \text{mit} \quad \bar{x} = N p , \, \sigma^2 = N p
+\end{equation}
+%
+Die Gleichungen~(\ref{eq:k11}) und (\ref{eq:gamma}) zeigen eine mehrzeilige Formel und Gl.~(\ref{eq:matrix}) 
+die Verwendung von Matrizen.%
+%
+\footnote{Gleichungen~(\ref{eq:k11}) und (\ref{eq:gamma}) wurden aus \citet{Khazimullin2011} entnommen.} 
+%
+In beiden Fällen wird eine Zeile jeweils durch \verb+\\+ beendet. Weitere mehr oder weniger komplizierte 
+Formeln werden in den Gln.~(\ref{waer:nichtstat})--(\ref{eq:sin}) vorgestellt. Wie in den Beispielen zu 
+sehen ist, können die verschiedenen mathematischen Ausdrücke wie Brüche, Wurzeln, Summen, Integrale usw.\ 
+beliebig ineinander verschachtelt werden.
+
+\begin{align}
+\label{eq:k11}
+  k_{11} & = \frac{\epsilon_0 \epsilon_\text{a}}{\pi^2} U_\text{F}^2
+    = \frac{\epsilon_0 \epsilon_\text{a}}{\pi^2}
+      \frac{U_\text{on}^2}{\tau_\text{off}/\tau_\text{on}+1} \, , \\
+%
+\label{eq:gamma}
+  \gamma_1 & = \frac{\pi^2}{d^2} k_{11} \tau_\text{off}
+     = \frac{\epsilon_0 \epsilon_\text{a}}{d^2}
+       \frac{\tau_\text{off} \, \tau_\text{on}}{\tau_\text{off} + \tau_\text{on}}
+      U_\text{on}^2 \, .
+\end{align}
+
+\begin{equation}
+\label{eq:matrix}
+\mathcal{A} = \left( \begin{array}{ccc} 6 & 0 & 0 \\ 0 & 5 & 0 \\ 0 & 1 & 2 \end{array} \right)\, , \quad
+\mathcal{B} = \left( \begin{array}{ccc} 1 & 2 & 3 \\ 2 & 1 & 0 \\ 4 & 3 & 0 \end{array} \right)\, \Rightarrow
+\mathcal{A} \cdot \mathcal{B} = \left( \begin{array}{ccc} 6 & 12 & 18 \\ 10 & 5 & 0 \\ 10 & 7 & 0 \end{array} \right)
+\end{equation}
+
+\begin{eqnarray} 
+\label{waer:nichtstat}
+& & T(x,t) = T_\text{b} + (T_0 - T_\text{b}) \cdot \text{erf}(z) \\
+\nonumber
+&\text{mit} & \text{erf}(z) = \frac{2}{\sqrt{\pi}} \int_0^z \text{e}^{-y^2} \, \text{d}y
+         \quad \text{und} \quad z = \frac{x}{2 \sqrt{m t}} 
+\end{eqnarray}
+
+\begin{equation}
+\label{eq:n_e}
+n_\text{e} = \frac{n_{\perp} n_{\|}}{\sqrt{n_{\perp}^2 \cos^2\theta(z) + n_{\|}^2 \sin^2 \theta(z)}} 
+\, , \quad n_\text{o} = n_{\perp} \, .
+\end{equation}
+
+\begin{align}
+\label{eq:bern}
+W_\text{B}(x) & = \frac{N!}{x! (N - x)!} \cdot p^x (1-p)^{N - x} \\
+\label{eq:bernmittel}
+\bar{x}       & = \sum_{x = 0}^N x \, W_\text{B}(x) = Np \\
+\label{eq:bernvarianz}
+\sigma^2      & = \sum_{x = 0}^N (x - \bar{x})^2 \, W_\text{B}(x) = Np(1-p)
+\end{align}
+
+\begin{equation}
+\label{eq:sin}
+\sin \gamma \approx \gamma, \quad \cos \gamma \approx 1 - \frac{\gamma^2}{2}, \quad
+     \sqrt{1 - (\frac{\gamma}{n})^2} \approx 1 - \frac{1}{2} \left( \frac{\gamma}{n} \right)^2
+\end{equation}
+
+Die mathematischen Umgebungen dienen nicht nur zum Setzen von Formeln, sondern auch zur Darstellung
+einer Vielzahl von Sonderzeichen und griechischen Buchstaben. Beispiele sind $\alpha$, $\beta$ und 
+$\Sigma$, aber auch $\nabla$, $\Downarrow$ und $\otimes$. Im Prinzip lässt sich so ziemlich jedes
+Symbol darstellen, man muss es nur finden. 
+
+\section{Schriftarten in Formeln}
+\label{sec:schrift}
+%
+\subsection{Variablen und Text, Indizes und Funktionen}
+\label{subsec:variable}
+%
+Innerhalb einer mathematischen Umgebung werden Buchstaben und damit auch die daraus entstehenden
+Wörter in $Italic$ gesetzt, was meistens auch gewünscht ist. Es ist deshalb darauf zu achten, 
+solche Variablen auch im fortlaufenden Text richtig zu setzen, also z.\,B.\ ``die Dicke $d$'' und 
+\textbf{nicht} ``die Dicke d''. 
+
+Will man umgekehrt Text innerhalb von Formeln schreiben, so muss man dies durch den Befehl 
+\verb+\text{... text ...}+ erzwingen, wie in den Gln.~(\ref{eq:gauss}) und (\ref{waer:nichtstat}) 
+geschehen. Ebenfalls nicht in $Italic$ gesetzt werden Funktionsnamen wie $\sin x$, $\arctan (2 \pi f)$ 
+oder $\lim_{t \to \infty} f(t)$. Die meisten dieser Namen sind in \LaTeX\ definiert, so dass z.\,B.\ 
+\verb+\sin+ verwendet werden kann. Das gleiche gilt für Indizes, welche Abkürzungen darstellen, also 
+z.\,B.\ ``$\tau_\text{off}$'' und \textbf{nicht} ``$\tau_{off}$'' (s.\ Gln.~\ref{eq:k11} und \ref{eq:gamma}).
+
+\subsection{Größen, Zahlen und Einheiten}
+\label{subsec:einheit}
+%
+Eine physikalische Größe besteht normalerweise aus einer Zahl und einer Einheit, welche zusammen gehören
+und deshalb am Zeilenende nicht getrennt oder umgebrochen werden sollen. Auch ist der Abstand zwischen
+beiden etwas kleiner als der normale Wortabstand, was durch das Einfügen von \verb+\,+ erreicht wird. 
+
+Es ist weiterhin darauf zu achten, dass im Gegensatz zu einer Variablen die Einheit nicht in $Italic$ 
+gesetzt wird. Es muss also richtig heißen ``die Dicke beträgt $d = 15\,\si{\micro\metre}$ und nicht etwa 
+``die Dicke beträgt d = 15 $\mu$m'' und auch nicht ``die Dicke beträgt $d = 15\,\mu m$. Dies wird erreicht 
+durch \verb+$d = 15\,\si{\micro\metre}$+ oder auch durch \verb+$d = 15\,$\si{\micro\metre}+.%
+%
+\footnote{Für den Befehl \verb+\si{<Einheit>}+ wird das Paket \verb+siunitx+ benötigt.} 
+%
+Ein weiteres Beispiel ist $g = 9.81\,\nicefrac{\text{m}}{\text{s}^2}$.
+
+\section{Aufzählungen}
+\label{sec:aufzählung}
+%
+Als wichtigste Aufzählungsmöglichkeiten stehen zur Verfügung:
+%
+\begin{enumerate}
+\item die \verb+enumerate+--Umgebung
+   \begin{enumerate}
+	   \item Erster Punkt
+	   \item Zweiter Punkt
+	   \item Dritter Punkt
+   \end{enumerate}
+%
+\item die \verb+itemize+--Umgebung
+   \begin{itemize}
+	   \item Erster Punkt
+	   \item Zweiter Punkt
+	   \item Dritter Punkt
+   \end{itemize}
+%
+\item und die \verb+description+--Umgebung
+   \begin{description}
+	   \item[Kamel] Ein Säugetier
+	   \item[Forelle] Ein Fisch
+	   \item[Baum] Eine Pflanze
+   \end{description}
+\end{enumerate}
+%
+Dieses Beispiel verdeutlicht auch, dass die verschiedenen Umgebungen ineinander verschachtelt
+werden können, und zwar bis zu einer Tiefe von 4 einzeln und wechselseitig. Je nach Ebene ändert
+sich dabei der Stil der Markierung.
+
+\section{Weitere Formatierungshilfen}
+\label{sec:formatierung}
+%
+\subsection{Überstehende Zeilen}
+\label{subsec:sloppy}
+%
+Kommen überlange Worte vor, so kann oder mag \LaTeX\ manchmal die Zeile nicht am rechten Rand 
+umbrechen, so dass einzelne Wörter nach rechts über die eigentliche Zeilenlänge hinaus stehen.
+Dies kann durch die \verb+sloppypar+--Umgebung, welche sich auf einen ganzen Absatz bezieht, 
+verhindert werden. Gegebenenfalls wird dann mehr und oft auch unschöner Zwischenraum zwischen 
+die einzelnen Wörter eingefügt, die Rechtsbündigkeit des Absatzes bleibt aber erhalten.
+
+\begin{sloppypar}
+%
+Solche Absätze wurden z.\,B.\ in Abschnitt~\ref{subsec:quelltext} oder in Abschnitt~\ref{subsec:labels} 
+und auch in diesem Absatz hier definiert. Ohne diese Umgebung würde der letzte Teil von 
+Abschnitt~\ref{subsec:quelltext} so aussehen:
+%
+\end{sloppypar}
+
+Hierbei wird durch ``\verb+dvips Auswertung+'' eine Postscript-Datei und durch ``\verb+dvipdfm Auswertung+'' 
+eine PDF-Datei generiert. Die ersten 4 Zeilen können auch durch ``\verb+texify Auswertung.tex+'' ersetzt 
+werden.
+
+\subsection{Trennhilfen}
+\label{subsec:trennen}
+%
+Manchmal kann \LaTeX\ einzelne Wörter nicht trennen, wie z.\,B.\ hier:
+
+``\ldots für abgesetzte Formeln gibt es zwei Möglichkeiten, nämlich die \verb+equation+--Umgebung für
+einzeilige Formeln und die \verb+eqnarray+--Umgebung für mehrzeilige Formeln.''
+
+oder Wörter werden falsch getrennt, wie etwa ``Wortende'': Wor- tende.
+
+In solchen Fällen kann die Trennung durch Einfügen der Trennhilfe `\verb+\-+' korrigiert werden:
+\verb+Wort\-ende+. In einem Wort können auch mehrere Trennhilfen vorkommen: \verb+Um\-ge\-bung+.
+\LaTeX\ wird die betroffenen Wörter dann ausschließlich an diesen Stellen trennen.
+
+Es wird dringend empfohlen, bei der endgültigen Version eines Dokumentes die rechten Ränder nach 
+fehlerhaften Trennungen abzusuchen!
+
+\subsection{Nicht zu trennende Ausdrücke}
+\label{subsec:nichttrennen}
+%
+Es kann vorkommen, dass einzelne Wörter, Wortgruppen oder sonstige Ausdrücke nicht getrennt oder 
+umgebrochen werden sollen. Dies erreicht man durch Einschließen des jeweiligen Ausdrucks in eine
+\verb+\mbox{"Ausdruck"}+. Man könnte also auch \verb+\mbox{Gleichung (3)}+ statt \verb+Gleichung~(3)+ 
+schreiben. 
+
+Im folgenden Beispiel wurde die zweite Variante durch \verb+\mbox{$f(x) = x^2$}+ erzwungen, 
+was insbesondere dann besser zu lesen ist, wenn statt des Zeilenumbruchs gar ein Seitenumbruch
+statt findet:
+
+\ldots \ldots dies ist der Rest des letzten Satzes. Betrachtet man nun die Funktion $f(x) = x^2$, so findet man \ldots
+
+\ldots \ldots dies ist der Rest des letzten Satzes. Betrachtet man nun die Funktion \mbox{$f(x) = x^2$}, so findet man \ldots
+
+Solche Konstruktionen können allerdings leicht zu überstehenden Zeilen führen, welche dann wieder
+durch die \verb+sloppypar+--Umgebung aufzulösen sind:
+
+\begin{sloppypar}
+%
+\ldots \ldots dies ist der Rest des letzten Satzes. Betrachtet man nun die Funktion \mbox{$f(x) = x^2$}, so findet man \ldots
+%
+\end{sloppypar}
+
+\section{Eine abschließende Warnung}
+\label{sec:warnung}
+%
+Oft sieht man zu Beginn eines \LaTeX --Quelltextes Anweisungen zur Textgeometrie. Ich möchte davor 
+ausdrücklich warnen! Seit der Erfindung des modernen Buchdrucks im 15.\ Jahrhundert wurde sehr viel 
+über diese Frage nachgedacht und die Erfahrung zeigt, dass eine Änderung durch Laien ohne typografische
+Ausbildung meist zu keinem zufriedenstellenden Ergebnis führt. Das Anpassen der Textgeometrie sollte 
+ausschließlich mit Hilfe der ``DIV = $X$''--Option der verwendeten \LaTeX --Klasse geschehen. Dabei
+bedeutet eine größere ganze Zahl $X$ einen höheren und breiteren Text, wobei Höhe, Breite und Ränder 
+proportional nach festen Richtlinien geändert werden. 

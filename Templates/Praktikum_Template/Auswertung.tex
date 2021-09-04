@@ -1,0 +1,198 @@
+% "Auswertung.tex" --- Template für Praktikumsauswertung
+%
+% Nicht zu verwechseln mit einer LaTeX-Anleitung. Dieses Template dient lediglich als
+% Einstieg, um die Arbeit mit LaTeX zu verfassen.
+%
+% Wolfgang Schöpf, Januar 2013
+% letzte Änderung: 
+%
+% WICHTIG:
+%
+% Versuchen Sie bitte nicht, die Textgeometrie selbstständig zu ändern. Bei Laien ohne typografische
+% Ausbildung wird das meist zu keinem zufriedenstellendes Ergebnis führen. Abgesehen dabon wurde
+% dieses Problem bereits gelöst. Verwenden Sie hierzu besser die Klassen-Option "DIV".
+
+% ----------------------------- Beginn des Vorspanns ----------------------------------------
+%
+% Dokumentenklasse und Packages
+% Die folgenden Zeilen sollen möglichst nicht verändert werden
+\documentclass[paper=a4,bibliography=totoc,BCOR=10mm,twoside,numbers=noenddot,fontsize=11pt]{scrreprt}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+%\usepackage[dvipdfmx]{graphicx}
+\usepackage{nicefrac}
+\usepackage{fancyvrb}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{siunitx}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{microtype}
+\usepackage[format=plain]{caption}
+% Hier können weitere Packages angefügt werden
+
+% Abschnittseinrückung und -abstand
+% Die folgenden Zeilen sollen möglichst nicht verändert werden
+\parindent 0.0cm
+\parskip 0.8ex plus 0.5ex minus 0.5ex
+
+% Anzahl und Größe von Gleitobjekten
+% maximal 2 Objekte oben und unten
+% erlaubt auch größere Bilder, welche die ganze Seite benötigen
+% Die folgenden Zeilen sollen möglichst nicht verändert werden
+\setcounter{bottomnumber}{2}
+\setcounter{topnumber}{2}
+\renewcommand{\bottomfraction}{1.}
+\renewcommand{\topfraction}{1.}
+\renewcommand{\textfraction}{0.}
+
+%\sc und \bc veraltet. Daher: (20.09.2018)
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\DeclareOldFontCommand{\bf}{\normalfont\scshape}{\textbf}
+
+% Verschiedenes
+\pagestyle{headings}          % Der Seitenstil sollte möglichst nicht verändert werden
+\graphicspath{{./bilder/}}    % Der Pfad für die Abbildungen Abbildungen wird gesetzt
+\VerbatimFootnotes            % \verb etc. auch in \footnotes möglich
+%
+% ------------------------------- Ende des Vorspanns -----------------------------------------
+
+
+% ----------------------------- Beginn des Dokumentes ----------------------------------------
+%
+\begin{document}
+\nonfrenchspacing             % Zusätzlicher kleiner Zwischenraum am Satzende; macht den Text netter lesbar.
+
+% ----------------------------- Beginn der Titelseite ----------------------------------------
+%
+\begin{titlepage}
+\begin{center}
+\vspace*{2cm}
+
+% Titel ändern!
+{\Huge\bf \LaTeX --Vorlage für eine} \\[3ex]\strut
+{\Huge\bf Praktikumsauswertung} \\[3ex]\strut
+{\Huge\bf (z.B.\ in Physik)}
+
+% Hier ein Beispiel:
+%{\Huge\bf Versuch Pol: Polarisation des} \\[3ex]\strut
+%{\Huge\bf Lichtes, Lichtstreuung} \\[3ex]\strut
+
+\vfill
+% Hier kann zur Motivation optionalerweise auch schon mal ein Bild sein
+\includegraphics[width = 0.8\textwidth]{titel}
+\vfill
+
+% Datum ändern!
+{\Large Physikalisches Praktikum PPBphys1} \\[3ex]
+{\Large im Sommersemester 2013} \\[6ex]
+{\large Durchgef\"uhrt am 30.\ Januar 2013 von} \\[3ex]
+
+% Namen ändern!
+{\LARGE\bf Wolfgang Schöpf und Christoph Kramer} \\[3ex]
+
+% Name ändern!
+{\large Betreuer: Prof.\ Dr.\ Ingo Rehberg}\\
+
+\end{center}
+\end{titlepage}
+\thispagestyle{empty}
+%
+% ------------------------------ Ende der Titelseite -----------------------------------------
+
+% Inhaltsverzeichnis auf die nächste rechte Seite
+\cleardoublepage
+\tableofcontents
+
+% Die Einleitung beginnt auf der nächsten rechten Seite, jedes weitere Kapitel auf einer jeweils neuen Seite 
+%
+\cleardoublepage
+\chapter{Motivation und Ziel des Versuchs}
+\label{chap:einleitung}
+%
+Dieses Dokument ist \textbf{keine} Musterauswertung und soll auch keine \LaTeX --Anleitung ersetzen. 
+Es stellt lediglich eine Vorlage zum Erstellen einer Praktikumsauswertung dar und gibt eine Idee f\"ur 
+eine Gliederung. Es soll Nicht--\LaTeX --Vertrauten den Einstieg erleichtern und \LaTeX --Experten von 
+Formfragen befreien. Für \LaTeX --Feinheiten wird auf die entsprechende Literatur verwiesen 
+\citep{Kopka2000,Lamport1995,Latex2011}. 
+
+Die meisten \LaTeX --Befehle werden hier nicht näher erklärt, deren Gebrauch sollte sich aber aus dem 
+Quelltext ``Auswertung.tex'' und den weiteren, in Kapitel~\ref{chap:grundlagen} beschriebenen, Dateien
+erschließen. Deshalb ist es als Einstieg sicher eine gute Idee, den Quelltext zusammen mit dem fertigen 
+Ausdruck zu lesen, um ein Gefühl für die \LaTeX --Struktur zu bekommen. Es wird hier zwar auf grundlegende 
+\LaTeX --Gestaltungsmöglichkeiten und einige Spezialitäten eingegangen, aber natürlich können nicht alle 
+Eventualitäten abgedeckt werden. Gewünschte Ergänzungen oder Verbesserungsvorschläge können gerne an den 
+Autor heran getragen werden.
+
+Kapitel~\ref{chap:grundlagen} geht auf das grundsätzliche Arbeiten mit \LaTeX , den Aufbau und die
+Gliederung des Textes sowie auf die Verwendung von Zitaten ein. Das Einfügen von Bildern und die 
+Gestaltung von Tabellen wird in Kapitel~\ref{chap:aufbau} behandelt. Kapitel~\ref{chap:diskussion}
+befasst sich mit Gleichungen und damit verwandten Problemen. Au\ss erdem werden 
+verschiedene weitere Gestaltungsmöglichkeiten und einige wichtige Befehle diskutiert. Die Arbeit 
+schließt mit einer Zusammenfassung und einem Fazit in Kapitel~\ref{chap:ausblick}.
+
+
+% Das 2. Kapitel wird aus "Grundlagen.tex" eingelesen
+\input{Grundlagen}
+
+% Das 3. Kapitel wird aus "Aufbau.tex" eingelesen
+\input{Aufbau}
+
+% Das 4. Kapitel wird aus "Diskussion.tex" eingelesen
+\input{Diskussion}
+
+
+% Das letzte Kapitel steht wieder direkt in der Masterdatei
+%
+\chapter{Zusammenfassung}
+\label{chap:ausblick}
+%
+Meine Hoffnung ist, dass durch dieses kleine Dokument der Einstieg in \LaTeX\ etwas leichter fällt und beim
+Schreiben einer Praktikumsauswertung nicht zu viel Zeit zum Erlernen eines Textverarbeitungssystems verloren 
+wird. Sollte einmal ein scheinbar unlösbares Problem auftauchen, so wage ich zu behaupten, dass es in 
+\LaTeX\ für alles Drucktechnische eine Lösung gibt, man muss sie nur finden.% 
+\cite{Schoepf1988}%
+\footnote{So ging es mir übrigens auch beim Schreiben dieser Vorlage.}
+
+Viel Spaß dabei! 
+
+% -------------------------- Hier beginnt der Anhang ---------------------------------------
+%
+\appendix
+\chapter{Herleitung und Lösung von Gleichung 3}
+\label{chap:gl3}
+%
+Die Gliederungsstruktur ist die gleiche wie im normalen Text. Lediglich die Hauptnummerierung
+erfolgt durch Buchstaben anstelle von Zahlen. Deshalb wird hier auf weiteren Text verzichtet.
+
+\section{Vorbereitung}
+\label{sec:gl3:vorbereitung}
+
+\section{Herleitung}
+\label{sec:gl3:herleitung}
+
+\section{Lösung}
+\label{sec:gl3:loesung}
+
+
+\chapter{Genaue Beschreibung der Auswertemethode}
+\label{chap:methode}
+%
+% --------------------------- Hier endet der Anhang ----------------------------------------
+
+
+% Das Literaturverzeichnis beginnt auf einer neuen rechten Seite, die Einträge stehen in der Datei
+% "Auswertung.bib", welche natürlich umbenannt werden kann.
+% Der Zitierstil (\bibliographystyle{Auswertung}) sollte möglichst nicht geändert werden.
+%
+\cleardoublepage
+\bibliographystyle{Auswertung}
+\bibliography{Auswertung}
+
+\end{document}
+%
+% ------------------------------ Ende des Dokumentes -----------------------------------------
+
+Alles was jetzt kommt, wird ignoriert!

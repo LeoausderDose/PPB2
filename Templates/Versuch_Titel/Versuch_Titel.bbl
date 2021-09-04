@@ -1,0 +1,96 @@
+\begin{thebibliography}{20}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[Agilent(2006)]{Agilent2006}
+{\sc Agilent} 2006 {\em {B}enutzerhandbuch {A}gilent 34410{A}/11{A}, Multimeter
+  mit 6$\nicefrac{1}{2}$ Stellen\/}, 3.\ Auflage.
+
+\bibitem[Ahlers \& Rehberg(1986)]{Ahlers1986}
+{\sc Ahlers, G. \& Rehberg, I.} 1986 Convection in a binary mixture heated from
+  below. {\em Phys. Rev. Lett.\/} {\bf 56}~(13), 1373--1376.
+
+\bibitem[Dierking(2003)]{Dierking2003}
+{\sc Dierking, I.} 2003 {\em Textures of Liquid Crystals\/}, chap.~5, pp.
+  54--74. Weinheim: Wiley-VCH Verlag.
+
+\bibitem[Gobrecht(1978)]{Bergmann1978}
+{\sc Gobrecht, H.} 1978 {\em Bergmann--Sch{\"a}fer, Lehrbuch der
+  Experimentalphysik, Band III Optik\/}, 7.\ Auflage, pp. 418--419. Berlin, New
+  York: Walter de Gruyter.
+
+\bibitem[Khazimullin {\em et~al.\/}(2011)Khazimullin, M\"uller, Messlinger,
+  Rehberg, Sch\"opf, Krekhov, Pettau, Kreger \& Schmidt]{Khazimullin2011}
+{\sc Khazimullin, M., M\"uller, T., Messlinger, S., Rehberg, I., Sch\"opf, W.,
+  Krekhov, A., Pettau, R., Kreger, K. \& Schmidt, H.-W.} 2011 Gel formation in
+  a mixture of a block copolymer and a nematic liquid crystal. {\em Phys. Rev.
+  E\/} {\bf 84}, 021710: 1--11.
+
+\bibitem[Khoo(2007)]{Khoo2007}
+{\sc Khoo, I.-C.} 2007 {\em Liquid Crystals\/}, 2nd edn. Hoboken, New Jersey:
+  John Wiley \& Sons.
+
+\bibitem[Kopka(2000)]{Kopka2000}
+{\sc Kopka, H.} 2000 {\em \LaTeX, Band 1 --- Einf\"uhrung\/}, 3.\
+  \"uberarbeitete Auflage. M\"unchen; Boston; San Francisco [u.a.]:
+  Addison-Wesley Verlag.
+
+\bibitem[Kramer(2010)]{Kramer2010}
+{\sc Kramer, C.} 2010 {\em Das magnetische Moment\/}. Bachelorarbeit,
+  Universit{\"a}t Bayreuth.
+
+\bibitem[Kramer \& Pesch(1996)]{Kramer1996}
+{\sc Kramer, L. \& Pesch, W.} 1996 Electrohydrodynamic instabilities in nematic
+  liquid crystals. In {\em Pattern Formation in Liquid Crystals\/} (eds. \'{A}.
+  Buka \& L.~Kramer), pp. 221--255. New York; Berlin; Heidelberg: Springer.
+
+\bibitem[Lafuente(2005)]{Lafuente2005}
+{\sc Lafuente, {\"O}.} 2005 {\em Thermoreversible {G}ele von isotropen und
+  anisotropen {F}l{\"u}ssigkeiten mit chiralen {O}rganogelatoren\/}.
+  Doktorarbeit, Universit{\"a}t Bayreuth.
+
+\bibitem[Lamport(1995)]{Lamport1995}
+{\sc Lamport, L.} 1995 {\em Das \LaTeX--Handbuch\/}. Bonn; Paris; Reading,
+  Mass. [u.a.]: Addison-Wesley Verlag.
+
+\bibitem[LaTeX(2011)]{Latex2011}
+{\sc LaTeX} 2011 Latex --- {A} document preparation system. URL
+  \url{http://www.latex-project.org/} -- Zugriffsdatum: 10.05.2011.
+
+\bibitem[Madsen(2006)]{Madsen2006}
+{\sc Madsen, L.} 2006 Avoid eqnarray. {\em The {Prac\TeX} Journal\/} {\bf
+  1}~(4).
+
+\bibitem[Mears {\em et~al.\/}(1969)Mears, Rosenthal \& Sinka]{Mears1969}
+{\sc Mears, W.~H., Rosenthal, E. \& Sinka, J.~V.} 1969 Physical properties and
+  virial coefficients of sulfur hexaflouride. {\em J. Phys. Chem.\/} {\bf
+  73}~(7), 2254--2261.
+
+\bibitem[MiKTeX(2011)]{Miktex2011}
+{\sc MiKTeX} 2011 {MiKTeX} {P}roject {P}age. URL \url{http://www.miktex.org/}
+  -- Zugriffsdatum: 11.11.2011.
+
+\bibitem[M\"uller {\em et~al.\/}(2011)M\"uller, P\"ohlmann \&
+  Messlinger]{Mueller2011}
+{\sc M\"uller, T., P\"ohlmann, A. \& Messlinger, S.} 2011 Normalizing radial
+  distribution functions on truncated regions. Internes Dokument,
+  Experimentalphysik V, Universit\"at Bayreuth.
+
+\bibitem[Rehberg(2011)]{Rehberg2011}
+{\sc Rehberg, I.} 2011 Pers\"onliche Mitteilung.
+
+\bibitem[Sch\"opf(1988)]{Schoepf1988}
+{\sc Sch\"opf, W.} 1988 {\em Konvektion in bin\"aren Fl\"ussigkeiten und
+  multikritisches Verhalten in der N\"ahe des Kodimension-2--Punktes\/}.
+  Diplomarbeit, Universit{\"a}t Bayreuth.
+
+\bibitem[Stieb {\em et~al.\/}(1975)Stieb, Baur \& Meier]{Stieb1975}
+{\sc Stieb, A., Baur, G. \& Meier, G.} 1975 Alignment inversion walls in
+  nematic liquid crystal layers deformed by an electric field. {\em J. Phy.
+  (Paris) Colloq.\/} {\bf 36 (C1)}, 185.
+
+\bibitem[TeXnicCenter(2011)]{Texnic2011}
+{\sc TeXnicCenter} 2011 {TeXnicCenter} --- the {C}enter of your {\LaTeX}\
+  {U}niverse. URL \url{http://www.texniccenter.org/} -- Zugriffsdatum:
+  15.11.2011.
+
+\end{thebibliography}

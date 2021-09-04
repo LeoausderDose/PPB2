@@ -1,0 +1,228 @@
+% "Grundlagen.tex" --- Kapitel 2 für das Template "Auswertung.tex"
+%
+% Wolfgang Schöpf, Januar 2013
+% letzte Änderung: 
+
+\chapter{Fragen zur Vorbereitung}
+\label{chap:grundlagen}
+%
+\section{\LaTeX --Distribution und Erstellen des Textes}
+\label{sec:distribution}
+%
+\subsection{MiKTeX}
+\label{subsec:miktex}
+%
+Dieses Dokument wurde mit Hilfe von MiKTeX~2.9 erstellt und sollte sich demnach auch mit neueren 
+MiKTeX--Versionen übersetzen lassen. MiKTeX ist eine \LaTeX --Implementation für Windows und 
+beinhaltet alles, was man für \LaTeX\ benötigt. Eine aktuelle MiKTeX--Distribution kann kostenlos 
+im Netz heruntergeladen werden \citep{Miktex2011}.
+
+\subsection{Erstellen des Quelltextes und Erzeugen des Dokumentes}
+\label{subsec:quelltext}
+%
+\begin{sloppypar}
+%
+Zum Erstellen des Quelltextes benötigt man einen Texteditor. Entweder kann der gesamte Text in eine 
+Datei geschrieben oder aber auf mehrere Dateien aufgeteilt werden. In letzterem Fall gibt es eine 
+Masterdatei, welche die anderen Dateien durch \verb+\input{...}+--Befehle einbezieht. Im vorliegenden 
+Dokument sind die Kapitel~\ref{chap:grundlagen}, \ref{chap:aufbau} und \ref{chap:diskussion} in 
+eigene Dateien (``Grundlagen.tex'', ``Aufbau.tex'' und ``Diskussion.tex'') ausgelagert und werden 
+an den entsprechenden Stellen der Masterdatei (hier: ``Auswertung.tex''), welche den restlichen Text 
+beinhaltet, eingelesen:
+%
+\begin{verbatim}
+  \input{Grundlagen}
+  \input{Aufbau}
+  \input{Diskussion}
+\end{verbatim}  
+%
+Ein druckbares Dokument wird durch die folgenden Befehle (z.B.\ von einer Kommandozeile aus) erzeugt:
+%
+\begin{verbatim}
+  latex Auswertung
+  bibtex Auswertung
+  latex Auswertung
+  latex Auswertung
+  dvips Auswertung / dvipdfm Auswertung
+\end{verbatim}  
+%
+Hierbei wird durch ``\verb+dvips Auswertung+'' eine Postscript-Datei und durch ``\verb+dvipdfm Auswertung+'' 
+eine PDF-Datei generiert. Die ersten 4 Zeilen können auch durch ``\verb+texify Auswertung.tex+'' ersetzt 
+werden.
+%
+\end{sloppypar}
+
+\subsection{Arbeitsumgebung}
+\label{subsec:umgebung}
+%
+Zum Erstellen des Textes  und Erzeugen des Dokumentes kann anstatt eines Texteditors auch eine 
+Arbeitsumgebung verwendet werden, welche üblicherweise zusätzliche Werkzeuge und Hilfsmittel 
+zur Verfügung stellt und somit die Arbeit mit \LaTeX\ erheblich erleichtert. Die aktuelle 
+MiKTeX--Distribution beinhaltet zu diesem Zweck die Umgebung ``TeXworks''. Zum Schreiben des 
+vorliegenden Dokumentes wurde allerdings das ``TeXnicCenter'' verwendet \citep{Texnic2011}, 
+welches als deutlich benutzerfreundlicher empfunden wurde.
+
+\section{Text, Befehle, Leerzeichen und Kommentare}
+\label{sec:text}
+\subsection[Text und Befehle]{Text und Befehle\protect\footnotemark}
+\label{subsec:text}
+\footnotetext{Dieser Abschnitt wurde fast wörtlich aus Abschnitt 1.4 des Buches von \citet{Kopka2000} übernommen.}
+%
+Ein \LaTeX --Dokument besteht normalerweise aus \emph{Text}, welcher zu verarbeiten ist, und aus 
+\emph{Befehlen}, welche angeben, wie der Text zu bearbeiten ist. Befehle bestehen entweder aus 
+einzelnen Sonderzeichen, welche im Text nicht vorkommen, oder aus Wörtern, denen ein Backslash
+($\backslash$) unmittelbar vorangesetzt ist. Einen Überblick über die Befehle gibt die einschlägige
+\LaTeX --Literatur \citep{Kopka2000,Lamport1995,Latex2011}.
+
+Ein Text besteht aus \emph{Zeichen}, die zu \emph{Wörtern} zusammengefügt sind. Die Wörter bilden
+\emph{Sätze} und diese wiederum \emph{Absätze}, welche zu größeren Einheiten wie \emph{Abschnitten}
+und \emph{Kapiteln} zusammengefügt werden. Wörter bestehen aus einem oder mehreren Zeichen und werden 
+durch Leerzeichen oder einen Zeilenwechsel voneinander getrennt. \LaTeX\ interpretiert Leerzeichen und 
+Zeilenwechsel als Wortende, wobei die Anzahl der Leerzeichen unerheblich ist. Der Wortabstand wird 
+dadurch nicht beeinflusst. Absätze werden durch eine oder mehrere Leerzeilen voneinander getrennt,
+wobei der Abstand zwischen den Absätzen ebenfalls nicht von der Anzahl der Leerzeilen abhängt. Der 
+Zeilenumbruch erfolgt unabhängig von der Texteingabe automatisch.
+
+\subsection{Einige Feinheiten zu Leerzeichen}
+\label{subsec:leerzeichen}
+%
+\LaTeX\ wählt innerhalb einer Zeile zwischen den Wörtern immer den gleichen Abstand, außer am Satzende.
+\LaTeX\ interpretiert einen Punkt, ein Ausrufezeichen, ein Fragezeichen oder einen Doppelpunkt, der
+hinter einem Kleinbuchstaben oder einer Zahl steht, als Satzende und fügt einen zusätzlichen kleinen
+Zwischenraum ein. Dies ist bei Abkürzungen wie  `i. Allg.' oder `Dr. Schmidt' und Ähnlichem unerwünscht
+und wird durch die Verwendung von `\verb+~+' oder `\verb*+\ +' anstelle des Leerzeichens 
+verhindert:
+
+\verb+  i.~Allg.\   + statt \verb+  i. Allg. + \\
+\verb+  Dr.~Schmidt + statt \verb+  Dr. Schmidt +
+
+Folgender Beispielsatz soll dies verdeutlichen:\\
+Zur Arbeit kommt Dr.~Schmidt i.~Allg.\ sehr früh.\\
+Zur Arbeit kommt Dr. Schmidt i. Allg. sehr früh.
+
+\verb+~+ und \verb*+\ + erzeugen beide den normalen Wortabstand. \verb+~+ verhindert überdies, dass an 
+dieser Stelle ein Zeilenumbruch erfolgen kann, was insbesondere bei Konstruktionen wie gerade erläutert 
+oder etwa bei `Gl.~(3)' unerwünscht ist.
+
+\subsection{Kommentare}
+\label{subsec:kommentar}
+%
+Zur besseren Lesbarkeit der Quelldateien können Kommentare eingefügt werden. Eine Zeile, die mit 
+einem Prozentzeichen (\%) beginnt, wird von \LaTeX\ als Kommentarzeile interpretiert und nicht 
+übersetzt. Ebenso wird innerhalb einer Zeile alles nach dem \%--Zeichen ignoriert.
+
+\section{Hervorhebungen, Fußnoten und Zitate}
+\label{sec:zitat}
+%
+Die Einleitung sollte eine kurze und zielgerichtete \emph{Einführung in die Thematik} geben, 
+welche sich nicht nur an Spezialisten wendet, sowie die Arbeit motivieren. Insbesondere 
+\emph{wichtige Begriffe} können verschiedenartig hervorgehoben werden, was aus Lesbarkeitsgründen 
+aber \textbf{möglichst sparsam} verwendet werden sollte. Fußnoten werden durch den Befehl
+\verb+\footnote{... text ...}+ erzeugt.%
+%
+\footnote{Dies sind oft kurze Anmerkungen, welche nicht direkt in den Text passen.}
+
+Im Praktikumsbericht muss natürlich die verwendete Literatur angegeben werden. Dabei kann aus 
+verschiedenen Quellen, wie etwa aus Büchern \citep{Bergmann1978,Dierking2003,Khoo2007} oder 
+Sammelbänden \citep{Kramer1996}, oder aber aus wissenschaftlichen Zeitschriften \citep{Stieb1975}
+zitiert werden. Weitere Quellen können Abschlussarbeiten wie Dissertationen \citep{Lafuente2005} sowie 
+Bachelor- oder Diplomarbeiten sein \citep{Kramer2010,Schoepf1988}, aber auch private Mitteilungen 
+\citep{Rehberg2011} und interne Dokumente \citep{Mueller2011}. Natürlich kann man aus dem Internet 
+zitieren \citep{Latex2011} wie auch aus technischen Dokumentationen und Bedienungsanleitungen 
+\citep{Agilent2006}. Die Zitate werden entweder wie oben in Klammern gesetzt oder man geht direkt 
+auf die Arbeit von \citet{Ahlers1986} ein.
+
+Das Literaturverzeichnis kann unmittelbar in die Quelldatei eingegeben oder mit Hilfe von ``bibtex'' 
+aus einer Literaturdatei (hier: ``Auswertung.bib'') erzeugt werden. Letzteres hat den Vorteil, dass 
+diese Literaturdatei wachsen und immer wieder verwendet werden kann, da ``bibtex'' hieraus automatisch 
+die benötigten Zitate erzeugt und dem jeweiligen Zitierstil anpasst. Deshalb wird diese Methode wärmstens 
+empfohlen. Das Literaturverzeichnis wird durch die Befehle
+%
+\begin{verbatim}
+  \bibliographystyle{Auswertung}
+  \bibliography{<Literaturdatei>}
+\end{verbatim}
+%
+hier:\ \verb+\bibliography{Auswertung}+, erzeugt (s.\ gegen Ende dieses Dokumentes). Der Zitierstil wird 
+durch die Datei ``Auswertung.bst'' festgelegt, welche diesen Dokumenten beiliegt. ``Auswertung.bst''
+wurde aus dem entsprechenden Stil für das \emph{Journal of Fluid Mechanics} speziell für diese Vorlage 
+angepasst, so dass auch Internetzitate bequem angebracht werden können und deutsche Zitate leichter
+möglich sind. Die Datei kann entweder in die MiKTeX--Verzeichnisstruktur integriert werden oder muss 
+sich im gleichen Verzeichnis wie die Datei ``Auswertung.tex'' befinden.
+
+\section{Gliederung der Arbeit und Labels}
+\label{sec:gliederung}
+%
+\subsection{Mögliche Gliederungsstruktur}
+\label{subsec:struktur}
+%
+Die hier vorgestellte Gliederung ist ein Vorschlag, muss natürlich nicht wörtlich übernommen werden und 
+orientiert sich an den Gegebenheiten des jeweiligen Versuchs. Die Hauptüberschriften (Kapitel) werden 
+durch den Befehl
+%
+\begin{verbatim}
+  \chapter{Überschrift}
+\end{verbatim}
+%
+ erzeugt, darunter gibt es die Gliederungsebenen
+%
+\begin{verbatim}
+  \section{...}
+  \subsection{...}
+\end{verbatim}
+%
+welche mit Nummern versehen und ins Inhaltsverzeichnis übernommen werden, sowie 
+%
+\begin{verbatim}
+  \subsubsection{...}
+  \paragraph{...}
+  \subparagraph{...} 
+\end{verbatim}
+%
+Letztere erhalten keine Nummern, werden nicht ins Inhaltsverzeichnis übernommen und sollten aus 
+Übersichtlichkeitsgründen bis vielleicht auf \verb+\subsubsection{...}+ wahrscheinlich auch nicht 
+verwendet werden.
+
+Material, welches nicht in den Hauptteil der Arbeit passt (komplizierte Herleitungen, technische 
+Feinheiten und Ähnliches), kann in einen Anhang gepackt werden. Der Anhang wird mit \verb+\appendix+ 
+eingeleitet (s.\ Ende dieses Dokumentes) und erlaubt die gleiche Gliederungsstruktur wie gerade 
+diskutiert. Lediglich die Hauptnummerierung erfolgt dann nicht mit Zahlen, sondern mit Großbuchstaben.
+
+Sollen Überschriften in einer geänderten oder abgekürzten Form ins Inhaltsverzeichnis bzw.\ in den 
+Seitenkopf übernommen werden, so kann man dies durch
+%
+\begin{verbatim}
+  \section[geänderte Überschrift]{richtige Überschrift}
+\end{verbatim}
+%
+bewerkstelligen. Diese Konstruktion wurde für Abschnitt~\ref{subsec:text} verwendet, damit die 
+Fußnotenmarke nicht im Inhaltsverzeichnis erscheint. Auch bei sehr langen Überschriften kann
+dies sinnvoll sein.
+
+\subsection{Labels: Referenzierung von Abschnitten}
+\label{subsec:labels}
+%
+\begin{sloppypar}
+%
+Es wird empfohlen, alle Überschriften gleich mit einem Label zu versehen, damit leicht auf sie Bezug 
+genommen werden kann.%
+%
+\footnote{Das gilt auch für Gleichungen, Bilder und Tabellen, s.\ später.} 
+%
+Das geschieht mit dem Befehl \verb+\label{<Label>}+. Diese Möglichkeit wurde am Ende von 
+Kapitel~\ref{chap:einleitung} für die Übersicht über diese Arbeit ausgenutzt. Insbesondere müssen dann 
+Querverweise nicht überarbeitet werden, wenn sich die Nummerierung von Überschriften aus irgendeinem 
+Grund einmal ändert.
+%
+\end{sloppypar}
+
+\section{Umgebungen}
+\label{sec:umgebung}
+%
+In \LaTeX\ gibt es eine Reihe von so genannten \emph{Umgebungen}, von denen ein paar wichtige in diesem 
+Dokument verwendet und auch kurz vorgestellt werden. Umgebungen gibt es für die verschiedensten Zwecke, 
+z.\,B.\ zum Setzen von Bildern und Tabellen, zum Setzen von Gleichungen oder für Aufzählungen. Eine 
+Umgebung wird durch den Befehl \verb+\begin{<Umgebung>}+ eröffnet und mit \verb+\end{<Umgebung>}+ wieder 
+geschlossen. Der innerhalb einer Umgebung stehende Text wird entsprechend der jeweiligen Umgebung anders 
+behandelt als der Text außerhalb der Umgebung. Was genau damit gemeint ist, wird anhand der Beispiele 
+klar werden.

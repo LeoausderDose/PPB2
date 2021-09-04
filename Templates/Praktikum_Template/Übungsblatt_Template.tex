@@ -1,0 +1,142 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dies Dokument der Fachschaft MPI soll eine Vorlage für alle bieten, die jetzt in Anbetracht der Einstellung der Präsenzlehre gerne ihre Übungsblätter direkt als PDF abgeben möchten, dies zwar sauber in LaTex machen wollen, aber gleichzeitig einen möglichst einfachen Einstieg haben wollen.
+% Den ganzen Teil von hier an bis zu den nächsten vielen "%%%.." brauch dich erstmal nicht zu interessieren. Du kannst danach einfach anfangen!
+% By David, Armin, Marius und Olli 2020 
+
+
+
+\documentclass[11pt, a4paper]{scrartcl} %Definiert die Klasse Dokuments. scrartcl ist für kurze Arbeiten gut geeignet, scrrprt eher für lange. In den [] sind wichtige Optionen wie die Schriftgröße und das Papierformat definiert. 
+
+\usepackage[ngerman]{babel} %Bindet Umlaute ein, sodass auf deutsch geschrieben werden kann.
+\usepackage{csquotes}
+\MakeOuterQuote{"} %Ermöglicht den üblichen Gebrauch von Anführungszeichen.
+
+\usepackage{latexsym} %Ermöglicht die Nutzung von speziellen Symbolen wie für Normalteiler vgl. http://mirrors.ibiblio.org/CTAN/macros/latex/base/latexsym.pdf
+
+\usepackage{amssymb} %Ermöglicht die Nutzung von weiteren Symbolen wie dem für die Natürlichen Zahlen vgl. http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{ifthen}
+
+\usepackage{paralist} %ERmöglicht leichtes Umschalten der Nummerierungszeichen in der enumerate Umgebung. vgl. https://www.namsu.de/Extra/pakete/Paralist.html
+
+\usepackage{amsmath} %Enthält hilfreiche neue Befehle wie Binomialkoeffizienten und \overset und am wichtigsten die Gleichungsumgebungen align und Matrizen. vgl. https://www.namsu.de/Extra/pakete/amsmath/Amsmath.html
+
+\usepackage{tabularx} %Schönere Tabellen. vgl. https://www.namsu.de/Extra/pakete/Tabularx.html
+
+\usepackage{tikz} % Paket für Zeichnungen. Eher für Fortgeschrittene
+
+\usepackage{setspace} %Ermöglicht Änderung des Zeilenabstands
+
+\usepackage{amsthm} %Ermöglicht die Definition einheitlicher Formate für Sätze, Definitionen und ähnliches und die Regelung von deren Nummerierung vgl. https://en.wikibooks.org/wiki/LaTeX/Theorems
+
+\usepackage{fancyhdr} %Ermöglicht das Design von Kopf und Fußzeilen
+
+\usepackage{listings} %Für Um Programmiercode in Latex anzuzeigen.
+\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt} %Das hier sind definitionen für kurze Zeilen Code. Ohne Farbliche hervorhebungen.
+\lstset{language=Perl}
+
+% Mittels diesem Befehl kannst du im Dokument Code auch farbig einbinden.
+% Wie das genau funktioniert findest du im Dokument: Liste wichtiger Latex Umgebungen.
+\lstdefinestyle{c}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	language = C,     % hier wird die verwendete Sprache eingegeben
+	frame=single,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black}, % Nachdem du oben nun deine     Programmiersprache ausgewählt hast, weiß Latex nun, was die Keywords sind und druck sie eben in der angegeben Farbe.
+	commentstyle=\itshape\color{purple!40!black}, %Farbe für die Kommentare
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+}
+
+\theoremstyle{plain} 
+\newtheorem{Theorem}{Theorem}[section] %Die ersten geschweiften Klammern definieren den Namen, die zweiten den Output in dem Dokument. Sind die .[] nachgestellt, gibt das an wonach nummeriert wir. Hier also in jeder section neu. 
+\newtheorem{Lemma}[Theorem]{Lemma} % stehen die [] dazwischen bezieht sich das auf den Counter, der diese durchnummeriert. Hier wird fortlaufend gezählt. Nach Lemma 1.3 kommt Theorem 1.4 danach Lemma 1.5 (nicht Lemma 1.4) 
+
+% Wie oben
+\theoremstyle{definition}
+\newtheorem{Definition}[Theorem]{Definition} 
+\newtheorem{Beispiel}[Theorem]{Beispiel} 
+\newtheorem{Bemerkung}[Theorem]{Bemerkung}
+
+%Hier definieren wir die Kopf- und Fußzeile dabei musst du einige Daten Ergänzen
+\setlength{\headheight}{75pt} % Setzt die Kopfzeilenhöhe fest. Muss mindestens 13.6 pt sein.
+\pagestyle{fancy}
+\fancyhf[HL]{% HL heist Header (oben) Links
+	\ifthenelse{\equal{\Vorlesung}{}}{}{Übungen zur Vorlesung:\\ \Vorlesung \\}
+	\ifthenelse{\equal{\Uebungsblattnummer}{}}{}{Übungsblatt \Uebungsblattnummer}\\
+	\ifthenelse{\equal{\Dozent}{}}{}{Dozent: \Dozent \\} 
+	Universität Bayreuth}
+\fancyhf[HR]{
+	\ifthenelse{\equal{\Datum}{}}{\today}{\Datum}\\
+	\ifthenelse{\equal{\Name}{}}{\textbf{Sicher, dass du das Blatt ohne deinen Namen abgeben willst?}}{\Name} \\
+	\ifthenelse{\equal{\Matrikelnummer}{}}{}{Matrikelnummer: \Matrikelnummer \\}
+	\ifthenelse{\equal{\Uebungsgruppe}{}}{}{Übungsgruppe: \Uebungsgruppe \\}
+	\ifthenelse{\equal{\Uebungsleiter}{}}{}{Übungsleiter: \Uebungsleiter}}
+
+
+\newcommand{\Name}{}
+\newcommand{\setName}[1]{\renewcommand{\Name}{#1}}
+
+\newcommand{\Vorlesung}{}
+\newcommand{\setVorlesung}[1]{\renewcommand{\Vorlesung}{#1}}
+
+\newcommand{\Dozent}{}
+\newcommand{\setDozent}[1]{\renewcommand{\Dozent}{#1}}
+
+\newcommand{\Matrikelnummer}{}
+\newcommand{\setMatrikelnummer}[1]{\renewcommand{\Matrikelnummer}{#1}}
+
+\newcommand{\Uebungsleiter}{}
+\newcommand{\setUebungsleiter}[1]{\renewcommand{\Uebungsleiter}{#1}}
+
+\newcommand{\Uebungsgruppe}{}
+\newcommand{\setUebungsgruppe}[1]{\renewcommand{\Uebungsgruppe}{#1}}
+
+\newcommand{\Uebungsblattnummer}{}
+\newcommand{\setUebungsblattnummer}[1]{\renewcommand{\Uebungsblattnummer}{#1}}
+
+\newcommand{\Datum}{}
+\newcommand{\setDatum}[1]{\renewcommand{\Datum}{#1}}
+
+
+\newcommand{\Aufgabe}[1]{\section*{Aufgabe #1}}
+\newcommand{\Unteraufgabe}[1]{\paragraph*{#1)}}
+\newcommand{\Unterunteraufgabe}[1]{\subparagraph*{#1)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hier geht es los!
+% Erstmal kannst du hier die wichtigen Dinge ausfüllen. Die werden dann automatisch oben im Dokument eingefügt. Benötigst du eine Angabe z.B. den Übungsleiter nicht, kannst du die Zeile mit einem Prozentzeichen einfach auskommentieren, und das wird automatisch übernommen.
+
+\setName{Paul \& Niclas}						% Hier kannst du deinen und ggf. die Namen der anderen, die am Blatt mitgearbeitet haben angeben.
+\setMatrikelnummer{1243546}		% Matrikelnummer was ist das?
+%\setDatum{1.1.1970}				% Lässt du die Zeile weg, wird automatisch das aktuelle Datum eingefügt.
+\setUebungsgruppe{Fr 8-10 Uhr}		% Sollte klar sein :)
+\setUebungsleiter{Tim}				% Das auch...
+\setVorlesung{Mechanik}				% Prinzip verstanden?
+\setUebungsblattnummer{3}           % Wohl die wichtigste Zeile
+\setDozent{Gekle}					% Falls nicht: Fragen an die Fachschaft eures Vertrauens ;)
+
+
+
+\begin{document}
+	\Aufgabe{1}
+	\Unteraufgabe{a}
+	So und jetzt ist hier Text sonst so ein eBlah: dkjsdjfhjk jksdfh jksdfh jjhjsdh jdhjf hdjh jdh jhd jdhf jdh jfhd jdhf jdhf jdhfjh djshf j
+	\Unteraufgabe{b} 
+	Hier steht eine Formel
+	\begin{align*}
+		\underset{dV}{\iiint} \text{d$^3$x} ~ \rho(\vec{r})
+	\end{align*}
+	\Unterunteraufgabe{i}
+	\begin{equation}
+		a^2+b^2=c^2=\frac{\int_a^\infty\exp(x)dx}{80}
+	\end{equation}
+	
+	\newpage 
+	\Aufgabe{2}
+	
+\end{document}
