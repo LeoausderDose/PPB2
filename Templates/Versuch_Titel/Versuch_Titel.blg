@@ -2,45 +2,47 @@ This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Versuch_Titel.aux
 The style file: Auswertung.bst.bst
+I found no \citation commands---while reading file Versuch_Titel.aux
 Database file #1: Auswertung.bib
-You've used 20 entries,
+You've used 0 entries,
             2845 wiz_defined-function locations,
-            781 strings with 7448 characters,
-and the built_in function-call counts, 8431 in all, are:
-= -- 826
-> -- 335
-< -- 20
-+ -- 130
-- -- 110
-* -- 692
-:= -- 1530
-add.period$ -- 39
-call.type$ -- 20
-change.case$ -- 137
-chr.to.int$ -- 20
-cite$ -- 20
-duplicate$ -- 410
-empty$ -- 649
-format.name$ -- 134
-if$ -- 1703
+            638 strings with 4731 characters,
+and the built_in function-call counts, 23 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 8
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 16
-newline$ -- 64
-num.names$ -- 82
-pop$ -- 137
+missing$ -- 0
+newline$ -- 4
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
-purify$ -- 116
+purify$ -- 0
 quote$ -- 0
-skip$ -- 269
+skip$ -- 1
 stack$ -- 0
-substring$ -- 419
-swap$ -- 90
-text.length$ -- 4
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 165
+type$ -- 0
 warning$ -- 0
-while$ -- 74
+while$ -- 0
 width$ -- 0
-write$ -- 217
+write$ -- 3
+(There was 1 error message)

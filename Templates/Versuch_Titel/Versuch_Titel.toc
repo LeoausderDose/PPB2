@@ -1,12 +1,9 @@
 \babel@toc {ngerman}{}
-\contentsline {chapter}{\numberline {1}Einleitung}{5}{}%
-\contentsline {chapter}{\numberline {2}Fragen zur Vorbereitung}{6}{}%
-\contentsline {section}{\numberline {2.1}Teilaufgabe X}{6}{}%
-\contentsline {chapter}{\numberline {3}Messprotokoll}{7}{}%
-\contentsline {chapter}{\numberline {4}Auswertung und Diskussion}{8}{}%
-\contentsline {section}{\numberline {4.1}Teilauswertung X}{8}{}%
-\contentsline {chapter}{\numberline {5}Fazit}{9}{}%
-\contentsline {chapter}{\numberline {A}Append A}{10}{}%
-\contentsline {section}{\numberline {A.1}Teilanhang X}{10}{}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{11}{}%
+\contentsline {chapter}{\numberline {1}Einleitung}{5}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Fragen zur Vorbereitung}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Teilaufgabe X}{6}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Messprotokoll}{7}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Auswertung und Diskussion}{8}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Teilauswertung X}{8}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Fazit}{9}{chapter.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
