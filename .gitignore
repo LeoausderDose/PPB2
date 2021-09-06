@@ -16,7 +16,7 @@
 *.cb
 *.cb2
 *.lb
-Versuch_*.pdf
+*.pdf
 .DS_Store
 
 ## Intermediate documents:
