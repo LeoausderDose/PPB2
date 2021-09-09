@@ -3,4 +3,63 @@
 
 % Teilauswertung X
 
-\section{Spektrale Quantenempfindlichkeit}
+\section{Spektrale Empfindlichkeit}
+\subsection{Lock-in-Verstärker}
+Um den Photostrom $I_{Ph}$ zu berechnen, muss zunächst die am Lock-in-Verstärker abgelesene Spannung in die tatsächlich anliegende Spannung umgerechnet werden. Der Verstärker hat als Output einen Wert zwischen $0$V und $10$V. Berücksichtigt man noch die Sensitivity des Verstärkers erhält man für die anliegende Spannung $U_{rms}$: \\
+
+\begin{equation}
+U_{rms} = \frac{U_{angezeigt}}{10V} \cdot Sensitivity
+\end{equation}
+
+Nun muss noch berücksichtigt werden, dass der Lock-in-Verstärker das Messsignal, das durch den Chopper (annähernd) reckteckförmig moduliert wurde, mit dem sinusförmigen Referenzsignal des Choppers faltet, bevor die Faltung durch einen Tiefpass geleitet wird. Ein Rechtecksignal kann geschrieben werden als:\\
+
+\begin{equation}
+f_{Rechteck} = \frac{4U_{Rechteck}}{\pi} \sum_{k=1}^\infty \frac{sin((2k-1)\omega t)}{2k-1}  ,
+\end{equation}
+
+wobei $U_{Rechteck}$ die Amplitude des Signals bezeichnet.
+Faltet man dieses nun mit einem Signal der Frequenz $\omega$, so trägt nach durchlaufen des Tiefpasses nur der Anteil am Rechtecksignal mit ebenfalls $\omega$ bei, also der Term für $k = 1$. Die gemessene Spannung ergibt sich also zu: \\
+
+\begin{align}
+U_{ein} &= \frac{4U_{Rechteck}}{\pi} sin(\omega t) \nonumber \\ 
+\implies U_{rms} &= \frac{1}{\sqrt{2}} \frac{4U_{Rechteck}}{\pi}
+\end{align}
+
+Stellt man nun nach der Amplitude der Spannung $U_{Rechteck}$ um, so erhält man:
+
+\begin{align}
+U_{Rechteck} &= \frac{\pi \sqrt{2}}{4} U_{rms} \\
+\implies U_{Rechteck} &= \frac{\pi \sqrt{2}}{4} \cdot Sensitivity \cdot \frac{U_{angezeigt}}{10V}
+\end{align}
+
+Um den Photostrom $I_{Ph}$ zu erhalten, muss jetzt nur noch die tatsächliche Spannung mithilfe des Faktors des U/I-Verstärkers umgerechnet werden:\\
+
+\begin{align}
+I_{Ph} &= \frac{U_{Rechteck}}{1 \frac{kV}{A}} \nonumber \\
+ &= \frac{\pi \sqrt{2}}{4} \cdot Sensitivity \cdot \frac{U_{angezeigt}}{10000 \frac{V^2}{A}}
+\label{eq: I_Ph}
+\end{align}
+
+\subsection{Spektrale Empfindlichkeit $SR$ und Externe Quanteneffizienz $EQE$}
+
+Die Spekrtale Empfindlichkeit $SR$ berechnet sich nach:
+\begin{equation}
+SR = \frac{I_{Ph}}{P_\lambda},
+\end{equation}
+
+mit Photostrom $I_{Ph}$ aus Gl. \ref{eq: I_Ph}. \\
+Die in die Zelle einfallende Leistung $P_{\lambda}$ muss erst noch aus der in das Powermeter einfallende Leistung berechnet werden. Es gilt:
+\begin{align}
+P_{PM} &= P_{ges} R \nonumber \\
+P_{\lambda} &= P_{ges} T \nonumber \\
+\implies P_{\lambda} &= P_{PM} \frac{T}{R},
+\end{align}
+
+mit Reflektionskoeffizient des Strahlteilers $R$, Transmissionskoeffizient $T$ und gesamter Lichtleistung vor Auftreffen auf den Teiler $P_{ges}$.
+
+Aus den Werten für $SR$ lassen sich nun auch die für die Externe Quanteneffizienz $EQE$ berechnen:
+\begin{align}
+EQE &= \frac{hc}{e} \frac{SR}{\lambda}
+\end{align}
+
+\subsection{Ideale Externe Quanteneffizienz}
