@@ -48,7 +48,8 @@ Die Spekrtale Empfindlichkeit $SR$ berechnet sich nach:
 SR = \frac{I_{Ph}}{P_\lambda},
 \end{equation}
 
-mit Photostrom $I_{Ph}$ aus Gl. \ref{eq:IPh}. \\
+mit Photostrom $I_{Ph}$ aus Gl. \ref{eq:IPh}. Dabei muss noch berücksichtigt werden, dass für alle Messwerte noch der Photostrom aus der
+Untergrundsmessung abgezogen wird. \\
 Die in die Zelle einfallende Leistung $P_{\lambda}$ muss erst noch aus der in das Powermeter einfallende Leistung berechnet werden. Es gilt:
 \begin{align}
 P_{PM} &= P_{ges} R \nonumber \\
@@ -76,7 +77,17 @@ Daraus folgt: \\
 
 \begin{equation}
 \lambda_{Si} = 1102,866 nm, \qquad \lambda_{CIS} = 1215,531 nm
+\label{eq:bandkante}
 \end{equation}
+
+In den folgenden Abbildungen wurden die spektrale Empfindlichkeit und die externe Quanteneffizienz gegen die Wellenlänge aufgetregen.
+Dabei wurden auch die jeweiligen Bandkanten aus Gl. \ref{eq:bandkante} eingezeichnet. Bei den Siliziummodulen ist zu erkennen, dass trotz 
+Überschreitung der Bandkante nicht vernachlässigbare Leistungen im Powermeter gemessen wurden. Dies ist auch nicht alleine durch die 
+Driftleistung des Powermeters zu erklären, da diese im Nanowatt-Bereich liegen. 
+Die Bandkante des CIS-Moduls liegt bei einer höheren Wellenlänge als der Messpunkt der größten Wellenlänge, deshalb kann nicht mit 
+Sicherheit gesagt werden, ob das Problem des Überschreitens der Bandkante hier auch auftreten würde. Dennoch lässt sich an Abb. 
+REFERENZ gut erkennen, dass die Lage der Bandkante annäherungsweise mit dem Nulldurchgang des Graphen der spektralen Empfindlichkeit
+übereinstimmt.
 
 
 \subsection{Ideale Externe Quanteneffizienz}
@@ -86,4 +97,6 @@ Nimmt man nun eine ideale externe Quanteneffizienz von $1$ an, folgt aus Gl. \re
 SR &= \frac{e}{hc}\lambda
 \end{align}
 
-Der Graph der spektralen Empfindlichkeit ist somit eine Gerade mit Steigung $\frac{e}{hc}$.
+Der Graph der spektralen Empfindlichkeit ist somit zunächst eine Gerade mit Steigung $\frac{e}{hc}$, bis diese Gerade auf die
+Vertikale der bandkante trifft. Da nach Überschreitung der Bandkante kein Stromfluss mehr möglich ist (höhere Wellenlänge 
+$\leftrightarrow$ niedrigere Energie), fällt die Gerade dort abrupt ab. 
