@@ -16,7 +16,7 @@
 *.cb
 *.cb2
 *.lb
-*.pdf
+.pdf
 .DS_Store
 
 ## Intermediate documents:
@@ -29,7 +29,7 @@
 
 
 ## Generated if empty string is given at "Please type another file name for output:"
-*.pdf
+*VersuchSolarzelle.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
