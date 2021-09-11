@@ -69,6 +69,25 @@ EQE &= \frac{hc}{e} \frac{SR}{\lambda}
 Die berechneten Werte finden sich in Tab. ref. wieder. TABELLEN!!
 \\
 
+\begin{tabular}{rrrrrr}
+    $Wellenlänge (nm)$ &  $I_{Ph} (A)$ &    $\frac{T}{R}$ &  $P_{ges} (\mu W)$ &  $SE (\frac{A}{W})$ &       $EQE$ \\
+    \hline
+    363.2 &  0.000020 &  1.226242 &   38.475290 &  0.513367 &   1.75246 \\
+    400.3 &  0.000067 &  1.223990 &   58.922040 &  1.139957 &   3.53077 \\
+    450.8 &  0.000184 &  1.225490 &  100.449600 &  1.836351 &   5.05054 \\
+    499.2 &  0.000281 &  1.200480 &  127.365700 &  2.204363 &   5.47488 \\
+    599.1 &  0.000495 &  1.180638 &  179.225200 &  2.759511 &   5.71083 \\
+    699.9 &  0.000563 &  1.158749 &  170.787700 &  3.299059 &   5.84414 \\
+    799.5 &  0.000516 &  1.187648 &  127.057800 &  4.058607 &   6.29397 \\
+    899.8 &  0.000781 &  1.140251 &  187.941100 &  4.156302 &     5.727 \\
+    949.4 &  0.000830 &  1.060445 &  217.927300 &  3.808663 &   4.97382 \\
+    1000.5 &  0.000809 &  1.043841 &  229.824200 &  3.519681 &   4.36167 \\
+    1051.2 &  0.000429 &  1.037344 &  165.326000 &  2.595124 &   3.06083 \\
+    1099.6 &  0.000103 &  1.039501 &   78.335660 &  1.315428 &    1.4832 \\
+    1123.3 &  0.000065 &  1.041124 &   77.253015 &  0.842145 &  0.929517 \\
+    \label{tab:32mono}
+\end{tabular}
+
 Die Lage der Bandkanten sind für Silizium $1,1242$eV (Quelle: https://www.pveducation.org/pvcdrom/materials/general-properties-of-silicon, 9.9.21) und für CIS $1,02$eV. (Quelle:https://www.pveducation.org/pvcdrom/materials/cuinse2, 9.9.21). Die Lage dieser im Wellenängenraum berechnet sich nach. \\
 
 \begin{align}
@@ -100,14 +119,14 @@ REFERENZ gut erkennen, dass die Lage der Bandkante annäherungsweise mit dem Nul
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.75]{Bilder/32_Si_SR.png}
+    \includegraphics[scale=0.75]{Bilder/32SiSR.png}
     \caption{Verlauf der gemessenen Werte von $SR$ der Siliziumzellen aufgetragen gegen die Wellenläge}
     \label{bild:SiSRMess}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.75]{Bilder/32_CIS_SR.png}
+    \includegraphics[scale=0.75]{Bilder/32CISSR.png}
     \caption{Verlauf der gemessenen Werte von $SR$ der CIS-Zelle aufgetragen gegen die Wellenläge}
     \label{bild:CISSR}
 \end{figure}
@@ -116,21 +135,21 @@ REFERENZ gut erkennen, dass die Lage der Bandkante annäherungsweise mit dem Nul
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.75]{Bilder/32_Si_EQE.png}
+    \includegraphics[scale=0.75]{Bilder/32SiEQE.png}
     \caption{Verlauf der gemessenen Werte von $EQE$ der Siliziumzellen aufgetragen gegen die Wellenläge}
     \label{bild:SiEQE}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.75]{Bilder/32_CIS_EQE.png}
+    \includegraphics[scale=0.75]{Bilder/32CISEQE.png}
     \caption{Verlauf der gemessenen Werte von $EQE$ der CIS-Zelle aufgetragen gegen die Wellenläge}
     \label{bild:CISEQE}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.75]{Bilder/32_all_SR_gest.png}
+    \includegraphics[scale=0.75]{Bilder/32allSRgest.png}
     \caption{Verlauf der um den Faktor zehn gestauchten Werte von $SR$ der Siliziumzellen aufgetragen gegen die Wellenläge, zusätzlich
     zu dem Verlauf der CIS-Zelle}
     \label{bild:allSRgest}
@@ -138,7 +157,7 @@ REFERENZ gut erkennen, dass die Lage der Bandkante annäherungsweise mit dem Nul
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.75]{Bilder/32_all_EQE_gest.png}
+    \includegraphics[scale=0.75]{Bilder/32allEQEgest.png}
     \caption{Verlauf der gemessenen Werte von $EQE$ aller Zellen aufgetragen gegen die Wellenläge; Werte für Si-Zellen um Faktor
     zehn gestaucht}
     \label{bild:allEQEgest}
@@ -154,14 +173,14 @@ kann das Überschreiten in unserer Messung wahrscheinlich auf die Abweichungen d
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.75]{Bilder/Theorie_SR.png}
+    \includegraphics[scale=0.75]{Bilder/TheorieSR.png}
     \caption{Vergleichsdaten für den Verlauf von $SR$ einer multikristallinen Siliziumzelle}
     \label{bild:ThSR}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.75]{Bilder/Theorie_EQE.png}
+    \includegraphics[scale=0.75]{Bilder/TheorieEQE.png}
     \caption{Vergleichsdaten für den Verlauf von $EQE$ einer multikristallinen Siliziumzelle}
     \label{bild:ThEQE}
 \end{figure}
@@ -189,7 +208,7 @@ nächsten Teilaufgabe weiter vertieft werden, wenn der Idealitätsfaktor bestimm
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.75]{Bilder/32_ideal_EQE.png}
+    \includegraphics[scale=0.75]{Bilder/32idealEQE.png}
     \caption{Verlauf von $SR$ bei einer idealen $EQE = 1$; der Graph für die Si-Zellen fällt mit der violetten Vertikalen ab, der für
     das CIS-Modul mit der roten. Zum Vergleich die Messwerte für $SR$ (Si-Zellen um Faktor 10 gestaucht)}
     \label{bild:idealEQE}
