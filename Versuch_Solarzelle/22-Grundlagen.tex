@@ -12,7 +12,7 @@ Elektrische Leiter haben bereits bei sehr niedrigen Temperaturen Ladungsträger 
     \includegraphics[scale=0.75]{Bilder/Baendermodell.png}
     \caption{Bändermodell für Nichtleiter, Halbleiter und Leiter}
 \end{figure}
-Quelle: virtual university(net)
+Quelle: https://www.virtualuniversity.ch/elektronik/analog/halbleiter/1.html, 9.9.21
 
 \subsubsection{Dotierung von Halbleitern und pn-Übergang}
 Die Leitfähigkeit von Halbleitern lässt sich durch Dotierungen verbessern. Man hat hierzu zwei Möglichkeiten: p- und n-Dotierung. \\
@@ -42,6 +42,28 @@ Der Typ von Solarzelle, mit dem sich in diesem Versuch beschäftigt wird, besteh
 \end{figure}
 
 Quelle: Shah, S.50
+
+\subsubsection{Ersatzschaltbild}
+Die ideale Solarzelle kann durch eine Stromquelle, die den Photostrom modelliert, und eine Diode dargestellt werden. 
+Erweitert werden kann dieses Modell durch einen Serienwiderstand, der hauptsächlich Widerstände in den Kontakten und Verkabelungen
+widerspiegelt, und einen Parallelwiderstand, der alle Effekte im Kristall zusammenfasst, die den pn-Übergang überbrücken.
+Quelle: Shah, S.52f 
+Das Ersatzschaltbild in Abb. \ref{bild:ersatzschaltbild} zu finden.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{Bilder/Ersatzschaltbild.png}
+    \caption{Ersatzschaltbild einer Solarzelle}
+    \label{bild:ersatzschaltbild}
+\end{figure}
+Quelle: Shah, S.53
+
+Die sich daraus ergebende U/I-Kennlinie wird durch die Shockley-Gleichung beschrieben:
+\begin{equation}
+    I = I_0 (exp(\frac{q(U-R_SI)}{nkT})-1) + \frac{U-R_SI}{R_P} - I_{Ph}
+\end{equation}
+
+Quelle: Skript S.3
 
 \subsubsection{Wichtige Kenngrößen}
 Die Leistung berechnet sich nach $P = |UI|$, im U/I-Diagramm entspricht ihr also die Fläche des Rechtecks unter der Kennlinie. Am Maximum-Power-Point $MPP$ ist $P$ maximal. Der $MPP$ ist auch in Abb. \ref{bild:kennlinien} eingezeichnet. \\
