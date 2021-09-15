@@ -1,6 +1,6 @@
 import pandas as pd
 
-daten = 'Versuch_Alpha_Gamma_Spektroskopie/Daten/CSV/UranerzBlei7.RPT'
+daten = 'Versuch_Alpha_Gamma_Spektroskopie/Daten/Rohdaten/SchichtdickeLeer1.RPT'
 
 #Daten importiernen
 df = pd.read_csv(daten,delimiter='\\', skiprows= 10, names=['Kanal', 'Dump', 'Count'])
