@@ -6,17 +6,18 @@
 \section{$\alpha$-Spektroskopie}
 
 \subsection{Energiekalibrierung}
+\label{subs:kali}
 
 Zunächst wurde das Spektrum von Radium-226 mit einer 1mm-Blende in einem Abstand von ca 5mm gemessen, um eine Relation zwischen Kanalnummer 
 und Energieinhalt in diesem herzustellen. Dabei wurden die Daten des Files Kali\_ra226\_b1\_603 zunächst geplottet (Abb. \ref{bild:kali}) 
-und mit den Werten aus der Tabelle in Abb. \ref{bild:TabelleRa} verglichen.
+und mit den Werten aus der Tabelle in Abb. %\ref{bild:TabelleRa} verglichen.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.5]{Bilder/kali.png}
-    \caption{Plot der Kalibrationsmessung} %Plot einfügen!!
-    \label{bild:kali}
-\end{figure}
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[scale=0.5]{Bilder/kali.png}
+%    \caption{Plot der Kalibrationsmessung} %Plot einfügen!!
+%    \label{bild:kali}
+%\end{figure}
 
 \begin{figure}[h]
     \centering
@@ -38,23 +39,107 @@ für Po-218 bei Kanal $126$. Mit den Energie aus der Tabelle für Po-214 ($7,69$
 Gleichungssystem:
 
 \begin{align*}{}
-    7,69 MeV &= 193 \cdot m + E_0
-    6,00 MeV &= 126 \cdot m + E_0
+    7,69 \, MeV &= 193 \cdot m + E_0 \\
+    6,00 \, MeV &= 126 \cdot m + E_0
 \end{align*}
 
 Mit der Lösung:
 
 \begin{equation*}
-    m = 0,02522388 MeV, \qquad E_0 = 2,82179104 MeV
+    m = 0,02522388 \, MeV, \qquad E_0 = 2,82179104 \, MeV
 \end{equation*}
 
 Womit sich die Kalibrierungsgerade ergibt zu:
 
 \begin{equation}
-    E = Kanalnummer \cdot 0,02522388 MeV + 2,82179104 MeV
+    E = Kanalnummer \cdot 0,02522388 \, MeV + 2,82179104 \, MeV
 \end{equation}
 
+Eine Problematik der Energiekalibrierung ist die starke Anhängigkeit der gemessenen Energien von Art und Dicke des Absorbers, wie in 
+\ref{subs:abs} näher beleuchtet. Ideal wäre demnach eine Messung unter Auschluss jedweden Absorbers, also ein Vakuum.\\
+
+\subsection{Geiger-Nutall-Regel}
+
+Die Geiger-Nutall-Regel ist eine empirische Abschätzung zur Halbwertszeit:\\
+\begin{equation}
+    \lg (\frac{T_{1/2}}{1s}) = a \cdot \frac{Z}{\sqrt{E_{\alpha}}} + b
+    \label{eq:gnr}
+\end{equation}
+
+
+mit Konstanten a und b. Die Wertepaare für Po-214 und Po-218 aus Kapitel \ref{subs:kali} in die Formel eingesetzt liefert a und b:
+
+\begin{equation}
+    a = 1747,12602759 \sqrt{1eV} \qquad b = -56,70765593
+\end{equation}
+
+Nun kann zur Überprüfung ein Element der Zerfallsreihe von U-238 eingesetzt werden. Dies sei Rn-222; bei einer Halbwertszeit von 
+$3,82$d sollte sich nach \ref{bild:TabelleRa} eine Energie von $5,49$ MeV ergeben. Es ist: \\
+
+\begin{equation*}
+    \ref{eq:gnr}  \leftrightarrow E_{\alpha} = \biggl(\,\frac{1747,12602759 \, Z}{\lg(T_{1/2})+56,70765593}\, \biggr)^2 \\
+    \to E_{\alpha, Rn-222} \approx 5,56 \, MeV
+\end{equation*}
+
+Dies entspricht zwar nicht ganz dem gefordertem Wert, allerdings liegt die Abweichung nur bei ca. 1\%. Deshalb kann die 
+Geiger-Nutall-Regel durchaus als bestätigt angesehen werden.
 
 \subsection{Blendenverkleinerung}
 
 \subsection{Absorption von $\alpha$-Strahlen}
+\label{subs:abs}
+
+Zur Bestimmung der Absorption von Alphastrahen wurde das Spektrum der Radiumquelle zunächst in verschiedenen Abständen zum Detektor 
+aufgenommen ($1$cm, $1,5$ cm, $2$cm, $2,5$cm, $3$cm), danach in konstantem Abstand ($1 \pm 0,2$) cm, aber mit Durchgang durch 
+unterschiedliche Anzahl an Schichten Mylarfolie (eine bis neun Lagen). 
+Dabei betrug der Durchmesser der Blende stets $3$mm. Die Messzeit bei der Abstandsmessung wurde i.d.R. immer größer, die der 
+Folienmessung betrug stets ca. $300$ s.\\
+
+Betrachtet man die entstandenen Spektren beider Messreihen, so fallen einige Gemeinsamkeiten auf:\\
+Die Anzahl der Einträge in den Kanälen, respektive die Höhe der Peaks, fallen mit zunehmenden Abstand bzw Schichtdicke, und das trotz 
+teilweise längerer Messdauer. Dies ist allerdings nicht verwunderlich: Da Alphastrahen eine sehr geringe Reichweite haben, genügen schon 
+kleinere Variationen in Abstand oder Dicke des Absorbermaterials, um die Transmission signifikant herabzusetzen.\\
+Zudem verschiebt sich die Lage der Peaks zunehmend zu kleineren Energien hin. Das scheint auf den ersten Blick verwunderlich, sollten 
+die Peaks doch den Energien der Elemente der Zerfallsreihe des Strahlers entsprechen und damit eine feste Energie haben. Jedoch 
+wechselwirken die Teilchen der Alphastrahlung durch Stöße mit dem Absorbermaterial (Luft bzw Mylar) und geben so Energie ab. Dieser 
+Verlust ist natürlich abhängig von der Wegstrecke durch den Absorber, was in geringeren detektierten Energien für größere Abstände 
+bzw Schichtdicken führt. Diese Erklärung wird durch die Messung der Gammaspektren gestützt: Gammastrahlung ist keine Teilchenstrahlung 
+sondern eine elektromagnetische Welle. Deshalb ist hier keine Verschiebung der Peaks bei Abstands- oder Absorberdickenvariation zu 
+erwarten; genau dies wurde im ersten Versuchsteil bestätigt.\\
+Aus der Verschiebung der Peaks ergibt sich allerdings eine praktische Konsequenz: Die Messung der Energien von Alphastrahen ist stark 
+abhängig von Art und Dicke des Absorbers. Dies muss unbedigt bei der Kalibration des Messgeräts berücksichtigt werden. Da allerdings 
+in der verwendeten Tabelle keine näheren Angaben gemacht wurden, gehen wir an dieser Stelle von Werten ohne Absorber aus. Die Messung 
+zur Kalibration wurde mit minimalem Abstand und kleinster Blende durchgeführt, weshalb auch ein Minimum an Absorber zwischen Probe 
+und Messgerät war. Deshalb ist davon auszugehen, dass die Kalibration im Wesentlichen richtig ist.\\
+
+Trägt man nun die Quadrate der Energien (des rechten Peaks im Spektrum) gegen den Abstand (ergo Absorberdicke von Luft) bzw 
+gegen die Schichtdicke der Mylarfolien (Foliendicke: $4,3 \mu$ m) auf, so ergibt sich jeweils näherugsweise eine Gerade. Dabei wurden 
+bei der Mylarfolie die Messung mit den neun Lagen nicht berücksichtigt, da die Datenlage mit einer maximalen Kanalbelegung von vier zu 
+gering ist. Ohnehin ist erkennbar, dass für größere Schichtzahlen die Abweichungen von der Gerade zunehmend größer werden. Mittels 
+linearer Regression werden die Steigungen $m_{Luft}$ und $m_{Mylar}$ berechnet. Die Abschwächungskoeffizienten aus der 
+Bethe-Bloch-Formel ergeben sich nach: \\
+
+\begin{equation}
+    k = 0,5 \cdot m
+    \to k_{Luft} = 1,31362546 \cdot 10^{-23} \, \frac{J^2}{m}, \qquad k_{Mylar} = 1,48780223 \cdot 10^{-20} \, \frac{J^2}{m}
+\end{equation}
+(\ref{Jaekel1997}, S.71f) \\
+
+Außerdem gilt: \\
+
+\begin{equation}
+    k = K \, \frac{Z \rho}{A}
+\end{equation}
+(\ref{Kador2021}, S. 15) \\
+
+Damit ist: \\
+
+\begin{equation}
+    \frac{k_{Luft}}{k_{Mylar}} = \frac{Z_{Luft} \rho_{Luft} A_{Mylar}}{Z_{Mylar} \rho_{Mylar} A_{Luft}} = 
+    \frac{7,22 \cdot 1,29 \cdot 10^{-3} \cdot 4,67}{2,67 \cdot 0,92 \cdot 14,44} = 0,001227
+\end{equation}
+ % Vergleich 
+
+\subsection{Vermessung eines radioaktiven Zeigers}
+
+
