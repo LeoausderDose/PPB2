@@ -10,14 +10,14 @@
 
 Zunächst wurde das Spektrum von Radium-226 mit einer 1mm-Blende in einem Abstand von ca 5mm gemessen, um eine Relation zwischen Kanalnummer 
 und Energieinhalt in diesem herzustellen. Dabei wurden die Daten des Files Kali\_ra226\_b1\_603 zunächst geplottet (Abb. \ref{bild:kali}) 
-und mit den Werten aus der Tabelle in Abb. %\ref{bild:TabelleRa} verglichen.
+und mit den Werten aus der Tabelle in Abb. \ref{bild:TabelleRa} verglichen.
 
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[scale=0.5]{Bilder/kali.png}
-%    \caption{Plot der Kalibrationsmessung} %Plot einfügen!!
-%    \label{bild:kali}
-%\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.65]{Bilder/kali.png}
+    \caption{Plot der Kalibrationsmessung} 
+    \label{bild:kali}
+\end{figure}
 
 \begin{figure}[h]
     \centering
@@ -86,6 +86,21 @@ Geiger-Nutall-Regel durchaus als bestätigt angesehen werden.
 
 \subsection{Blendenverkleinerung}
 
+Nun wurde eine Messung identisch zu der Kalibrationsmessung durchgeführt, mit dem einzigen UNterschied, dass anstatt der 1mm-Blende 
+jetzt die 3mm-Blende verwendet wurde. Trägt man die detektierten Teilchen in den Kanäle gegen die selbigen auf, so ergibt sich der 
+Graph in Abb. \ref{bild:blende}. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.65]{Bilder/blende.png}
+    \caption{Detektierte Teilchen aufgetragen gegen die Kanalnummer, 3mm-Blende}
+    \label{bild:blende}
+\end{figure}
+
+Dabei fällt zunächst einmal auf, dass die Zahl der detektierten Teilchen trotz identischer Messzeit deutlich angestiegen ist. Dies ist 
+allerdings zu erwarten, da eine größere Blende offensichtlich eine größere Deektorfläche freigibt.
+
+
 \subsection{Absorption von $\alpha$-Strahlen}
 \label{subs:abs}
 
@@ -123,14 +138,14 @@ Bethe-Bloch-Formel ergeben sich nach: \\
     k = 0,5 \cdot m
     \to k_{Luft} = 1,31362546 \cdot 10^{-23} \, \frac{J^2}{m}, \qquad k_{Mylar} = 1,48780223 \cdot 10^{-20} \, \frac{J^2}{m}
 \end{equation}
-(\ref{Jaekel1997}, S.71f) \\
+(\cite{Jaekel1997}, S.71f) \\
 
 Außerdem gilt: \\
 
 \begin{equation}
     k = K \, \frac{Z \rho}{A}
 \end{equation}
-(\ref{Kador2021}, S. 15) \\
+(\cite{Kador2021}, S. 15) \\
 
 Damit ist: \\
 
@@ -138,7 +153,14 @@ Damit ist: \\
     \frac{k_{Luft}}{k_{Mylar}} = \frac{Z_{Luft} \rho_{Luft} A_{Mylar}}{Z_{Mylar} \rho_{Mylar} A_{Luft}} = 
     \frac{7,22 \cdot 1,29 \cdot 10^{-3} \cdot 4,67}{2,67 \cdot 0,92 \cdot 14,44} = 0,001227
 \end{equation}
- % Vergleich 
+ 
+Das Verhältnis der gemessenen Abschwächungskoeffizienten ergibt sich zu:\\
+
+\begin{equation}
+    \frac{k_{Luft}}{k_{Mylar}} = \frac{1,31362546 \cdot 10^{-23}}{1,48780223 \cdot 10^{-20}} = 0,0008829
+\end{equation}
+
+Messung und Theorie stimmen zwar in der Größenordnung überein, haben allerdings einen Fehler von ca 30\%. 
 
 \subsection{Vermessung eines radioaktiven Zeigers}
 
