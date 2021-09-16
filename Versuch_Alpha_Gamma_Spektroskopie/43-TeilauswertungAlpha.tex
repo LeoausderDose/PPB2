@@ -1,7 +1,7 @@
 %Matteo Kumar - Leonard Schatt
 % Fortgeschrittenes Physikalisches Praktikum
 
-% Teilauswertung X
+% Teilauswertung Alpha
 
 \section{$\alpha$-Spektroskopie}
 
@@ -62,7 +62,7 @@ Eine Problematik der Energiekalibrierung ist die starke Anhängigkeit der gemess
 
 Die Geiger-Nutall-Regel ist eine empirische Abschätzung zur Halbwertszeit:\\
 \begin{equation}
-    \lg (\frac{T_{1/2}}{1s}) = a \cdot \frac{Z}{\sqrt{E_{\alpha}}} + b
+    \lg \biggl (\frac{T_{1/2}}{1s} \biggl ) = a \cdot \frac{Z}{\sqrt{E_{\alpha}}} + b
     \label{eq:gnr}
 \end{equation}
 
@@ -86,7 +86,7 @@ Geiger-Nutall-Regel durchaus als bestätigt angesehen werden.
 
 \subsection{Blendenverkleinerung}
 
-Nun wurde eine Messung identisch zu der Kalibrationsmessung durchgeführt, mit dem einzigen UNterschied, dass anstatt der 1mm-Blende 
+Nun wurde eine Messung identisch zu der Kalibrationsmessung durchgeführt, mit dem einzigen Unterschied, dass anstatt der 1mm-Blende 
 jetzt die 3mm-Blende verwendet wurde. Trägt man die detektierten Teilchen in den Kanäle gegen die selbigen auf, so ergibt sich der 
 Graph in Abb. \ref{bild:blende}. \\
 
@@ -98,7 +98,20 @@ Graph in Abb. \ref{bild:blende}. \\
 \end{figure}
 
 Dabei fällt zunächst einmal auf, dass die Zahl der detektierten Teilchen trotz identischer Messzeit deutlich angestiegen ist. Dies ist 
-allerdings zu erwarten, da eine größere Blende offensichtlich eine größere Deektorfläche freigibt.
+allerdings zu erwarten, da eine größere Blende offensichtlich eine größere Detektorfläche freigibt. Skaliert man nun die Messung 
+mit der kleineren Blende entsprechend hoch und legt diese über die Messung mit der größeren Blende, so ergibt sich Abb. 
+\ref{bild:blendebeide}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.65]{Bilder/blendebeide.png}
+    \caption{Vergleich der Plots für beide Blendenweiten; Werte für 1mm-Blende mit Faktor 3,35 zur Vergleichbarkeit skaliert}
+    \label{bild:blendebeide}
+\end{figure}
+
+Dabei ist erkennbar, dass die Spektren beinahe identisch sind. Der Graph der größeren Blende wirkt jedoch glatter. Dies könnte 
+daran liegen, dass bei kleineren Zählraten sich deren Fehler von $\sqrt{n}$ (gaußverteilt) deutlich stärker auswirkt und die Schwankungen der 
+Messwerte dadurch größer ist.
 
 
 \subsection{Absorption von $\alpha$-Strahlen}
@@ -109,6 +122,29 @@ aufgenommen ($1$cm, $1,5$ cm, $2$cm, $2,5$cm, $3$cm), danach in konstantem Absta
 unterschiedliche Anzahl an Schichten Mylarfolie (eine bis neun Lagen). 
 Dabei betrug der Durchmesser der Blende stets $3$mm. Die Messzeit bei der Abstandsmessung wurde i.d.R. immer größer, die der 
 Folienmessung betrug stets ca. $300$ s.\\
+
+Die Graphen mit allen Abständen bzw allen und ausgewählten Lagen finden sich in den Abb. \ref{bild:abstandAlle} bis \ref{bild:lagenAusgewaehlt}. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.65]{Bilder/abstandAlle.png}
+    \caption{Alphaspektren für verschiedene Abstände d}
+    \label{bild:abstandAlle}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.65]{Bilder/lagenAlle.png}
+    \caption{Alphaspektren für alle Lagenzahlen an Mylarfolie l}
+    \label{bild:lagenAlle}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.65]{Bilder/lagenAusgewaehlt.png}
+    \caption{Alphaspektren für ausgewählte Lagenzahlen an Mylarfolie l}
+    \label{bild:lagenAusgewaehlt}
+\end{figure}
 
 Betrachtet man die entstandenen Spektren beider Messreihen, so fallen einige Gemeinsamkeiten auf:\\
 Die Anzahl der Einträge in den Kanälen, respektive die Höhe der Peaks, fallen mit zunehmenden Abstand bzw Schichtdicke, und das trotz 
@@ -135,7 +171,7 @@ linearer Regression werden die Steigungen $m_{Luft}$ und $m_{Mylar}$ berechnet. 
 Bethe-Bloch-Formel ergeben sich nach: \\
 
 \begin{equation}
-    k = 0,5 \cdot m
+    k = 0,5 \cdot m \\
     \to k_{Luft} = 1,31362546 \cdot 10^{-23} \, \frac{J^2}{m}, \qquad k_{Mylar} = 1,48780223 \cdot 10^{-20} \, \frac{J^2}{m}
 \end{equation}
 (\cite{Jaekel1997}, S.71f) \\
@@ -163,5 +199,31 @@ Das Verhältnis der gemessenen Abschwächungskoeffizienten ergibt sich zu:\\
 Messung und Theorie stimmen zwar in der Größenordnung überein, haben allerdings einen Fehler von ca 30\%. 
 
 \subsection{Vermessung eines radioaktiven Zeigers}
+
+Zuletzt wurde noch das Alphaspektrum eines alten Uhrzeigers mit radioaktiver Farbe aufgenommen. Dabei wurde aufgrund der sehr schwachen 
+Strahlung die größtmögliche Blende (5mm) und ein kleinstmöglicher Abstand gewählt. Zudem betrug die Messdauer ca. einen Tag. Das 
+Spektrum findet sich in Abb. \ref{bild:uhr} wieder. \\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.65]{Bilder/uhr.png}
+    \caption{Alphaspektrum eines alten Uhrzeigers}
+    \label{bild:uhr}
+\end{figure}
+
+In dem Spektrum sind die Peaks sehr scharf zu sehen. Sie liegen laut Messtabellen bei: \\
+
+\begin{align*}
+    E_0 &= 6,06 \, MeV \to Bi-212 \, (T_{1/2} = 60,5m, E = 6,05 MeV),\, Po-218 \, (T_{1/2} = 3,05m, E = 6,0 MeV) \\
+    E_1 &= 6,55 \, MeV \to Rn-219 \, (T_{1/2} = 3,42s, E = 6,82 MeV), Bi-211 \, (T_{1/2} = 216s, E = 6,6 MeV)\\
+    E_2 &= 6,68 \, MeV \to vgl. \, E_1 \\
+    E_3 &= 7,16 \, MeV \to Po-215 \, (T_{1/2} = 1,8 \cdot 10^{-3}s, E = 7,38 MeV) \\
+    E_4 &= 8,62 \, MeV \to Po-212 \, (T_{1/2} = 3 \cdot 10^{-3}s, E = 8,78 MeV) \\
+\end{align*}
+
+(\cite{Mende2016}, S. 376f)
+
+
+
 
 
