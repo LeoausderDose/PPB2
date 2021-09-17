@@ -1,0 +1,26 @@
+\section{Schichtdickenmessung}
+
+Die Schichtdickenmessung ist der umgekehrte Prozess zu dem in Kapitel \ref{section:Absorbtionskoeff} Versuchsteil. Diesmal hat man den linearen Absorptionskoeffizient gegeben und 
+sucht die SChichtdicke.\\
+Dazu misst man jeweils 4 Mal die Zahlrate unter einem Peak, jeweils mit und ohne Absorber dazwischen. Dies tut man, um die Präzsion der Messung zu überprüfen. Diese liegt im Rahmen der 
+statistischen Schwankung. Die Position scheint keinen Einfluss auf die Messung zu haben und ist daher vernachlässigbar. Als Absorber wir hier Alufolie verwendet. Diese wird 
+5 Mal gefaltet. Danaach hat man eine Absorberschicht aus 32 Lagen Alufolie. Die bei der Messung verwendete Gammastrahlenquelle ist Am-241, welche ihren Peak bei 0,0594 MeV hat. \\
+
+Für die Schichtdicke wurden jeweils der Mittelwert der Zahlraten, welche proportional zur Intensität ist, aus den 4 Messungen gemittelt. Die Absorberdicke $d$ ergibt sich wie folgt:
+
+\begin{equation}
+    d = \frac{-\log{\frac{I}{I_0}}}{\mu}
+\end{equation}
+
+$I_0$ = Intensität vor Absorber, $I$ = Intensität mit Absorber, $\mu$ = linearer Absorptionskoeffizient (gegeben).
+
+Nach klassischer Fehlerfortpflanzung ergibt sich:
+
+\begin{center}
+    \centering
+    \textcolor{red}{$ d = (0,045\pm0,015) \mathrm{cm}$}\\
+    \textcolor{red}{$ d_{Alufolie} = \frac{d}{32} = (0,00141\pm0,00050) \mathrm{cm}$}\\
+\end{center}
+
+Dabei muss man beachten, dass $d$ dann die Dicke aller Schichten bezeichnet. Also muss man, um aud die Dicke einer Lage Alu $d_{Alufolie}$ zu erhalten, 
+$d$ noch durch 32 teilen.
