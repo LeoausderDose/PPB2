@@ -3,21 +3,16 @@
 
 % Teilauswertung Alpha
 
-\section{$\alpha$-Spektroskopie}
 
-\subsection{Energiekalibrierung}
+\section{Energiekalibrierung}
 \label{subs:kali}
 
 Zunächst wurde das Spektrum von Radium-226 mit einer 1mm-Blende in einem Abstand von ca 5mm gemessen, um eine Relation zwischen Kanalnummer 
-und Energieinhalt in diesem herzustellen. Dabei wurden die Daten des Files Kali\_ra226\_b1\_603 zunächst geplottet (Abb. \ref{bild:kali}) 
-und mit den Werten aus der Tabelle in Abb. \ref{bild:TabelleRa} verglichen.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.65]{Bilder/kali.png}
-    \caption{Plot der Kalibrationsmessung} 
-    \label{bild:kali}
-\end{figure}
+und Energieinhalt in diesem herzustellen. Dafür wurde das sich ergebende Spektrum aus Abb. \ref{bild:kali} mit den Werten aus der 
+Tabelle in Abb. \ref{bild:TabelleRa} verglichen.
+\\
+\\
+\\
 
 \begin{figure}[h]
     \centering
@@ -25,14 +20,23 @@ und mit den Werten aus der Tabelle in Abb. \ref{bild:TabelleRa} verglichen.
     \caption{Zerfallsdaten der Ra-226-Reihe \protect \footnotemark}
     \label{bild:TabelleRa}
 \end{figure}
-
 \footnotetext{\cite{Kador2021}}
+
+\clearpage
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.75]{Bilder/kali.png}
+    \caption{Plot der Kalibrationsmessung} 
+    \label{bild:kali}
+\end{figure}
+
 
 Dabei sind in der Tabelle zwei sehr kurzlebige Alphastrahler zu finden: Po-214 und Po-218. Da Po-214 die höchste Strahlenenergie hat, 
 sollte der rechte einzelne Peak diesem Strahler zuzuordnen sein. Po-218 ist der rechte Peak des Dreifachpeaks zuzuordnen. Dessen 
 linker Peak (Ra-226) ist für eine Kalibrierung zu schlecht aufgelöst und der mittlere aufgrund der Überlagerung zweier Strahler 
-(Rn-222, Po-210) ebenfalls nicht geeignet
-(\url{https://www.ld-didactic.de/software/524221en/Content/Appendix/Ra226.htm}, Stand: 14.09.21).
+(Rn-222, Po-210) ebenfalls nicht geeignet. \footnotemark
+\footnotetext{\url{https://www.ld-didactic.de/software/524221en/Content/Appendix/Ra226.htm}, Stand: 14.09.21}
 
 In den Daten wird nun der Kanal mit den maximalen Einträgen für jeden Peak gesucht. Dieser lag für Po-214 bei Kanal $193$ und 
 für Po-218 bei Kanal $126$. Mit den Energie aus der Tabelle für Po-214 ($7,69$ MeV) und Po-218 ($6,00$ MeV) erhält man folgendes 
@@ -58,7 +62,11 @@ Womit sich die Kalibrierungsgerade ergibt zu:
 Eine Problematik der Energiekalibrierung ist die starke Anhängigkeit der gemessenen Energien von Art und Dicke des Absorbers, wie in 
 \ref{subs:abs} näher beleuchtet. Ideal wäre demnach eine Messung unter Auschluss jedweden Absorbers, also ein Vakuum.\\
 
-\subsection{Geiger-Nutall-Regel}
+
+
+
+
+\section{Geiger-Nutall-Regel}
 
 Die Geiger-Nutall-Regel ist eine empirische Abschätzung zur Halbwertszeit:\\
 \begin{equation}
@@ -84,7 +92,11 @@ $3,82$d sollte sich nach \ref{bild:TabelleRa} eine Energie von $5,49$ MeV ergebe
 Dies entspricht zwar nicht ganz dem gefordertem Wert, allerdings liegt die Abweichung nur bei ca. 1\%. Deshalb kann die 
 Geiger-Nutall-Regel durchaus als bestätigt angesehen werden.
 
-\subsection{Blendenverkleinerung}
+
+
+
+
+\section{Blendenverkleinerung}
 
 Nun wurde eine Messung identisch zu der Kalibrationsmessung durchgeführt, mit dem einzigen Unterschied, dass anstatt der 1mm-Blende 
 jetzt die 3mm-Blende verwendet wurde. Trägt man die detektierten Teilchen in den Kanäle gegen die selbigen auf, so ergibt sich der 
@@ -92,7 +104,7 @@ Graph in Abb. \ref{bild:blende}. \\
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.65]{Bilder/blende.png}
+    \includegraphics[scale=0.75]{Bilder/blende.png}
     \caption{Detektierte Teilchen aufgetragen gegen die Kanalnummer, 3mm-Blende}
     \label{bild:blende}
 \end{figure}
@@ -104,17 +116,22 @@ mit der kleineren Blende entsprechend hoch und legt diese über die Messung mit 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.65]{Bilder/blendebeide.png}
+    \includegraphics[scale=0.75]{Bilder/blendebeide.png}
     \caption{Vergleich der Plots für beide Blendenweiten; Werte für 1mm-Blende mit Faktor 3,35 zur Vergleichbarkeit skaliert}
     \label{bild:blendebeide}
 \end{figure}
 
 Dabei ist erkennbar, dass die Spektren beinahe identisch sind. Der Graph der größeren Blende wirkt jedoch glatter. Dies könnte 
 daran liegen, dass bei kleineren Zählraten sich deren Fehler von $\sqrt{n}$ (gaußverteilt) deutlich stärker auswirkt und die Schwankungen der 
-Messwerte dadurch größer ist.
+Messwerte dadurch größer ist. Zudem ist eine kleine Verbreiterung in Richtung niedrigerer Energien erkennbar. Dies könnte darin begründet 
+liegen, dass nun auch die in einem größeren Raumwinkel emittierten Alphateilchen duch die größere Blende auf den Detektor treffen können. 
+Diese haben allerdings eine (etwas) längere Wegstrecke in Luft zurückgelegt und so durch Stöße mehr Energie abgegeben.
 
 
-\subsection{Absorption von $\alpha$-Strahlen}
+
+
+
+\section{Absorption von $\alpha$-Strahlen}
 \label{subs:abs}
 
 Zur Bestimmung der Absorption von Alphastrahen wurde das Spektrum der Radiumquelle zunächst in verschiedenen Abständen zum Detektor 
@@ -127,24 +144,26 @@ Die Graphen mit allen Abständen bzw allen und ausgewählten Lagen finden sich i
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.65]{Bilder/abstandAlle.png}
+    \includegraphics[scale=0.75]{Bilder/abstandAlle.png}
     \caption{Alphaspektren für verschiedene Abstände d}
     \label{bild:abstandAlle}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.65]{Bilder/lagenAlle.png}
+    \includegraphics[scale=0.75]{Bilder/lagenAlle.png}
     \caption{Alphaspektren für alle Lagenzahlen an Mylarfolie l}
     \label{bild:lagenAlle}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.65]{Bilder/lagenAusgewaehlt.png}
+    \includegraphics[scale=0.75]{Bilder/lagenAusgewaehlt.png}
     \caption{Alphaspektren für ausgewählte Lagenzahlen an Mylarfolie l}
     \label{bild:lagenAusgewaehlt}
 \end{figure}
+
+\clearpage
 
 Betrachtet man die entstandenen Spektren beider Messreihen, so fallen einige Gemeinsamkeiten auf:\\
 Die Anzahl der Einträge in den Kanälen, respektive die Höhe der Peaks, fallen mit zunehmenden Abstand bzw Schichtdicke, und das trotz 
@@ -163,17 +182,45 @@ in der verwendeten Tabelle keine näheren Angaben gemacht wurden, gehen wir an d
 zur Kalibration wurde mit minimalem Abstand und kleinster Blende durchgeführt, weshalb auch ein Minimum an Absorber zwischen Probe 
 und Messgerät war. Deshalb ist davon auszugehen, dass die Kalibration im Wesentlichen richtig ist.\\
 
-Trägt man nun die Quadrate der Energien (des rechten Peaks im Spektrum) gegen den Abstand (ergo Absorberdicke von Luft) bzw 
-gegen die Schichtdicke der Mylarfolien (Foliendicke: $4,3 \mu$ m) auf, so ergibt sich jeweils näherugsweise eine Gerade. Dabei wurden 
-bei der Mylarfolie die Messung mit den neun Lagen nicht berücksichtigt, da die Datenlage mit einer maximalen Kanalbelegung von vier zu 
-gering ist. Ohnehin ist erkennbar, dass für größere Schichtzahlen die Abweichungen von der Gerade zunehmend größer werden. Mittels 
-linearer Regression werden die Steigungen $m_{Luft}$ und $m_{Mylar}$ berechnet. Die Abschwächungskoeffizienten aus der 
-Bethe-Bloch-Formel ergeben sich nach: \\
+Die Bethe-Bloch-Formel beschreibt den Zusammenhang zwischen Energieverlust der Strahlung und durchquerter Weglänge durch einen Absorber. 
+Im vereinfachten Fall für schwere Teilchen in der nicht-relativistischen Näherung lautet diese: \\
 
 \begin{equation}
-    k = 0,5 \cdot m \\
-    \to k_{Luft} = 1,31362546 \cdot 10^{-23} \, \frac{J^2}{m}, \qquad k_{Mylar} = 1,48780223 \cdot 10^{-20} \, \frac{J^2}{m}
+    - \frac{dE}{dx} = \frac{k}{E}, 
 \end{equation}
+
+wobei k ein materialabhängiger Parameter ist, der im folgenden für Luft und Mylar bestimmt werden soll (\cite{Jaekel1997}, S.64).\\
+
+Trägt man nun die Quadrate der Energien (des rechten Peaks im Spektrum) gegen den Abstand (ergo Absorberdicke von Luft) bzw 
+gegen die Schichtdicke der Mylarfolien (Foliendicke: $4,3 \mu$ m) auf, so ergibt sich jeweils näherugsweise eine Gerade (Abb. \ref{bild:luftger} 
+und \ref{bild:mylarger}). Dabei war vor allem der Abstand aufgrund des Aufbaus nicht leicht zu messen und soll mit einer Unsicherheit 
+von $\pm 2$mm berücksichtigt werden.\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.75]{Bilder/luftger.png}
+    \caption{Quadrate der Energien gegen Abstand des Detektors zur Probe aufgetragen; dazu berechnete Regressionsgerade}
+    \label{bild:luftger}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.75]{Bilder/mylarger.png}
+    \caption{Quadrate der Energien gegen Sichichtdicke des Mylars aufgetragen; dazu berechnete Regressionsgerade}
+    \label{bild:mylarger}
+\end{figure}
+
+\clearpage
+
+Dabei wurden bei der Mylarfolie die Messung mit den neun Lagen nicht berücksichtigt, da die Datenlage mit einer maximalen Kanalbelegung 
+von vier zu gering ist. Ohnehin ist erkennbar, dass für größere Schichtzahlen die Abweichungen von der Gerade zunehmend größer werden. 
+Mittels linearer Regression werden die Steigungen $m_{Luft}$ und $m_{Mylar}$ berechnet. Die Abschwächungskoeffizienten aus der 
+Bethe-Bloch-Formel ergeben sich nach: \\
+
+\begin{align}
+    k &= 0,5 \cdot m \nonumber \\
+    \to k_{Luft} &= 1,31362546 \cdot 10^{-23} \, \frac{J^2}{m}, \qquad k_{Mylar} = 1,48780223 \cdot 10^{-20} \, \frac{J^2}{m} \\
+\end{align}
 (\cite{Jaekel1997}, S.71f) \\
 
 Außerdem gilt: \\
@@ -196,9 +243,19 @@ Das Verhältnis der gemessenen Abschwächungskoeffizienten ergibt sich zu:\\
     \frac{k_{Luft}}{k_{Mylar}} = \frac{1,31362546 \cdot 10^{-23}}{1,48780223 \cdot 10^{-20}} = 0,0008829
 \end{equation}
 
-Messung und Theorie stimmen zwar in der Größenordnung überein, haben allerdings einen Fehler von ca 30\%. 
+Messung und Theorie stimmen zwar in der Größenordnung überein, haben allerdings einen Fehler von ca 30\%. Dabei gehen wir davon aus, 
+dass der Hauptbeitrag zu diesem von der enormen Unsicherheit in der Abstandsmessung ausgeht. Durch den geringen Abstand der Messpunkte 
+überlappen sich die Fehlerbalken beinahe. Dadurch ergibt sich ein großer Spielraum für die Lage und damit auch die Steigung der 
+Regressionsgerade. In dieser Hinsicht sind unseres Erachtens der Fehler von 30\% nicht wünschenswert, aber unter diesen Voraussetzungen 
+akzeptabel. Der Fehler der Mylarfolie (vom Betreuer angegeben) und die Nicht-Berücksichtigung des Absorbers Luft bei der Mylarmessung 
+sollten um Größenordnungen kleiner liegen und deshalb kaum eine Rolle spielen.
 
-\subsection{Vermessung eines radioaktiven Zeigers}
+
+
+
+
+
+\section{Vermessung eines radioaktiven Zeigers}
 
 Zuletzt wurde noch das Alphaspektrum eines alten Uhrzeigers mit radioaktiver Farbe aufgenommen. Dabei wurde aufgrund der sehr schwachen 
 Strahlung die größtmögliche Blende (5mm) und ein kleinstmöglicher Abstand gewählt. Zudem betrug die Messdauer ca. einen Tag. Das 
@@ -206,7 +263,7 @@ Spektrum findet sich in Abb. \ref{bild:uhr} wieder. \\
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.65]{Bilder/uhr.png}
+    \includegraphics[scale=0.75]{Bilder/uhr.png}
     \caption{Alphaspektrum eines alten Uhrzeigers}
     \label{bild:uhr}
 \end{figure}
@@ -214,7 +271,7 @@ Spektrum findet sich in Abb. \ref{bild:uhr} wieder. \\
 In dem Spektrum sind die Peaks sehr scharf zu sehen. Sie liegen laut Messtabellen bei: \\
 
 \begin{align*}
-    E_0 &= 6,06 \, MeV \to Bi-212 \, (T_{1/2} = 60,5m, E = 6,05 MeV),\, Po-218 \, (T_{1/2} = 3,05m, E = 6,0 MeV) \\
+    E_0 &= 6,05 \, MeV \to Bi-212 \, (T_{1/2} = 60,5m, E = 6,05 MeV),\, Po-218 \, (T_{1/2} = 3,05m, E = 6,0 MeV) \\
     E_1 &= 6,55 \, MeV \to Rn-219 \, (T_{1/2} = 3,42s, E = 6,82 MeV), Bi-211 \, (T_{1/2} = 216s, E = 6,6 MeV)\\
     E_2 &= 6,68 \, MeV \to vgl. \, E_1 \\
     E_3 &= 7,16 \, MeV \to Po-215 \, (T_{1/2} = 1,8 \cdot 10^{-3}s, E = 7,38 MeV) \\
@@ -223,7 +280,9 @@ In dem Spektrum sind die Peaks sehr scharf zu sehen. Sie liegen laut Messtabelle
 
 (\cite{Mende2016}, S. 376f)
 
-
+Dabei ist auffällig, dass die Linien langsam ansteigen, aber nach dem Peak prompt abfallen. Dies könnte damit erklärt werden, dass 
+die Peaks die maximale Energie der Alphateilchen abbilden. Diese können aber auch mit dem Material in der Probe wechselwirken, wobei 
+sie einen Teil ihrer Energie abgeben. Dies führt zu den Ausläufern zu niedrigeren Energien bzw asymmetrischen Linien. 
 
 
 
