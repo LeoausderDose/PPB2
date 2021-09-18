@@ -13,10 +13,10 @@ def Zerfall(x, A0, mu, rausch):
 
 
 
-daten = 'Versuch_Alpha_Gamma_Spektroskopie/Daten/CSV/Bismut.csv'
+daten = 'Versuch_Alpha_Gamma_Spektroskopie/Daten/CSV/Radium127.csv'
 df = pd.read_csv(daten)
 
-"""
+
 #Fitten des Graphen
 popt, pcov = opt.curve_fit(Zerfall, df['Dicke'],df['Count'])
 
@@ -25,7 +25,7 @@ perr = np.sqrt(np.diag(pcov))
 print('Linearer Absortionksoeffizient: '+str(popt[1]))
 print('Fehler linearer Absortionksoeffizient: '+str(perr[1]))
 
-"""
+
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
 #ax.spines['left'].set_position('center')
@@ -49,5 +49,5 @@ plt.plot(df['Dicke'],df['Count'], marker = 'x', color = 'r', ls = 'None')
 
 #plt.errorbar(df['Dicke'],df['Zaehlrate (1/s)'],xerr= 0.1, yerr=popt[2],capsize = 2, ls = 'None',  color = 'black',elinewidth = 0.5)
 
-plt.show()
+#plt.show()
 
