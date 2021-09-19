@@ -50,17 +50,17 @@ Gleichungssystem:
 Mit der Lösung:
 
 \begin{equation*}
-    m = 0,02522388 \, MeV, \qquad E_0 = 2,82179104 \, MeV
+    m = 0,02522388 \, MeV, \qquad E_0 = 2,82179104 \, MeV,
 \end{equation*}
 
-Womit sich die Kalibrierungsgerade ergibt zu:
+womit sich die Kalibrierungsgerade ergibt zu:
 
 \begin{equation}
     E = Kanalnummer \cdot 0,02522388 \, MeV + 2,82179104 \, MeV
 \end{equation}
 
 Eine Problematik der Energiekalibrierung ist die starke Anhängigkeit der gemessenen Energien von Art und Dicke des Absorbers, wie in 
-\ref{subs:abs} näher beleuchtet. Ideal wäre demnach eine Messung unter Auschluss jedweden Absorbers, also ein Vakuum.\\
+\ref{subs:abs} näher beleuchtet. Ideal wäre demnach eine Messung unter Auschluss jedweden Absorbers, also im Vakuum.\\
 
 
 
@@ -115,6 +115,7 @@ mit der kleineren Blende entsprechend hoch und legt diese über die Messung mit 
 \ref{bild:blendebeide}
 
 \begin{figure}[h]
+    \captionsetup{justification=centering,margin=2cm}
     \centering
     \includegraphics[scale=0.75]{Bilder/blendebeide.png}
     \caption{Vergleich der Plots für beide Blendenweiten; Werte für 1mm-Blende mit Faktor 3,35 zur Vergleichbarkeit skaliert}
@@ -122,7 +123,7 @@ mit der kleineren Blende entsprechend hoch und legt diese über die Messung mit 
 \end{figure}
 
 Dabei ist erkennbar, dass die Spektren beinahe identisch sind. Der Graph der größeren Blende wirkt jedoch glatter. Dies könnte 
-daran liegen, dass bei kleineren Zählraten sich deren Fehler von $\sqrt{n}$ (gaußverteilt) deutlich stärker auswirkt und die Schwankungen der 
+daran liegen, dass bei kleineren Zählraten sich deren Fehler von $\sqrt{n}$ (poissonverteilt) deutlich stärker auswirkt und die Schwankungen der 
 Messwerte dadurch größer ist. Zudem ist eine kleine Verbreiterung in Richtung niedrigerer Energien erkennbar. Dies könnte darin begründet 
 liegen, dass nun auch die in einem größeren Raumwinkel emittierten Alphateilchen duch die größere Blende auf den Detektor treffen können. 
 Diese haben allerdings eine (etwas) längere Wegstrecke in Luft zurückgelegt und so durch Stöße mehr Energie abgegeben.
@@ -172,7 +173,7 @@ kleinere Variationen in Abstand oder Dicke des Absorbermaterials, um die Transmi
 Zudem verschiebt sich die Lage der Peaks zunehmend zu kleineren Energien hin. Das scheint auf den ersten Blick verwunderlich, sollten 
 die Peaks doch den Energien der Elemente der Zerfallsreihe des Strahlers entsprechen und damit eine feste Energie haben. Jedoch 
 wechselwirken die Teilchen der Alphastrahlung durch Stöße mit dem Absorbermaterial (Luft bzw Mylar) und geben so Energie ab. Dieser 
-Verlust ist natürlich abhängig von der Wegstrecke durch den Absorber, was in geringeren detektierten Energien für größere Abstände 
+Verlust ist natürlich abhängig von der Wegstrecke durch den Absorber, was zu geringeren detektierten Energien für größere Abstände 
 bzw Schichtdicken führt. Diese Erklärung wird durch die Messung der Gammaspektren gestützt: Gammastrahlung ist keine Teilchenstrahlung 
 sondern eine elektromagnetische Welle. Deshalb ist hier keine Verschiebung der Peaks bei Abstands- oder Absorberdickenvariation zu 
 erwarten; genau dies wurde im ersten Versuchsteil bestätigt.\\
@@ -197,6 +198,7 @@ und \ref{bild:mylarger}). Dabei war vor allem der Abstand aufgrund des Aufbaus n
 von $\pm 2$mm berücksichtigt werden.\\
 
 \begin{figure}[h]
+    \captionsetup{justification=centering,margin=2cm}
     \centering
     \includegraphics[scale=0.75]{Bilder/luftger.png}
     \caption{Quadrate der Energien gegen Abstand des Detektors zur Probe aufgetragen; dazu berechnete Regressionsgerade}
@@ -204,6 +206,7 @@ von $\pm 2$mm berücksichtigt werden.\\
 \end{figure}
 
 \begin{figure}[h]
+    \captionsetup{justification=centering,margin=2cm}
     \centering
     \includegraphics[scale=0.75]{Bilder/mylarger.png}
     \caption{Quadrate der Energien gegen Sichichtdicke des Mylars aufgetragen; dazu berechnete Regressionsgerade}
