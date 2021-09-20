@@ -59,7 +59,11 @@ P_{\lambda} &= P_{ges} T \nonumber \\
 \end{align}
 
 mit Reflektionskoeffizient des Strahlteilers $R$, Transmissionskoeffizient $T$ und gesamter Lichtleistung vor Auftreffen auf den Teiler $P_{ges}$.
-Für die Werte von $\frac{T}{R}$ wurden die Inversen von Abschätzungen der Werte $\frac{R}{T}$ aus Anhang $A.2$ des Versuchsskriptes benutzt.
+Für die Werte von $\frac{T}{R}$ wurden die Inversen von Abschätzungen der Werte $\frac{R}{T}$ aus Anhang $A.2$ des Versuchsskriptes benutzt. Bei der 
+Berechnung der einfallenden Leistung muss für das CIS-Modul noch ein Faktor $\frac{1}{11}$ berücksichtigt werden, da das Modul aus 11 
+einzelnen Zellen besteht und die Leistung sich demnach auf diese näherungsweise gleichmäßig aufteilt (tatsächlich wohl eher ungleichmäßig, 
+je nach Positionierung der Zelle im Strahl, dennoch soll dies zur Vereinfachung der Rechnung angenommen werden). Der Photostrom bleibt 
+allerdings gleich dem gemessenen, da die Zellen in Reihe geschalten sind.
 
 Aus den Werten für $SR$ lassen sich nun auch die für die Externe Quanteneffizienz $EQE$ berechnen:
 \begin{align}
@@ -155,71 +159,39 @@ Daraus folgt: \\
 \label{eq:bandkante}
 \end{equation}
 
-In den folgenden Abbildungen \ref{bild:SiSRMess} - \ref{bild:CISEQE} wurden die spektrale Empfindlichkeit und die externe Quanteneffizienz gegen die Wellenlänge aufgetregen.
+In den folgenden Abbildungen \ref{bild:SRall} und \ref{bild:allEQE} wurden die spektrale Empfindlichkeit und die externe 
+Quanteneffizienz gegen die Wellenlänge aufgetragen.
 Dabei wurden auch die jeweiligen Bandkanten aus Gl. \ref{eq:bandkante} eingezeichnet.
-Zunächst fällt auf, das die Werte für die Siliziumzellen in beiden Graphen ungefähr um den Faktor zehn größer sind als die der 
-CIS-Zellen. Vor allem bei der $EQE$ ist aber klar, dass dies nicht realistisch ist, da für diese $0 < EQE < 1$ gelten muss.
-In Annahme, dass die (einfache) Umrechnung von $SR$ in $EQE$ korrekt ist (dies legt auch der sinnvolle Verlauf des Graphen für 
-das CIS-Modul nahe), und dass beim Übertragen der Rechnung keine Fehler gemacht wurden, sind Mess- oder Methodikfehler als Fehlerquellen
-wahrscheinlich. Als Ergänzung sind in Abb. \ref{bild:allSRgest} und \ref{bild:allEQEgest} die um den Faktor 10 gestauchten Graphen gezeigt.
- Bei den Siliziummodulen ist zu erkennen, dass trotz 
-Überschreitung der Bandkante nicht vernachlässigbare Leistungen im Powermeter gemessen wurden. Dies ist auch nicht alleine durch die 
-Driftleistung des Powermeters zu erklären, da diese im Nanowatt-Bereich liegen. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.75]{Bilder/32allSRverb.png}
+    \caption{Verlauf der gemessenen Werte von $SR$ der verschiedenen Zellen aufgetragen gegen die Wellenlänge}
+    \label{bild:SRall}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.75]{Bilder/32allEQEverb.png}
+    \caption{Verlauf der gemessenen Werte von $EQE$ der verschiededen Zellen aufgetragen gegen die Wellenlänge}
+    \label{bild:allEQE}
+\end{figure}
+
+\clearpage
+
+Bei den Siliziummodulen ist zu erkennen, dass sich trotz 
+Überschreitung der Bandkante dennoch eine endliche spektrale Empfindlichkeit aus den Messungen ergibt. 
+%Dies ist auch nicht alleine durch die Driftleistung des Powermeters zu erklären, da diese im Nanowatt-Bereich liegen. 
 Die Bandkante des CIS-Moduls liegt bei einer höheren Wellenlänge als der Messpunkt der größten Wellenlänge, deshalb kann nicht mit 
 Sicherheit gesagt werden, ob das Problem des Überschreitens der Bandkante hier auch auftreten würde. Dennoch lässt sich an Abb. 
-\ref{bild:CISSR} gut erkennen, dass die Lage der Bandkante annäherungsweise mit dem Nulldurchgang des Graphen der spektralen Empfindlichkeit
+\ref{bild:SRall} gut erkennen, dass die Lage der Bandkante annäherungsweise mit dem Nulldurchgang des Graphen der spektralen Empfindlichkeit
 übereinstimmt. Als Erklärung, dass hinter der Bandkante noch Messwerte vorliegen, können Messfehler dienen. Allerdings ist die 
 Überschreitung nicht sehr groß, daher kann auch eine Abweichung der realen Solarzelle vom Bändermodell die Ursache sein. \\
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.75]{Bilder/32SiSR.png}
-    \caption{Verlauf der gemessenen Werte von $SR$ der Siliziumzellen aufgetragen gegen die Wellenläge}
-    \label{bild:SiSRMess}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.75]{Bilder/32CISSR.png}
-    \caption{Verlauf der gemessenen Werte von $SR$ der CIS-Zelle aufgetragen gegen die Wellenläge}
-    \label{bild:CISSR}
-\end{figure}
-
-
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.75]{Bilder/32SiEQE.png}
-    \caption{Verlauf der gemessenen Werte von $EQE$ der Siliziumzellen aufgetragen gegen die Wellenläge}
-    \label{bild:SiEQE}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.75]{Bilder/32CISEQE.png}
-    \caption{Verlauf der gemessenen Werte von $EQE$ der CIS-Zelle aufgetragen gegen die Wellenläge}
-    \label{bild:CISEQE}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.75]{Bilder/32allSRgest.png}
-    \caption{Verlauf der um den Faktor zehn gestauchten Werte von $SR$ der Siliziumzellen aufgetragen gegen die Wellenläge, zusätzlich
-    zu dem Verlauf der CIS-Zelle}
-    \label{bild:allSRgest}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.75]{Bilder/32allEQEgest.png}
-    \caption{Verlauf der gemessenen Werte von $EQE$ aller Zellen aufgetragen gegen die Wellenläge; Werte für Si-Zellen um Faktor
-    zehn gestaucht}
-    \label{bild:allEQEgest}
-\end{figure}
 
 Als Anhaltspunkt zum Vergleich sollen die Abb. \ref{bild:ThSR} und \ref{bild:ThEQE} dienen, in denen $SR$ und $EQE$ für eine multikristalline Solarzelle 
-gegen die Wellenlänge aufgetragen ist. Es ist gut zu erkennen, dass der grobe Verlauf mit den gemessenen Kurven übereinstimmt. Dies
-legt nahe, dass es sich beim Fehler bei den Siliziumzellen tatsächlich nur um einen Fehler um einen Faktor ca. 10 handelt. Im 
+gegen die Wellenlänge aufgetragen ist. Es ist gut zu erkennen, dass die Form des Verlaufs mit den gemessenen Kurven übereinstimmt. Im 
 Vergleichsgraphen werden zwar deutlich höhere Werte für $SR$ und $EQE$ erreicht, es ist aber anzunehmen, dass der Idealitätsfaktor $n$ 
 der dort in präzisen Labormessungen verwendeten Zellen deutlich besser war und dass infolgedessen die Ausbeute höher war.
 Aber auch in diesen Messungen ist deutlich zu sehen, dass die Bandkante bei $\lambda = 1102,866 nm$ deutlich überschritten wird. Somit
@@ -244,7 +216,7 @@ kann das Überschreiten in unserer Messung wahrscheinlich auf die Abweichungen d
 \footnotetext{\cite{Shah2020}, S.68}
 
 
-\clearpage
+
 \subsection{Ideale Externe Quanteneffizienz}
 
 Nimmt man nun eine ideale externe Quanteneffizienz von $1$ an, folgt aus Gl. \ref{eq:eqe}:
@@ -254,19 +226,19 @@ SR &= \frac{e}{hc}\lambda
 
 Der Graph der spektralen Empfindlichkeit ist somit zunächst eine Gerade mit Steigung $\frac{e}{hc}$, bis diese Gerade auf die
 Vertikale der bandkante trifft. Da nach Überschreitung der Bandkante kein Stromfluss mehr möglich ist (höhere Wellenlänge 
-$\leftrightarrow$ niedrigere Energie), fällt die Gerade dort abrupt ab. Der Verlauf ist in Abb. \ref{bild:idealEQE} zu sehen.
+$\leftrightarrow$ niedrigere Energie), fällt die Gerade dort abrupt ab. Der Verlauf ist in Abb. \ref{bild:idealEQEverb} zu sehen.
 Hierbei ist der Verlauf beider Modularten erst die rote Ursprungsgerade, die dann im Fall der Siliziumzellen mit der violetten
 Vertikalen, im Fall des CIS-Moduls mit der roten Vertikalen abfallen.
-Hier wird 
-nochmals klar, dass die Werte der Siliziumzellen für $SR$ nicht stimmen können, da sie besser als der Idealverlauf wären.
-Betrachtet man die Graphen der Messwerte wird klar, dass die verwendeten Zellen fern von einem Ideal sind. Dieser Umstand soll in der
+Betrachtet man die Graphen der Messwerte wird klar, dass die verwendeten Zellen zwar kein Ideal sind. Dennoch lässt sich in 
+ihrem Verlauf ein Trend zum idealen Graphen erkennen. Dieser Umstand soll in der
 nächsten Teilaufgabe weiter vertieft werden, wenn der Idealitätsfaktor bestimmt wird.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.75]{Bilder/32idealEQE.png}
+    \includegraphics[scale=0.75]{Bilder/32idealEQEverb.png}
     \caption{Verlauf von $SR$ bei einer idealen $EQE = 1$; der Graph für die Si-Zellen fällt mit der violetten Vertikalen ab, der für
-    das CIS-Modul mit der roten. Zum Vergleich die Messwerte für $SR$ (Si-Zellen um Faktor 10 gestaucht)}
-    \label{bild:idealEQE}
+    das CIS-Modul mit der roten. Zum Vergleich die Messwerte für $SR$.}
+    \label{bild:idealEQEverb}
 \end{figure}
-
+ 
+\newpage
