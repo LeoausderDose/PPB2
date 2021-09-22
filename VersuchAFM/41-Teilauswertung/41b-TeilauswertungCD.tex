@@ -4,15 +4,15 @@
 % Teilauswertung CD
 
 \section{Untersuchung eines CD-Presswerkzeugs}
+\subsection{Bumphöhe}
 
 Zunächst wird der 50$\mu m$-Ausschnitt zur Bestimmung der Bumphöhe untersucht.
 Auf Abb. \ref{bild:CD50Linie} ist ein großer heller Fleck am unteren Bildrand zu erkennen. Dies könnte eine Verunreinigung wie z.B. Staub sein. 
-Zur Bestimmung der Höhe der Bumps wird das Profil über mehrere Tracks betrachtet. Vermessen wurde, wie in Abb. \ref{bild:CD50Profil} 
-zu erkennen. 
+Zur Bestimmung der Höhe der Bumps wird das Profil über mehrere Tracks betrachtet. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale = 0.5]{Bilder/CD50Linie.png}
+    \includegraphics[scale = 0.47]{Bilder/CD50Linie.png}
     \caption{Aufnahme eines CD-Pressswerkzeugs auf 50x50 $\mu$m. Unten ist eine Verunreinigung als heller Fleck zu sehen. Die Strecke 
     für das benutzte Höhenprofil ist ebenfalls eingezeichnet}
     \label{bild:CD50Linie}
@@ -20,16 +20,21 @@ zu erkennen.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale = 0.65]{Bilder/CD50Profil.png}
+    \includegraphics[scale = 0.6]{Bilder/CD50Profil.png}
     \caption{Höhenprofil durch die Bumps des CD-Presswerkzeuges. Als Anhaltspunkt für die Höhe der Bumps dienen die rosafarbenen Linien, die 
     122.2 nm auseinander sind.}
     \label{bild:CD50Profil}
 \end{figure}
 
-
+Die Höhe der Bumps soll mit Hilfe von Abb. \ref{bild:CD50Profil} eingeordnet werden. 
 Die rosanen Linien stellen einen Abstand von 122.2 nm dar. Der große Bump hat eine Höhe von 164.4 nm. Der Hersteller 
-gibt allerdings Höhen von ca. 200nm an. % Diskussion
-\\
+gibt allerdings Höhen von ca. 200nm an (\cite{SampleKit2007}). Da die Ungenauigkeit des Herstellerwertes nicht bekannt ist, ist eine Einordnung an dieser Stelle 
+schwierig. Allerdings ist durchaus zu erkennen, dass die gemessenen Bumps deutlich kleiner sind. Womöglich liegt auch hier bereits eine 
+Abnutzung von einigen nm vor.
+\newpage
+
+\subsection{Trackabstand}
+
 Nun wird der 20$\mu m$-Ausschnitt betrachtet. Es wird ein Höhenprofil entlang der in Abb. \ref{bild:CD20Linie} eingezeichneten Strecke 
 erstellt. Zur Bestimmung des Trackabstandes wird das gesamte Profil über 12 Bumps hinweg gemessen, wie in Abb. \ref{bild:CD20Profil} zu 
 sehen. 
@@ -44,7 +49,7 @@ sehen.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale = 0.65]{Bilder/CD20Profil.png}
+    \includegraphics[scale = 0.6]{Bilder/CD20Profil.png}
     \caption{Profil durch die Bumps des Presswerkzeugs. Zur Ermittlung der Trackbreite wurde über 12 Bumps zwischen den rosafarbenen 
     Linien gemessen.}
     \label{bild:CD20Profil}
@@ -60,27 +65,33 @@ ergibt:
     \textcolor{red}{d_{Tr} = (1.58 \pm 0.05) \mu m}
 \end{equation*}
 
-Der Hersteller gibt einen nominellen Wert von 1.6$\mu$m an. Dieser liegt innerhalb des Fehlers; er wird also durch die Messung bestätigt.\\
+Der Hersteller gibt einen nominellen Wert von 1.6$\mu$m an (\cite{SampleKit2007}). 
+Dieser liegt innerhalb des Fehlers; er wird also durch die Messung bestätigt.
+
+\subsection{Bumplänge}
+
 Als nächstes werden die Längen der Bumps ausgemessen. Dazu wird ein Höhenprofil entlang eines Tracks, wie in Abb. \ref{bild:CD20Laenge} 
-gezeigt, angelegt. Auf diesem Profil (Abb. \ref{bild:CD20LaengeProfil}). 
+gezeigt, angelegt.  
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale = 0.65]{Bilder/CD20Laenge.png}
-    \caption{Strecke entlang eines Tracks, entlang der das Profil zur Bestimmung der Länge der Bumps ermittelt wird.}
-    \label{bild:CD20Laenge}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale = 0.65]{Bilder/CD20LaengeProfil.png}
+    \includegraphics[scale = 0.8]{Bilder/CD20LaengeProfil.png}
     \caption{Profil durch die Bumps des Presswerkzeugs in Längsrichtung.}
     \label{bild:CD20LaengeProfil}
 \end{figure}
 
-\clearpage
 
-Es sind acht größere Bumps erkennbar. Von links nach rechts 
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.5]{Bilder/CD20Laenge.png}
+    \caption{Strecke entlang eines Tracks, entlang der das Profil zur Bestimmung der Länge der Bumps ermittelt wird.}
+    \label{bild:CD20Laenge}
+\end{figure}
+
+
+\newpage
+
+Auf diesem Profil (Abb. \ref{bild:CD20LaengeProfil}) sind acht größere Bumps erkennbar. Von links nach rechts 
 sind deren Längen: 
 
 \begin{center}
@@ -101,5 +112,7 @@ sind deren Längen:
 \end{center}
 
 Die Längen der Bumps in dieser Auswahl liegen also alle im Bereich von 1.2-3.2$\mu$m. Laut Hersteller sollten die Längen in einer Spanne von 
-0.8-3$\mu$m liegen. Berücksichtigt man noch die Fehler beim Setzen der Markierungen beim Ausmessen der Bumps (abgeschätzt auf 1$\mu$m 
+0.8-3$\mu$m liegen (\cite{SampleKit2007}). 
+Berücksichtigt man noch die Fehler beim Setzen der Markierungen beim Ausmessen der Bumps (abgeschätzt auf 1$\mu$m 
 pro Markierung), so umfasst der angegebene Bereich noch die gemessenen Werte. 
+\clearpage
