@@ -94,4 +94,32 @@ Durch das halbieren halbiert sich auch der Ablesefehler.
 \end{equation*}
 
 
-\subsubsection*{Krümmungsradius der Spitze des Cantilevers}
+\subsection{Krümmungsradius der Spitze des Cantilevers}
+
+Wie oben beschrieben sagt die Form der Abtastung etwas über den Krümmungsradius der Spitze des Cantilevers aus. Das wird in Abbildung 
+\ref{NanoTip} anschaulich dargestellt.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 10cm]{Bilder/Nanotubes/TipGeoNano.png}
+    \caption{Zusammenhang Krümmungsradius $R$ der Spitze und Präparatradius $r$ aus der abgebildeten Kontur (\cite[S.46]{SampleKit2007})}
+    \label{NanoTip}
+\end{figure}
+
+Darau ergibt sich für den Radius der Spitze (\cite[S.47]{SampleKit2007}):\\
+\begin{equation}
+    R = \frac{d^2}{4r}
+\end{equation}
+mit $d$, $R$ und $r$ wie in Abbildung\ref{NanoTip} eingezeichnet.
+
+Auch für $d$ setzt man beim Ablesen am besten ein großzügiges Intervall der Unsicherheit von 15\% an. Abgelesen wurde:\\
+
+\begin{equation*}
+    d = 68\pm10\mathrm{nm}
+\end{equation*}
+
+Daraus ergibt sich mit dem Fehlerfortpflanzungsgesetz:\\
+
+\begin{equation}
+    \textcolor{red}{R = 0,88\pm0,14 \mu \mathrm{m}}
+\end{equation}
