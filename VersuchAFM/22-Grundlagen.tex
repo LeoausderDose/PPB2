@@ -3,3 +3,64 @@
 %Grundlagen
 
 \chapter{Grundlagen}
+\section{Aufbau und Funktionsweise}
+Im Gegensatz zu optischen Mikroskopen basiert die Rasterkraftmikroskopie (atomic force mikroscopy, kurz AFM) auf der Detektion von Kräften. 
+Hauptbestandteil sind eine Feder (Cantilever) und eine sehr feine, im Idealfall einatomige, Spitze. Mit dieser wird die Probe abgerastert 
+(wie genau, siehe \ref{sec:Modi}). Dabei existieren eine Fülle an anziehenden und abstoßenden Kräften zwischen Probe und Spitze, beispielsweise 
+Londonsche Dispersionskräfte oder Coulomb-Wechselwirkungen. Die Gesamtheit dieser Wechselwirkungen kann mit dem Lennard-Jones-Potential 
+angenähert werden. Dieses ist, in Abhängigkeit vom Abstand $r$ zwischen den Molekülen, mit molekülabhängigen Parametern $a$, $b$: 
+\begin{equation*}
+    \Phi_{LJ}(r) = \frac{a}{r^{12}} - \frac{b}{r^6}
+\end{equation*}
+(\cite{Demtroeder2013}, S.126f) \\
+Eine Skizze des Potentials ist in Abb. \ref{bild:LJP} zu sehen.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.135]{Bilder/LennardJones.jpg}
+    \caption{Skizze des Lennard-Jones-Potentials \protect \footnotemark}
+    \label{bild:LJP}
+\end{figure}
+\footnotetext{\cite{Haefner2019}, S.94}
+
+Diese Wechselwirkungen üben eine Kraft auf den Cantilever aus, der sich infolgedessen verbiegt. Diese Verbiegung wird über einen 
+Laserstrahl detektiert, der auf den Cantilever gerichtet ist. Verbiegt sich dieser, so wird auch der Strahl des Lasers unter einem anderen 
+Winkel abgelenkt, was ausgewertet werden kann (\cite{Haugstad2012}, S.5). Ein schematischer Aufbau ist in Abb. \ref{bild:Aufbau} zu sehen.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.45]{Bilder/AufbauAFM.png}
+    \caption{Schematischer Aufbau eines Rasterkraftmikroskops \protect \footnotemark}
+    \label{bild:Aufbau}
+\end{figure}
+\footnotetext{\cite{easyScan2003}, S.6}
+
+Duch das Funktionsprinzip über die Detektion von wechselwirkungen sind bei der AFM auch keine besonderen Anforderungen an die Probe 
+gestellt. Sie müssen insbesondere nicht leitfähig oder im Vakuum sein. \footnotemark \, Dennoch sollten sie frei vor Verunreinigungen sein 
+und vor Feuchte geschützt werden; zudem sollte die Probe zu der verwendeten Spitze passen. \\
+\footnotetext{Eine AFM im Vakuum liefert dennoch bessere Ergebnisse; für die meisten Zwecke ist eine Untersuchung an der Luft aber 
+vollkommen ausreichend}
+
+
+\newpage
+
+
+\section{Verwendete Modi}
+\label{sec:Modi}
+Bei der AFM gibt es einige Betriebsmodi; die im Versuch verwendeten sollen hier kurz erläutert werden.
+
+\subsection{Contact Mode}
+Im Contact Mode hat die Spitze des Cantilevers dauerhaft Kontakt mit der zu untersuchenden Probe. Man unterscheidet dabei wiederum zwei Modi: \\
+Der Constant Hight Mode ist der einfachster aller Modi. In diesem wird der Cantilever auf einer konstanten Höhe über die Probe gefahren. 
+Eine Regelung ist nicht nötig. (\url{https://www.nanosurf.com/en/support/afm-modes-overview/contact-modes}, Stand: 23.09.21) \\
+Im Constant Force Mode wird nicht die Höhe über der Probe, sondern die Kraft, die auf die Spitze wirkt, konstant gehalten. Diese wird 
+über den sog. Setpoint eingestellt. Zur Beibehaltung der Kraft ist ein PID-Regler notwendig. (\cite{Rieger2013}, S.8)\\
+Obwohl der Contact Mode leicht zu realisieren ist, hat er einige Nachteile. So ist durch den dauerhaften Kontakt die Abnutzung der Spitze 
+vergleichsweise hoch; zudem kann diese bei plötzlichen Erhebungen oder schlecht gewählten Einstellungen leicht abbrechen. (\cite{Vesely2017}, S.26)
+
+\subsection{Non-Contact Mode}
+Im Non-Contact- oder Tapping-Mode (je nachdem ob die Spitze die Probe nie berührt oder kurz antippt) wird der Cantilever mit einer 
+konstanten Frequenz nahe seiner Resonanzfrequenz zum Schwingen angeregt. Diese wird wieder über einen PID-Regler gehalten. 
+Die Wechselwirkungen zwischen Probe und Spitze bewirken zum einen eine Änderung der Schwingungsamplitude, über die topographische 
+Erkenntnisse gewonnen werden können. (\cite{Vesely2017}, S.26). Zum anderen ergibt sich auch eine Phasenverschiebung, die dazu genutzt 
+werden kann, Eigenschaften der Probe zu bestimmen (Dichte etc.). (\url{https://www.nanosurf.com/en/support/afm-modes-overview/dynamic-modes}, Stand: 23.09.21)\\
