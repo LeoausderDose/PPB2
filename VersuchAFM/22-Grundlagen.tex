@@ -52,9 +52,10 @@ Bei der AFM gibt es einige Betriebsmodi; die im Versuch verwendeten sollen hier 
 \subsection{Contact Mode}
 Im Contact Mode hat die Spitze des Cantilevers dauerhaft Kontakt mit der zu untersuchenden Probe. Man unterscheidet dabei wiederum zwei Modi: \\
 Der Constant Hight Mode ist der einfachster aller Modi. In diesem wird der Cantilever auf einer konstanten Höhe über die Probe gefahren. 
-Eine Regelung ist nicht nötig. (\url{https://www.nanosurf.com/en/support/afm-modes-overview/contact-modes}, Stand: 23.09.21) \\
+Eine Regelung ist nicht nötig. \footnotemark \\
 Im Constant Force Mode wird nicht die Höhe über der Probe, sondern die Kraft, die auf die Spitze wirkt, konstant gehalten. Diese wird 
 über den sog. Setpoint eingestellt. Zur Beibehaltung der Kraft ist ein PID-Regler notwendig. (\cite{Rieger2013}, S.8)\\
+\footnotetext{\url{https://www.nanosurf.com/en/support/afm-modes-overview/contact-modes}, Stand: 23.09.21}
 Obwohl der Contact Mode leicht zu realisieren ist, hat er einige Nachteile. So ist durch den dauerhaften Kontakt die Abnutzung der Spitze 
 vergleichsweise hoch; zudem kann diese bei plötzlichen Erhebungen oder schlecht gewählten Einstellungen leicht abbrechen. (\cite{Vesely2017}, S.26)
 
@@ -63,4 +64,6 @@ Im Non-Contact- oder Tapping-Mode (je nachdem ob die Spitze die Probe nie berüh
 konstanten Frequenz nahe seiner Resonanzfrequenz zum Schwingen angeregt. Diese wird wieder über einen PID-Regler gehalten. 
 Die Wechselwirkungen zwischen Probe und Spitze bewirken zum einen eine Änderung der Schwingungsamplitude, über die topographische 
 Erkenntnisse gewonnen werden können. (\cite{Vesely2017}, S.26). Zum anderen ergibt sich auch eine Phasenverschiebung, die dazu genutzt 
-werden kann, Eigenschaften der Probe zu bestimmen (Dichte etc.). (\url{https://www.nanosurf.com/en/support/afm-modes-overview/dynamic-modes}, Stand: 23.09.21)\\
+werden kann, Eigenschaften der Probe zu bestimmen (Dichte etc.). \footnotemark
+\footnotetext{\url{https://www.nanosurf.com/en/support/afm-modes-overview/dynamic-modes}, Stand: 23.09.21}
+ 
