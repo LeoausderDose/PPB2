@@ -86,7 +86,15 @@ wurden.
     ($\gamma_{oH}$) bzw. über die Intensitäten der gesamten Zelle $Z$ ($\gamma_Z$).}
 \end{center}
 
-Für die verschienen Arten von $\gamma$ ergeben sich die Werte in Tab.\ref{tab:gamma}.
+Für die verschienen Arten von $\gamma$ ergeben sich die Werte in Tab.\ref{tab:gamma}. Dabei fällt auf, dass die Mittelwerte für die beiden 
+Berechnungen für die Membranregionen kaum voneinander abweichen. Dies ist aber nicht weiter verwunderlich, berechnet sich $\gamma$ doch 
+über einen Quotienten; sind nun Zähler und Nenner groß genug, wie es hier der Fall ist, fällt die Subtraktion des kleinen Wertes der 
+Hintergrundsintensität kaum ins Gewicht. Der Unterschied zu dem Wert für die gesamte Zelle ist schon deutlich größer, aber auch das 
+ist erklärbar: Die Membranregion enthält die Bereiche mit den höchsten Intensitäten, alle zusätzlichen Gebiete, die bei der ganzen Zelle 
+mit betrachtet werden (Zellinneres, etwas Hintergrund) sollten nur sehr wenig Intensität vorweisen. Je mehr solcher Gebiete geringer 
+Intensität nun in die Berechnung des Mittelweretes einbezogen werden (und in der Regel ist das Zellinnere wesentlich größer als der 
+Schnitt durch die Membran), so wird das Mittel immer weiter gesenkt und die Werte der mittleren Intensitäten für $S$ und $A$ gleichen sich 
+immer mehr an, was zu einem Anstieg von $\gamma$ führt.
 
 \begin{center}
     \centering
@@ -172,18 +180,40 @@ $E = \frac{SE}{\sqrt{M_A M_D}}$.
 
 
 Anstelle die Berechnung von $SE$ und $E$ mit den Intensitätsmittelwerten auf der Membran durchzuführen kann diese auch pixelweise 
-mit den gesamten Bildern erfolgen. Die Bilder finden sich in ...... Wählt man nun in der Darstellung von $E$ nun die gleiche 
+mit den gesamten Bildern erfolgen. Die Bilder finden sich in Abb. \ref{bild:E2} - \ref{bild:E13} wieder. Wählt man nun in der Darstellung 
+von $E$ nun die gleiche 
 Membranregion aus, über die auch die Intensität gemittelt wurde, ergeben sich die Mittelwerte $E_{pixelweise}$, die in \ref{tab:VerglE} 
 zu finden sind.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.45]{Bilder/E2.png}
+    \caption{2D-Plot der Förstereffizienz $E$ von Zelle 2, pixelweise berechnet.}
+    \label{bild:E2}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.45]{Bilder/E10.png}
+    \caption{2D-Plot der Förstereffizienz $E$ von Zelle 10, pixelweise berechnet.}
+    \label{bild:E10}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.45]{Bilder/E13.png}
+    \caption{2D-Plot der Förstereffizienz $E$ von Zelle 13, pixelweise berechnet.}
+    \label{bild:E13}
+\end{figure}
 
 \begin{center}
     \centering
     \begin{tabular}{l|r|r}
         Zelle & $E_{aus \, Mittelung}$ & $E_{pixelweise}$\\
         \hline
-        1 & & 0,413\\
-        2 & & 0,329\\
-        3 & & 0,370\\
+        2 & 0,379 & 0,413\\
+        10 & 0,135 & 0,329\\
+        13 & 0,0873 & 0,370\\
     \end{tabular}
     \label{tab:VerglE}
 \end{center}
