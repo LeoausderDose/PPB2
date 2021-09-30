@@ -1,0 +1,50 @@
+\section{Fluorescence Life-Time Measurement (FLIM)}
+
+\section{Lebenszeit von CFP und YFP}
+
+In diesem Versuchsteil geht es um die Bestimmung der Lebensdauer des Donors und des Akzeptors. Dies tut man am 
+besten indem man eine einfache Exponentialfunktion an die Daten anpasst. Dabei passt man zwei Parameter an, die Amplitude $A_0$ und 
+Lebensdauer $\tau$.
+
+\begin{equation}
+    A(t) = A_0 \cdot \exp(-\frac{t}{\tau})
+\end{equation}
+
+Aus den einzelnen Parametern der angepassten Exponentialfunktionen bildet man einen Mittelwert. Das es jeweils für CFP und YFP 9 Werte gibt, 
+verkleinert sich der Fehler um einen Faktor drei.\\
+Aus den Anpassungen erhält man folgende Werte:\\
+
+\begin{center}
+    \centering
+    \begin{tabular}{l|cr}
+        \toprule
+        Messung & Lebensdauer CFP (ns)& Lebensdauer YFP (ns)\\
+        \midrule
+        Kanal 1 & 2,4985& 3,0513\\
+        Kanal 1 & 2,5074& 3,0670\\
+        Kanal 1 & 2,5623& 3,0482\\
+        \midrule
+        Kanal 2 & 2,5483& 3,0482\\
+        Kanal 2 & 2.4853& 3,1066\\
+        Kanal 2 & 2,5123& 3,0923\\
+        \midrule
+        Kanal 1\&2 & 2,5458& 3,0923\\
+        Kanal 1\&2 & 2,5063& 3,0682\\
+        Kanal 1\&2 & 2,5595& 3,0500\\
+        \midrule
+        Mittelwert & 2,5251& 3,0693\\
+        Fehler& 0,0036& 0,0043\\
+        Ergebnis:& \textcolor{red}{2,5251 $\pm$ 0,0012}& \textcolor{red}{3,0693 $\pm$ 0,0043}\\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+Man sieht also einen Unterschied in der Lebenszeit der beiden Proteine. Der eigentlich spannende Teil 
+ist jedoch die Lebensdauer des Donators mit und ohne Fret zu vergleichen.
+
+\section{Lebensdauer mit FRET}
+
+Man erwartet eine Verkürzung der Lebensdauer $\tau_D$ des Donator bei hinzukommen von FRET. Dies geschieht 
+- wie in den Grundlagen erklärt - aufgrund der Kopplung an den Akzeptor. Um es vorweg zu nehmen. Die Methode funktioniert hier sehr schlecht. 
+Man versucht das zu bewerkstelligen indem man eine Anpassung zweier Exponentialfunktionen macht. Diese beinhalten dann insgesamt 4 Parameter; 
+ein Fit mit 4 Parametern ist jedoch sehr Störungsanfällig.
