@@ -178,6 +178,43 @@ $E = \frac{SE}{\sqrt{M_A M_D}}$.
     $D$, $S$ und $A$; zudem die berechnete Sensitized Emission $SE$ und Förstereffizienz $E$.}
 \end{center}
 
+Über die Förstereffizienz kann auch der mittlere Abstand zwischen den Fluorophoren abgeschätzt werden, wenn der Försterradius $R_0$ bekannt ist. 
+Dieser beträgt bei YFP/CFP $R_0 = 4,92\,nm$ (\cite{Patterson2000}). Der Zusammenhang zwischen Förstereffizienz $E$, Försterradius $R_0$ und Abstand der Fluorophore $r$ 
+lautet 
+\begin{equation*}
+    E = \frac{1}{1+(\frac{r}{R_0})^6} \leftrightarrow r = R_0 \sqrt[6]{\frac{1}{E} -1}
+\end{equation*}
+
+Damit ergeben sich für die Zellen die mittleren Abstände, die in Tab. \ref{tab:abst} zu sehen sind.
+
+\begin{center}
+    \centering
+    \begin{tabular}{lrr}
+        \toprule
+        Zelle &     E &     r \\
+        \midrule
+        1     & 0,380 & 5,337 \\
+        2     & 0,379 & 5,343 \\
+        3     & 0,328 & 5,545 \\
+        4     & 0,284 & 5,741 \\
+        5     & 0,290 & 5,712 \\
+        6     & 0,279 & 5,764 \\
+        7     & 0,181 & 6,331 \\
+        8     & 0,131 & 6,740 \\
+        9     & 0,087 & 7,273 \\
+        10    & 0,135 & 6,705 \\
+        11    & 0,154 & 6,538 \\
+        12    & 0,157 & 6,507 \\
+        13    & 0,087 & 7,275 \\
+        14    & 0,137 & 6,690 \\
+        15    & 0,176 & 6,366 \\
+        \bottomrule
+    \end{tabular}
+    \captionof{table}{Berechnete mittlere Abstände $r$ zwischen den Fluorophoren für jede Zelle der CFP/YFP-Messung und die dazugehörige Förstereffizienz $E$.}
+    \label{tab:abst}
+\end{center}
+
+
 
 Anstelle die Berechnung von $SE$ und $E$ mit den Intensitätsmittelwerten auf der Membran durchzuführen kann diese auch pixelweise 
 mit den gesamten Bildern erfolgen. Die Bilder finden sich in Abb. \ref{bild:E2} - \ref{bild:E13} wieder. Wählt man nun in der Darstellung 
@@ -217,3 +254,5 @@ zu finden sind.
     \end{tabular}
     \label{tab:VerglE}
 \end{center}
+
+\clearpage
