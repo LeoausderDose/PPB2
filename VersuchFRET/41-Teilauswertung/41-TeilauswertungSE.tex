@@ -4,6 +4,7 @@
 % Teilauswertung SE
 
 \section{Sensitized Emission}
+\label{sec:SE}
 
 \subsection{Bestimmung der Korrekturfaktoren}
 \label{subs:korr}
@@ -23,7 +24,7 @@ Bestimmung von $\gamma$ ohne Hintergrundkorrektur. Die jeweils gemessenen Hinter
 Um kleine und negative Zahlen, die in späteren Rechnungen stören könnten zu vermeiden, wird ein unterer Threshold auf eine Zahl zwischen 
 zwei und drei festgelegt. Anschließend werden die mittleren Graustufen in der ROI2 ($M_D$, $M_S$, $M_A$ zur regulären Bestimmung 
 der Parameter) und ROI3 von $S$, $A$ ($Z_S$, $Z_A$ zur Bestimmung von $\gamma$ für die ganze Zelle) gemessen. Die Parameter ergeben 
-sich nach:
+sich nach
 \begin{equation*}
     \alpha = \frac{M_D}{M_A}, \qquad
     \gamma = \frac{M_S}{M_A}, \qquad
@@ -37,8 +38,7 @@ nicht berücksichtigt werden.
 
 %TABELLEN
 \begin{center}
-    
-\centering
+    \centering
 \begin{tabular}{lrrrrrrrrr}
     \toprule
     Zelle &  $H_D$ &  $H_S$ &  $H_A$ &   $M_D$ &    $M_S$ &    $M_A$ &  $\alpha$ &  $\gamma$ &  $\delta$ \\
@@ -94,7 +94,11 @@ ist erklärbar: Die Membranregion enthält die Bereiche mit den höchsten Intens
 mit betrachtet werden (Zellinneres, etwas Hintergrund) sollten nur sehr wenig Intensität vorweisen. Je mehr solcher Gebiete geringer 
 Intensität nun in die Berechnung des Mittelweretes einbezogen werden (und in der Regel ist das Zellinnere wesentlich größer als der 
 Schnitt durch die Membran), so wird das Mittel immer weiter gesenkt und die Werte der mittleren Intensitäten für $S$ und $A$ gleichen sich 
-immer mehr an, was zu einem Anstieg von $\gamma$ führt.
+immer mehr an, was zu einem Anstieg von $\gamma$ führt. Auch ist die höhere Standardabweichung bei der Berechnung über die gesamte Zelle 
+nicht verwunderlich, da durch unterschiedliche Membran-Zellinneres-Verhältnisse in der ausgewählten ROI ein unterschiedlicher Anteil an 
+Bereichen mit geringer Intensität für die verschiedenen Zellen vorliegt. Dies resultiert in einer Stärkeren Schwankung von $\gamma$. 
+Dass die Standardabweichung für die Intensitäten der ROIs mit Hintergrundkorrektur höher ist als die für die ohne, könnte an der Benutzung 
+des Thresholds liegen, der einen Eingriff in die natürliche Verteilung der Intensitäten darstellt.
 
 \begin{center}
     \centering
@@ -113,8 +117,11 @@ immer mehr an, was zu einem Anstieg von $\gamma$ führt.
 
 
 
-Analog werden werden die Bilder aus der Messung mit reinem CFP bearbeitet. Der Parameter $\beta$ ergibt sich hier aus 
-$\beta = \frac{M_S}{M_D}$, wobei die $M$ hier die Werte aus der CFP-Messung sind.
+Analog werden werden die Bilder aus der Messung mit reinem CFP bearbeitet. Der Parameter $\beta$ ergibt sich hier aus
+\begin{equation*}
+    \beta = \frac{M_S}{M_D}, 
+\end{equation*}
+wobei die $M$ hier die Werte aus der CFP-Messung sind.
 
 %TABELLEN
 
@@ -143,10 +150,16 @@ $\beta = \frac{M_S}{M_D}$, wobei die $M$ hier die Werte aus der CFP-Messung sind
 
 \subsection{Sensitized Emission und Förstereffizienz}
 Zur Bestimmung der Förstereffizienz $E$ muss erst die Sensitized Emission $SE$ bestimmt werden. Dazu werden die Bilder aus der 
-Messung mit den CFP- und YFP-Proben wie in \ref{subs:korr} gezeigt vom Hintergrund bereinigt und mit einem Threshold versehen. 
-Zudem wird auch hier die mittlere Graustufe der Zellmembranregion $M_D$, $M_S$, $M_A$ bestimmt. Daraus folgt $SE$ über 
-$SE = \frac{M_S - \beta M_D - (\gamma - \alpha \beta) M_A}{1 - \beta \delta}$. $E$ ergibt sich dann aus 
-$E = \frac{SE}{\sqrt{M_A M_D}}$.
+Messung mit den CFP- und YFP-Proben wie in Abschnitt \ref{subs:korr} gezeigt vom Hintergrund bereinigt und mit einem Threshold versehen. 
+Zudem wird auch hier die mittlere Graustufe der Zellmembranregion $M_D$, $M_S$, $M_A$ bestimmt. Daraus folgt $SE$ über
+\begin{equation*}
+    SE = \frac{M_S - \beta M_D - (\gamma - \alpha \beta) M_A}{1 - \beta \delta}.
+\end{equation*}
+$E$ ergibt sich dann aus 
+\begin{equation*}
+    E = \frac{SE}{\sqrt{M_A M_D}}.
+\end{equation*}
+
 %TABELLE
 
 
@@ -182,16 +195,17 @@ $E = \frac{SE}{\sqrt{M_A M_D}}$.
 Dieser beträgt bei YFP/CFP $R_0 = 4,92\,nm$ (\cite{Patterson2000}). Der Zusammenhang zwischen Förstereffizienz $E$, Försterradius $R_0$ und Abstand der Fluorophore $r$ 
 lautet 
 \begin{equation*}
-    E = \frac{1}{1+(\frac{r}{R_0})^6} \leftrightarrow r = R_0 \sqrt[6]{\frac{1}{E} -1}
+    E = \frac{1}{1+(\frac{r}{R_0})^6} \leftrightarrow r = R_0 \sqrt[6]{\frac{1}{E} -1} 
 \end{equation*}
-
-Damit ergeben sich für die Zellen die mittleren Abstände, die in Tab. \ref{tab:abst} zu sehen sind.
+(\cite{Zuern2009}, S.21)
+Damit ergeben sich für die Zellen die mittleren Abstände, die in Tab. \ref{tab:abst} zu sehen sind. Diese liegen auch in dem Bereich von 
+1-10\,nm, der notwendig ist, um einen messbaren FRET zu beobachten. (\cite{Zuern2009}, S.20)
 
 \begin{center}
     \centering
     \begin{tabular}{lrr}
         \toprule
-        Zelle &     E &     r \\
+        Zelle &     E &     r / nm \\
         \midrule
         1     & 0,380 & 5,337 \\
         2     & 0,379 & 5,343 \\
@@ -211,15 +225,17 @@ Damit ergeben sich für die Zellen die mittleren Abstände, die in Tab. \ref{tab
         \bottomrule
     \end{tabular}
     \captionof{table}{Berechnete mittlere Abstände $r$ zwischen den Fluorophoren für jede Zelle der CFP/YFP-Messung und die dazugehörige Förstereffizienz $E$.}
-    \label{tab:abst}
+    %\label{tab:abst}
 \end{center}
 
 
 
 Anstelle die Berechnung von $SE$ und $E$ mit den Intensitätsmittelwerten auf der Membran durchzuführen kann diese auch pixelweise 
-mit den gesamten Bildern erfolgen. Die Bilder finden sich in Abb. \ref{bild:E2} - \ref{bild:E13} wieder. Wählt man nun in der Darstellung 
-von $E$ nun die gleiche 
-Membranregion aus, über die auch die Intensität gemittelt wurde, ergeben sich die Mittelwerte $E_{pixelweise}$, die in \ref{tab:VerglE} 
+mit den gesamten Bildern erfolgen. Die Bilder finden sich in Abb. \ref{bild:E2} - \ref{bild:E13} wieder. In diesen ist deutlich abgesetzt 
+und heller die Membran der Zellen zu erkennen. Dies ist nicht verwunderlich, da das verwendete Protein, an das die CFP und YFP binden, selbst 
+an der Membran gebunden ist.
+Wählt man nun in der Darstellung von $E$ nun die gleiche 
+Membranregion aus, über die auch die Intensität gemittelt wurde, ergeben sich die Mittelwerte $E_{pixelweise}$, die in Tab. \ref{tab:VerglE} 
 zu finden sind.
 
 \begin{figure}[h]
@@ -252,7 +268,12 @@ zu finden sind.
         10 & 0,135 & 0,329\\
         13 & 0,0873 & 0,370\\
     \end{tabular}
+    \captionof{table}{Förstereffizienz $E$ für drei ausgewählte Zellen berechnet einmal über die Mittelung der Intensitäten und einmal über die pixelweise Berechnung von $E$ und darauffolgender Mittelung}
     \label{tab:VerglE}
 \end{center}
+
+Dabei ist festzustellen, dass die Werte teilweise deutlich voneinander abweichen. Ein gewisser Fehler ist zu erwarten, da es einen Unterschied macht, wo 
+genau in der Rechnung gemittelt wird. Ob dieser dennoch so groß ist darf angezweifelt werden. Trotz dessen sind alle Werte für $E$ durchaus 
+plausibel.
 
 \clearpage
