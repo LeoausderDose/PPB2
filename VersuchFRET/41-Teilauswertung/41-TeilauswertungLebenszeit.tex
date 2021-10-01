@@ -1,6 +1,6 @@
 \section{Fluorescence Life-Time Measurement (FLIM)}
 
-\section{Lebenszeit von CFP und YFP}
+\subsection{Lebenszeit von CFP und YFP}
 
 In diesem Versuchsteil geht es um die Bestimmung der Lebensdauer des Donors und des Akzeptors. Dies tut man am 
 besten indem man eine einfache Exponentialfunktion an die Daten anpasst. Dabei passt man zwei Parameter an, die Amplitude $A_0$ und 
@@ -42,9 +42,119 @@ Aus den Anpassungen erhält man folgende Werte:\\
 Man sieht also einen Unterschied in der Lebenszeit der beiden Proteine. Der eigentlich spannende Teil 
 ist jedoch die Lebensdauer des Donators mit und ohne Fret zu vergleichen.
 
-\section{Lebensdauer mit FRET}
+\subsection{Lebensdauer mit FRET}
 
+Um die FRET-Effizienz $E$ zu vergleichen betrachtet man Lebensdauerunterschiede des Donor mit und ohne FRET. 
 Man erwartet eine Verkürzung der Lebensdauer $\tau_D$ des Donator bei hinzukommen von FRET. Dies geschieht 
-- wie in den Grundlagen erklärt - aufgrund der Kopplung an den Akzeptor. Um es vorweg zu nehmen. Die Methode funktioniert hier sehr schlecht. 
+- wie in den Grundlagen erklärt - aufgrund der Kopplung an den Akzeptor. Um es vorweg zu nehmen: Die Methode funktioniert hier sehr schlecht. 
 Man versucht das zu bewerkstelligen indem man eine Anpassung zweier Exponentialfunktionen macht. Diese beinhalten dann insgesamt 4 Parameter; 
-ein Fit mit 4 Parametern ist jedoch sehr Störungsanfällig.
+ein Fit mit 4 Parametern ist jedoch sehr störungsanfällig.\\
+
+Deswegen verwenden wir eine Methode, bei der wir jeweils zwei Parameter anpassen und die anderen gleich lassen. Danach passt man die anderen zwei 
+Parameter schrittweise an. Dieses Vorgehen führt zu einer schrittweisen Approximation, da sich beide Parameter ihrem Maximum annähern. Mit dieser 
+Methode erhält man die Werte, welche in Tabelle \ref{LTFit} dargestellt werden. Dabei wird die erste Anpassung unter Voraussetzung eines geschätzten Aktivität $A_0$ 
+von YFP durchgeführt. Diese wird auf den halben Wert der Nullaktivität der YFP-Probe auf selbem Kanal gesetzt. Dann führt man eine Anpassung der 
+Parameter für drei Parameter durch und verwendet nur die ausgegebenen Lebensdauerparameter.\\
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l|rr||rr}
+        \toprule
+        Schritt & $\tau_{YFP}$ & $A_{0_{YFP}} $&  $\tau_{CFP}$ & $A_{0_{CFP}}$\\
+        \midrule
+        1 & 1,599\,ns & & 3,096\,ns& \\
+        2 & & 24052\,$s^{-1}$ & & 97490 \,$s^{-1}$\\
+        3 & 4,009\,ns & & 2,539\,ns& \\
+        4 & & 22941\,$s^{-1}$ & & 98340 \,$s^{-1}$\\
+        5 & 4,038\,ns & & 2,5526\,ns& \\  
+        \bottomrule
+    \end{tabular}
+    \caption{Schrittweises Anpassen zweier Exponentialfunktionen an die Daten. Es werden immer zwei Parameter festgehalten. Die anderen zwei werden 
+    angepasst.}
+    \label{LTFit}
+\end{table}
+
+Aus dieser kann man dann die FRET-Effizienz berechnen indem man die Formel 
+\begin{equation}
+    E = 1 - \frac{\tau_{CFP, FRET}}{\tau_{CFP, NoFRET}}
+\end{equation}
+auswertet. Dabei erhält man als Ergebnis den Werte 
+\begin{equation}
+    \textcolor{red}{E = 1 - \frac{2,5526\,ns}{2,5251\,ns} = −0,010890658}, 
+\end{equation}
+welcher offensichtlich unsinnig ist. \\
+Die Methode scheint also nicht zu funktionieren. Ein Grund dafür könnte die Anzahl der anzupassenden Parameter 
+sein. Wegen dieser kann es sein, dass beispielsweise wegen der im Vergleich zu YFP geringen Anfangsaktivität $A_0$ der 
+Parameter $\tau_{YFP, FRET}$ nicht so stark in Gewicht fällt. Der falscher Wert für diesen führt dann zu einer Verfälschung 
+von $\tau_{CFP, FRET}$.
+
+\clearpage
+\subsection{Impulsantwort}
+
+Im folgenden Abschnitt wollen wir die Impulsantwort des Systems charakterisieren. Dazu verwenden wir Kanal 1 bei der YFP Probe. Dabei wird das aud zwei Arten gemacht. 
+Die erste Art ist sich die Impulsantwort (IRF) durch das Programm 'SymPhoTime' ausgeben zu lassen. Dieses berechnet diese in dem 
+sie das Signal entfaltet. Die andere Variante ist es eine Gaußkurve an das Histogram anzupassen. Diese wird der IRF entsprechen, 
+weil wir von einer abgeschnittenen Exponentialfunktion ausgehen als ideales Signal.\\
+Allgemein beginnen wir mit der Betrachtung des Histograms der Lebensdauer der Einzelphotonenereignisse. Dabei fällt auf, dass es eine Totzeit des 
+Detektor gibt. Diese ist sehr schön in der Abbildung \ref{IRFGaussian} zu sehen.\\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{Bilder/Auswertung/IRFGaussian.png}
+    \caption{Lebensdauer bei Einzelphotonenereignissen. Als Probe wurde YFP verwendet und gemessen wurde im Bereich 535-585\,nm. Schön zu sehen ist die Totzeit des Detektors am Anfang. 
+    An die Daten wurde eine Gaußfunktion angepasst um die IRF zu charakterisieren.}
+    \label{bild:IRFGaussian}
+\end{figure}
+
+Wie lange die Totzeit genau ist, ist relativ schwer zu sagen. Aber man kann sie grafisch abschätzen. Sie liegt vermutlich im Anstieg 
+der Kurve. Genau abzulesen wo diese ist, geht nicht daher schätzen wir, dass\\
+
+\begin{equation*}
+    \textcolor{red}{t_{tot} = (2,0\pm0,5)\,ns}
+\end{equation*}
+
+ist. Der Fehler ist jedoch relativ groß. \\
+Dann passen wir wie in Abbildung \ref{bild:IRFGaussian} zu sehen, eine Gaußfunktion an diese an. Diese Falten wir dann mit der bei 2 
+abgeschnittenen Exponentialfunktion. Das Ergebnis liegt schon nahe an dem wirklichen Daten, wie in Abbildung \ref{bild:IRFconvGauss} zu sehen; aber es kann noch verbessert werden, indem man den Parameter $\tau_{YFP}$ variiert, da dieser auch bei Fit schon 
+durch die IRF verzerrt wurde. Dazu gibt es mehrere Möglichkeiten. Man kann eine Cost-Funktion aufstellen, also eine Funktion die den Squared-Error angibt und diese 
+dann minimieren. Dies hat den Nachteil, dass diese Methode anfällig für Fehler ist. Es können sich beispielsweise kleine Fehler in höheren 
+Teilen des Spektrum sich aufaddieren können. Wenn man optisch die Funktion anpasst hat das den Vorteil, dass man nicht die allgemeine Steigung aus dem Auge 
+verliert, indem man nicht nur auf die Fehler schaut. Deswegen ist diese Methode hier zu bevorzugen.\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{Bilder/Auswertung/IRFGaussianConvol.png}
+    \caption{Lebensdauer bei Einzelphotonenereignissen und die Faltung der IRF und dem idealen Signal nach der Totzeit. Das (nicht dargestellte) ideale Signal ist in diesem 
+    Modell noch verzerrt, da es mit den Daten, welche die IRF beinhalten, noch gefittet wurde.}
+    \label{bild:IRFconvGauss}
+\end{figure}
+
+Durch manuelles Anpassen der Lebensdauer des YFP auf 
+
+\begin{equation*}
+    \tau_{YFP} = 2,1
+\end{equation*}
+
+erhält man einen realistischeren Wert. Dieser ist jedoch mit einer großen Unsicherheit behaftet, da weder die IRF wirklich wie eine 
+Gaußfunktion aussehen muss noch die Totzeit 2\,ns betragen muss. Daher nehmen wir 
+\begin{equation*}
+    \textcolor{red}{\tau_{YFP} = (2,1\pm0,4)\,ns}
+\end{equation*}
+als realistischen Wert an. Dieser passt bei beiden Methoden, dem Gaußfit und der programmgenerierten IRF (siehe Abb. \ref{bild:IRFProg}), wie man in den optimierten Abbildungen \ref{bild:IRFconvGaussOpt} und \ref{bild:IRFconvProOpt} sieht.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{Bilder/Auswertung/IRFGaussianConvolCorrectet.png}
+    \caption{Lebensdauer bei Einzelphotonenereignissen und die Faltung der IRF und dem idealen Signal ($\tau_{YFP}$ optimiert) nach der Totzeit. Es zeigt sich, dass die theoretische Kurve 
+    den Sachverhalt nun besser beschreibt als in Abbildung \ref{bild:IRFconvGauss}}
+    \label{bild:IRFconvGaussOpt}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{Bilder/Auswertung/IRFGaussianConvolCorrectet.png}
+    \caption{Lebensdauer bei Einzelphotonenereignissen und die Faltung der IRF und dem idealen Signal ($\tau_{YFP}$ optimiert) nach der Totzeit. Es zeigt sich, dass die theoretische Kurve 
+    den Sachverhalt nun besser beschreibt als in Abbildung \ref{bild:IRFconvProg}}
+    \label{bild:IRFconvProOpt}
+\end{figure}
+
+
