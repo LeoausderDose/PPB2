@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-daten = 'Versuch_Alpha_Gamma_Spektroskopie/Daten/CSV/Untergrundmessung.csv'
+daten = 'Daten/CSV/Untergrundmessung.csv'
 df = pd.read_csv(daten)
 
 

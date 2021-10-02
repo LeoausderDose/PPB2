@@ -6,20 +6,21 @@ den Kanalnummern des Vierkanalanalysators und den Energiewerte hergestellt werde
 die charakteristischen Linien dreier Präparate mit Kanalnummern in Verbindung. Danach bestimmen 
 wir via linearer Regression die Parameter $E_0$  für den y-Achsenabschnitt und $m$ für die Steigung.\\
 
-Die drei verwendeten Präparate/Emissionslinien  sind:
+Die drei verwendeten Präparate/Emissionslinien  sind in Tabelle \ref{Eichung} dargestellt.
  \begin{table}[h]
     \centering
      \begin{tabular}{lcr}
         Isotop & Energie (MeV) & Kanalnummer \\
         \toprule
          Cs-137 & 0,6616  & 447\\
-         Am-241 & 0.0594 & 41\\
-         Co-60 & 1.1732 & 792\\
+         Am-241 & 0,0594 & 41\\
+         Co-60 & 1,1732 & 792\\
      \end{tabular}
      \caption{Zur Energieeichung verwendete Spektrallinien}
      \label{Eichung}
  \end{table}
 
+ Die Peaks wurden hier einfach abgelesen, da diese beim Gammaspektrum so schmal sind, dass eindeutig feststellbar ist, in welchem Kanal der Peak liegt.
  Mit linearer Regression erhält man $E_0 = -1386.75067405 \mathrm{ eV}$ und $m = 1483.09394689 \frac{\mathrm{eV}}{\mathrm{Kanal}}$.
  Dabei sieht man sehr gut an Grafik \ref{Eichgerade}, dass die Annahme eines linearen Zusammenhangs gerechtfertigt ist und der Vierkanalanalysators in 
  diesem Bereich linear arbeitet.
@@ -27,6 +28,6 @@ Die drei verwendeten Präparate/Emissionslinien  sind:
  \begin{figure}[ht]
      \centering
      \includegraphics[width = \linewidth]{Bilder/Auswertung/EnergieeichgeradeGamma.png}
-     \caption{Eichgerade anhand der oben verwendeten Isotope}
+     \caption{Eichgerade anhand der oben verwendeten Isotope. Die Fehler sind zu klein um sie in dieser Grafik zu sehen}
      \label{Eichgerade}
  \end{figure}

@@ -2,16 +2,11 @@ import numpy as np
 import pandas as pd
 #from scipy import optimize as opt
 import matplotlib.pyplot as plt
-import matplotlib.ticker as tkr
+import locale
+locale.setlocale(locale.LC_ALL, "deu_deu")
+import matplotlib as mpl
+mpl.rcParams['axes.formatter.use_locale'] = True
 
-
-
-def func(x, pos):  # formatter function takes tick label and tick position
-    s = str(x)
-    ind = s.index('.')
-    return s[:ind] + ',' + s[ind+1]   # change dot to comma
-
-y_format = tkr.FuncFormatter(func)  # make formatter
 
 
 daten = 'Daten/CSV/EnergieeichungCo60.csv'
@@ -26,7 +21,7 @@ ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 #ax.xaxis.set_ticks_position('bottom')
 #ax.yaxis.set_ticks_position('left')
-ax.xaxis.set_major_formatter(y_format)  # set formatter to needed axi
+ax.xaxis.set_major_formatter(x_format)  # set formatter to needed axi
 #ax.yaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:,.0f}'))
 #ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:,.0f}'))
 #plt.ylim(0,8000)

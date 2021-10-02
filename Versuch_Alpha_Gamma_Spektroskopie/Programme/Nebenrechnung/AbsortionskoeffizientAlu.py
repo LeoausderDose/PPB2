@@ -13,7 +13,7 @@ def Zerfall(x, A0, mu, rausch):
 
 
 
-daten = 'Versuch_Alpha_Gamma_Spektroskopie/Daten/CSV/AbsobtionskoeffizeintAlu.csv'
+daten = 'Daten/CSV/AbsobtionskoeffizeintAlu.csv'
 df = pd.read_csv(daten)
 
 df['Zaehlrate (1/s)'] = df['Integral']/df['Zeit']
@@ -50,5 +50,5 @@ plt.plot(np.linspace(0,df.iloc[-1,0]*1.1,100),Zerfall(np.linspace(0,df.iloc[-1,0
 
 plt.errorbar(df['Dicke'],df['Zaehlrate (1/s)'],xerr= 0.1, yerr=popt[2],capsize = 2, ls = 'None',  color = 'black',elinewidth = 0.5)
 
-#plt.show()
+plt.show()
 
