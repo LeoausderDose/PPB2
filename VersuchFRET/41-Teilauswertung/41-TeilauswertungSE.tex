@@ -9,21 +9,21 @@
 \subsection{Bestimmung der Korrekturfaktoren}
 \label{subs:korr}
 
-Da es aufgrund des Crosstalks nicht möglich ist, zur Bestimmung der Förstereffizienz $E$ alleine den s.e.-Kanal zu messen, müssen zuerst 
+Da es aufgrund des Crosstalks nicht möglich ist, zur Bestimmung der Förstereffizienz $E$ alleine den SE-Kanal zu messen, müssen zuerst 
 Korrekturfaktoren $\alpha, \beta, \gamma, \delta$ aus den Messungen der Proben mit reinem CFP/YFP berechnet werden.
 Dies werde exemplarisch an einer YFP-Zelle durchgeführt. Als Bearbeitungsprogramm wird FIJI gewählt. \footnotemark 
 \footnotetext{\url{https://fiji.sc/}}
 \\
-Für jede Zelle stehen vier Bilder zur Verfügung: Das Bild aus dem Donorkanal $D$, das aus dem s.e.-Kanal $S$, das aus dem 
+Für jede Zelle stehen vier Bilder zur Verfügung: Das Bild aus dem Donorkanal $D$, das aus dem SE-Kanal $S$, das aus dem 
 Akzeptorkanal $A$ und das Brightfield $BF$, welche auf 32 Bit konvertiert werden. 
 Als Erstes wird zur Bestimmung des Untergrunds eine zellfreie Region in $BF$ als ROI1 gewählt und 
 auf die anderen Bilder übertragen und die mittlere Graustufe gemessen. Danach wird in $S$ die hell dargestellte Membran als ROI2 gewählt und 
 als eine zusätzliche ROI3 die gesamte Zelle mit ein wenig Hintergrund. Die mittlere Graustufe in ROI2 wird in $S$ und $A$ gemessen 
-($M_{S,oH}$, $M_{A,oH}$ zur 
-Bestimmung von $\gamma$ ohne Hintergrundkorrektur. Die jeweils gemessenen Hintergrundwerte werden nun von $D$, $S$ und $A$ abgezogen. 
-Um kleine und negative Zahlen, die in späteren Rechnungen stören könnten zu vermeiden, wird ein unterer Threshold auf eine Zahl zwischen 
-zwei und drei festgelegt. Anschließend werden die mittleren Graustufen in der ROI2 ($M_D$, $M_S$, $M_A$ zur regulären Bestimmung 
-der Parameter) und ROI3 von $S$, $A$ ($Z_S$, $Z_A$ zur Bestimmung von $\gamma$ für die ganze Zelle) gemessen. Die Parameter ergeben 
+($M_{S,oH}$, $M_{A,oH}$; zur 
+Bestimmung von $\gamma$ ohne Hintergrundkorrektur). Die jeweils gemessenen Hintergrundwerte werden nun von $D$, $S$ und $A$ abgezogen. 
+Um kleine und negative Zahlen, die in späteren Rechnungen stören könnten, zu vermeiden, wird ein unterer Threshold auf eine Zahl zwischen 
+zwei und drei festgelegt. Anschließend werden die mittleren Graustufen in der ROI2 ($M_D$, $M_S$, $M_A$; zur regulären Bestimmung 
+der Parameter) und ROI3 von $S$, $A$ ($Z_S$, $Z_A$; zur Bestimmung von $\gamma$ für die ganze Zelle) gemessen. Die Parameter ergeben 
 sich nach
 \begin{equation*}
     \alpha = \frac{M_D}{M_A}, \qquad
@@ -31,7 +31,7 @@ sich nach
     \delta = \frac{M_D}{M_S}
 \end{equation*}
 
-Diese und die dafür benötigten Intensitäten finden sich in Tab.\ref{tab:YFP1}. Dabei ist für Zelle 1 eine sehr große Abweichung bei den 
+Diese und die dafür benötigten Intensitäten finden sich in Tab. 4.1. Dabei ist für Zelle 1 eine sehr große Abweichung bei den 
 Werten für die Parameter, insbesondere bei $\alpha$ und $\delta$, zu erkennen. Dies könnten statistische Ausreißer sein. Da die Abweichung 
 allerdings sehr groß ist und die Anzahl der Parameter, über die gemittelt wird, klein ist, soll Zelle 1 bei der Mittelwertbildung 
 nicht berücksichtigt werden.
@@ -60,7 +60,7 @@ nicht berücksichtigt werden.
     $D$, $S$ und $A$; zudem die berechneten Korrekturfaktoren $\alpha$, $\gamma$ und $\delta$.}
 \end{center}
 
-In Tab.\ref{tab:YFP2} sind die Werte für $\gamma$ dargestellt, die auf den oben beschriebenen alternativen Berechnungswegen berechnet 
+In Tab.4.2 sind die Werte für $\gamma$ dargestellt, die auf den oben beschriebenen alternativen Berechnungswegen berechnet 
 wurden.
 
 \begin{center}
@@ -86,7 +86,7 @@ wurden.
     ($\gamma_{oH}$) bzw. über die Intensitäten der gesamten Zelle $Z$ ($\gamma_Z$).}
 \end{center}
 
-Für die verschienen Arten von $\gamma$ ergeben sich die Werte in Tab.\ref{tab:gamma}. Dabei fällt auf, dass die Mittelwerte für die beiden 
+Für die verschienen Arten von $\gamma$ ergeben sich die Werte in Tab. 4.3. Dabei fällt auf, dass die Mittelwerte für die beiden 
 Berechnungen für die Membranregionen kaum voneinander abweichen. Dies ist aber nicht weiter verwunderlich, berechnet sich $\gamma$ doch 
 über einen Quotienten; sind nun Zähler und Nenner groß genug, wie es hier der Fall ist, fällt die Subtraktion des kleinen Wertes der 
 Hintergrundsintensität kaum ins Gewicht. Der Unterschied zu dem Wert für die gesamte Zelle ist schon deutlich größer, aber auch das 
@@ -96,7 +96,7 @@ Intensität nun in die Berechnung des Mittelweretes einbezogen werden (und in de
 Schnitt durch die Membran), so wird das Mittel immer weiter gesenkt und die Werte der mittleren Intensitäten für $S$ und $A$ gleichen sich 
 immer mehr an, was zu einem Anstieg von $\gamma$ führt. Auch ist die höhere Standardabweichung bei der Berechnung über die gesamte Zelle 
 nicht verwunderlich, da durch unterschiedliche Membran-Zellinneres-Verhältnisse in der ausgewählten ROI ein unterschiedlicher Anteil an 
-Bereichen mit geringer Intensität für die verschiedenen Zellen vorliegt. Dies resultiert in einer Stärkeren Schwankung von $\gamma$. 
+Bereichen mit geringer Intensität für die verschiedenen Zellen vorliegt. Dies resultiert in einer stärkeren Schwankung von $\gamma$. 
 Dass die Standardabweichung für die Intensitäten der ROIs mit Hintergrundkorrektur höher ist als die für die ohne, könnte an der Benutzung 
 des Thresholds liegen, der einen Eingriff in die natürliche Verteilung der Intensitäten darstellt.
 
@@ -121,7 +121,7 @@ Analog werden werden die Bilder aus der Messung mit reinem CFP bearbeitet. Der P
 \begin{equation*}
     \beta = \frac{M_S}{M_D}, 
 \end{equation*}
-wobei die $M$ hier die Werte aus der CFP-Messung sind.
+wobei die $M$ hier die Werte aus der CFP-Messung sind. Die berechneten Werte finden sich in Tab. 4.4 wieder.
 
 %TABELLEN
 
@@ -160,6 +160,8 @@ $E$ ergibt sich dann aus
     E = \frac{SE}{\sqrt{M_A M_D}}.
 \end{equation*}
 
+Die berechneten Werte sind in Tab. 4.5 zu finden.
+
 %TABELLE
 
 
@@ -192,13 +194,13 @@ $E$ ergibt sich dann aus
 \end{center}
 
 Über die Förstereffizienz kann auch der mittlere Abstand zwischen den Fluorophoren abgeschätzt werden, wenn der Försterradius $R_0$ bekannt ist. 
-Dieser beträgt bei YFP/CFP $R_0 = 4,92\,nm$ (\cite{Patterson2000}). Der Zusammenhang zwischen Förstereffizienz $E$, Försterradius $R_0$ und Abstand der Fluorophore $r$ 
+Dieser beträgt bei YFP/CFP $R_0 = 4,92$\,nm (\cite{Patterson2000}). Der Zusammenhang zwischen Förstereffizienz $E$, Försterradius $R_0$ und Abstand der Fluorophore $r$ 
 lautet 
 \begin{equation*}
     E = \frac{1}{1+(\frac{r}{R_0})^6} \leftrightarrow r = R_0 \sqrt[6]{\frac{1}{E} -1} 
 \end{equation*}
-(\cite{Zuern2009}, S.21)
-Damit ergeben sich für die Zellen die mittleren Abstände, die in Tab. \ref{tab:abst} zu sehen sind. Diese liegen auch in dem Bereich von 
+(\cite{Zuern2009}, S.21).\\
+Damit ergeben sich für die Zellen die mittleren Abstände, die in Tab. 4.6 zu sehen sind. Diese liegen auch in dem Bereich von 
 1-10\,nm, der notwendig ist, um einen messbaren FRET zu beobachten. (\cite{Zuern2009}, S.20)
 
 \begin{center}
