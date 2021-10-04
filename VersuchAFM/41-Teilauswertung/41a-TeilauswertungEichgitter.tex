@@ -44,13 +44,16 @@ Der Hauptfehler dürfte beim Wählen der Start- und Endpunkte
 der zu vermessenden Strecke liegen, da diese nicht sehr gut exakt zu setzen waren. Mithilfe des Vermessungstools wird dieser Fehler auf 
 2$\mu m$ pro Strecke abgeschätzt. Nach Fehlerfortpflanzung ergibt sich also:
 \begin{equation*}
-    s_d = \sqrt{5}\frac{2 \mu m}{24} = 0.186 \mu m
+    s = \sqrt{5}\frac{2 \mu m}{24} = 0.186 \mu m
 \end{equation*}
 
-Dieser beträgt mehr als der Fehler der internen 1.8\% des Mikroskops, also ergibt sich für die Versetzung:
+Mit dem internen Fehler des Mikroskops von 1.2\%, ergibt sich für die Versetzung ein Fehler von
+\begin{equation*}
+    s_d = \sqrt{0.186^2 + (0.012 \cdot 9.942)^2}\, \mu m = 0.22\, \mu m
+\end{equation*}
 
 \begin{equation*}
-    \textcolor{red}{d_{xy} = (9.942 \pm 0.19) \mu m}
+    \textcolor{red}{d_{xy} = (9.94 \pm 0.22) \mu m}
 \end{equation*}
 
 Nach Angaben des Herstellers beträgt die Versetzung 10.0 $\mu m$ (s. Protokoll). 
