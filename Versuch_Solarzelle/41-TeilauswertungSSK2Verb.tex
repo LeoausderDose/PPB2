@@ -9,7 +9,7 @@ Aus den Daten wurde mithilfe einens MatLab-Programmes ref die Parameter, welche 
 dass bei der CIS-Zelle einen Reihenschaltung von 11 kleinen Solarmodulen vorhanden ist. Daher wird die Spannung durch 11 geteilt. Leider erhält man 
 trotzdem sehr fragwürdige Parameter, beispielsweise unrealistisch hohe Temperaturen als Umgebungsbedingungen hatten. Diese sind aber ausgeschlossen, 
 da die Temperatur als Referenz gemessen wurde.
-Interessant ist vor allem, dass sich mit dem Programm vor allem die Multi- und MonoSi besser mitder Shockley-Gleichung gefittet werden, als 
+Interessant ist vor allem, dass sich mit dem Programm vor allem die Multi- und MonoSi besser mit der Shockley-Gleichung gefittet werden, als 
 die CIS Solarzelle, was aber auch gut an der fehlerhaften Anwendung des Programmes oder dem Programm selbst.
 
 \subsection{CIS-Solarmodul}
@@ -23,29 +23,15 @@ Nach dem fitten mit dem oben erwähnten Programm erhält man folgende Abbildunge
     
 \end{figure}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width = \linewidth]{Bilder/CIS180Plot.pdf}
-    \caption{Gefittete Shockley-Gleichung an das CIS-Modul bei 180V Trafospannung}    
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width = \linewidth]{Bilder/CIS230Plot.pdf}
-    \caption{Gefittete Shockley-Gleichung an das CIS-Modul bei 230V Trafospannung}
-\end{figure}
 
 Dabei fällt vor allem die ungewöhnlich hohe Temperatur. Der Reihenwiderstand ist größer als der der anderen Module. Dies ist jedoch normal, da 
 es ja auch 11 Module sind und somit 11 Mal die entsprechenden Kontaktstellen existieren. Der Parallelwiderstand ist groß, was aber ein gutes 
-Zeichen ist, weil das beideutet, dass der Leckstrom gering ist.
-Da die Werte sehr unrealistisch erscheinen, ist darauf zu schließen, dass sich irgendwo ein Fehler eingschlichen hat, 
-den wir leider auch bei genauer Betrachtung nicht ermitteln konnten.
+Zeichen ist, weil das beideutet, dass der Leckstrom gering ist.\\
+Im Gesamten muss man sagen, dass sich bei dem CIS-Modul kein schöner exponentieller Zusammenhang finden lässt. Nicht desto trotz ist dieser 
+eine ausreichend gute Beschreibung der Wirklichkeit um Aussagen über die CIS-Zelle zu machen.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width = \linewidth]{Bilder/CISDunkelPlot.pdf}
-    \caption{Gefittete Schockley-Gleichung an Dunkelmessung der CIS-Zelle}
-\end{figure}
+Bei allen Solarzellen finden sich dei Fits im Anhang \ref{section:AnhangShock}.
+
 
 \clearpage
 
@@ -136,7 +122,7 @@ Setzt man die in Kapitel \ref{chapter:fitten} erhaltenen Werte ein, so erhalt ma
 \end{table}
 
 Wie bei den obigen Werten ist es schwer überhaupt Fehler anzugeben, da die einzelnen Parameter aus der Shockley-Gleichung 
-schwer im Fehler abzuschätzen sind. Eine Unsicherheit von 10\% wäre jedoch sicher nicht vermessen.\
+schwer im Fehler abzuschätzen sind. Eine Unsicherheit von 10\% wäre jedoch sicher nicht untertrieben.\
 Im Gesamten kann man sagen, dass die obigen Werte durchaus realistisch erscheinen. Eine 
 Diode sollte einen Idealitätsfaktor zwischen 1-2 haben. Hier liegen wir schon nah an 1, dass 
 heißt, dass sich die Solar-Module sehr gut durch das Bändermodell beschreiben lassen.
@@ -150,7 +136,9 @@ bestimmt man die Lichtleitung $P_L$. Der Wirkungsgrad $\eta$ ergibt sich dann wi
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width = \linewidth]{Bilder/PlotWirkungsgradInt.png}
+    \includegraphics[width = \linewidth]{Bilder/WirkungsgradInt.png}
+    \caption{Wirkungsgrad verschiedner Solarmodule bei Intensitäten bis zu 0,25\,sun. Die Fehler sind Fehlerabschätzungen, 
+    beispielsweise für die X-Werte aus der Schwankung der Intensität bei der Messung mir der geeichten Solarzelle}
 \end{figure}
 
 Dabei kann man einen Trend zu einem besseren Wirkungsgrad bei höheren Frequenzen sehen. Dies ist vermutlich ein 
@@ -171,7 +159,7 @@ Anzahl der Photonen ist. Der Photostrom hängt von der Anzahl der Elektronen ab,
 Anzahl der eintreffenden Photonen. Durch lineare Regression ergibt sich das folgende Bild für die extrapolierten Werte.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width = 12cm]{Bilder/ExtrapolierteIPhAusschnitt.png}
+    \includegraphics[width = 12cm]{Bilder/ExtraInt.png}
     \caption{Ausschnitt der obigen Abbildung}
 \end{figure} 
 
@@ -181,8 +169,8 @@ Dabei sieht man, dass die Daten sehr gut in einen linearen Zusammenhang zu setze
     \begin{tabular}{lr}
         Solarzellenart & Extrapolierter Wert\\
         \midrule
-        CIS & 0,22 A\\
-        MonoSi&15,38 A\\
-        MultiSi&13,04A\\
+        CIS & 0,07\,A\\
+        MonoSi&5,2\,A\\
+        MultiSi&4,4\,A\\
     \end{tabular}
 \end{center}
