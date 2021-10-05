@@ -14,7 +14,7 @@ die CIS Solarzelle, was aber auch gut an der fehlerhaften Anwendung des Programm
 
 \subsection{CIS-Solarmodul}
 
-Nach dem fitten mit dem oben erwähnten Programm erhält man folgende Abbildungen und Parameter.
+Nach dem Fitten mit dem oben erwähnten Programm erhält man folgende Abbildungen und Parameter.
 
 \begin{figure}[ht]
     \centering
@@ -26,14 +26,14 @@ Nach dem fitten mit dem oben erwähnten Programm erhält man folgende Abbildunge
 
 Dabei fällt vor allem die ungewöhnlich hohe Temperatur. Der Reihenwiderstand ist größer als der der anderen Module. Dies ist jedoch normal, da 
 es ja auch 11 Module sind und somit 11 Mal die entsprechenden Kontaktstellen existieren. Der Parallelwiderstand ist groß, was aber ein gutes 
-Zeichen ist, weil das beideutet, dass der Leckstrom gering ist.\\
+Zeichen ist, weil das bedeutet, dass der Leckstrom gering ist.\\
 Im Gesamten muss man sagen, dass sich bei dem CIS-Modul kein schöner exponentieller Zusammenhang finden lässt. Nicht desto trotz ist dieser 
 eine ausreichend gute Beschreibung der Wirklichkeit um Aussagen über die CIS-Zelle zu machen.
 
-Bei allen Solarzellen finden sich dei Fits im Anhang \ref{section:AnhangShock}.
+Bei allen Solarzellen finden sich die Fits im Anhang \ref{section:AnhangShock}.
 
 
-\clearpage
+
 
 \subsection{Mono- und MultiSi-Zellen}
 
@@ -157,14 +157,14 @@ Im Gesamten bleibt die Form der Kurve jedoch ähnlich, was man auch an konstante
 Der Photostrom $I_{Ph}$ wird bis 1sun extrapoliert. Dabei wird ein linearer Zusammenhang angenommen, da eine Zunahme der Lichtintensität direkt proportional zu der 
 Anzahl der Photonen ist. Der Photostrom hängt von der Anzahl der Elektronen ab, die durch den photoelektrischen Effekt zum Photostrom beitragen können. Diese ist proportional zur 
 Anzahl der eintreffenden Photonen. Durch lineare Regression ergibt sich das folgende Bild für die extrapolierten Werte.
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width = 12cm]{Bilder/ExtraInt.png}
     \caption{Ausschnitt der obigen Abbildung}
 \end{figure} 
 
-Dabei sieht man, dass die Daten sehr gut in einen linearen Zusammenhang zu setzen sind. Die extrapolierten Werte für 1 sun betragen:\\
-\begin{center}
+Dabei sieht man, dass die Daten sehr gut in einen linearen Zusammenhang zu setzen sind. Die extrapolierten Werte für 1 sun sind in Tabelle \ref{tabelle:Interpol}.
+\begin{table}[hat]
     \centering
     \begin{tabular}{lr}
         Solarzellenart & Extrapolierter Wert\\
@@ -173,4 +173,6 @@ Dabei sieht man, dass die Daten sehr gut in einen linearen Zusammenhang zu setze
         MonoSi&5,2\,A\\
         MultiSi&4,4\,A\\
     \end{tabular}
-\end{center}
+    \caption{Interpolierte Werte der drei Solarzellen bei 1\,sun}
+    \label{tabelle:Interpol}
+\end{table}
