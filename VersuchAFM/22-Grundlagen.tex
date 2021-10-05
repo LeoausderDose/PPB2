@@ -67,3 +67,45 @@ Erkenntnisse gewonnen werden können. (\cite{Vesely2017}, S.26). Zum anderen erg
 werden kann, Eigenschaften der Probe zu bestimmen (Dichte etc.). \footnotemark
 \footnotetext{\url{https://www.nanosurf.com/en/support/afm-modes-overview/dynamic-modes}, Stand: 23.09.21}
  
+\section{Regler}
+
+Regler oder Regelkreise sind wichtige Bestandteile von vielen Messapparaturen. Dabei ist ein Regler im Allgemeinen ein Objekt, welches 
+ein Eingangssignal $V_e$ aufnimmt, dieses auf eine Art verarbeitet und dann ein Ausgangssignal $V_a$ ausgibt. Das Eingangssignal könnte 
+beispielsweise ein Signal eines Sensors sein und das Ausgangsignal könnte der Steuerung eines Bauelements dienen. Dabei gibt es klassisch einige Elemente, die 
+oft in Reglern enthalten sind. Diese heißen auch 'Glieder'.
+
+\subsection*{P-Glied}
+
+Ein P-Glied ist etwas ähnliches wie ein Schalter. Wenn eine bestimmte Bedingung erfüllt ist, dann gibt er einen konstanten Wert aus. Er antwortet also mit einer 
+Sprungantwort. Die Antwort ist instantan. Alleine ist er in seiner Anwendung sehr begrenzt; kombiniert man ihn aber mit anderen Gliedern wie dem I- oder D-Glied ist dieser hoch wirksam.
+
+\subsection*{I-Glied}
+
+Das 'I' im Namen kommt von 'Integrieren'. Dabei tut diese Glied genau das, was der Name verspricht. Das I-Glied gibt ein Ausgangssignal aus, welches 
+proportional ist zur Integration über das Eingangssignal. Dabei ist klar, dass dieses Glied verzögert antwortet zu dem Eingangssignal, weil 
+es dauert bis das Integral entsprechend groß ist.
+
+\subsection*{D-Glied}
+
+Das D-Glied hat nahezu entgegengesetzte Eigenschaften zum I-Glied. Da es als Ausgangsignal ein Signal ausgibt, welches proportional zu Ableitung des 
+Eingangssignal ist, reagiert das Glied instantan. Damit kann es Prozesse wie das Einschwingen von langsam reagierenden Elementen verhindern.
+
+\subsection*{Mehrere Glieder}
+
+Oft verwendet man mehrere Glieder additiv, da diese gegenseitig ihr Vorteile zur Geltung bringen. Man sollte jedoch bedenken, dass zu viele Glieder auch das 
+Optimieren des Regler erschweren, da es sehr viele Parameter gibt, die angepasst werden müssen.
+
+
+\section{Faltung und das AFM}
+
+Generell kann man eine Faltung mit der Formel 
+
+\begin{equation*}
+    (f \circledast g)(t) = \int_{\-\infty}^\infty f(\tau)g(t-\tau) d\tau
+\end{equation*}
+berechnen. Sie lässt sich aber auch grafisch berechnen, indem man die eine Funktion nimmt, an der y-Achse spiegelt und dann übereinander 'schiebt'. 
+Die Überlappung der beiden Funktionen ist dann das Ergebnis der Faltung. \\
+
+Die Faltung spielt in vielen Bereichen der Physik eine Rolle, auch beim AFM. Das was man misst, ist eine Faltung der Spitzenform mit der realen Probenoberfläche\footnote{\url{https://www.weizmann.ac.il/Chemical_Research_Support/surflab/peter/condecon/index.html}, Aufgerufen: 5.10.2021}. 
+Dies ist insofern auch schlüssig, da man so keine 'Spalten' in der Probe sehen kann, die schmaler als die Spitze sind. Das gleiche Ergebnis erhält man, wenn man Faltet, da die Faltung 
+zweier Funktionen runder ist als die rundere der beiden Funktionen.
