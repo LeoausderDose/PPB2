@@ -43,7 +43,7 @@ Den Abstand der Moden bestimmt man auch grafisch aus Abbildung \ref{bild:AxialMo
 und mit der Umrechnung aus Gleichung \ref{eq:Umrechnung} erhalt man 
 
 \begin{equation}
-    \textcolor{red}{\Delta \nu_{Modenabstand} = (252 \pm 17)\,\mathrm{MHz}}
+    \textcolor{red}{\delta \nu = (252 \pm 17)\,\mathrm{MHz}}
     \label{eq:Modenabstand}
 \end{equation}
 
@@ -51,21 +51,62 @@ den Abstand zweier longitudinaler Lasermoden. Die Unsicherheit wird hierbei aus 
 der Unsicherheit der Kalibrierung  mittels Fehlerfortpflanzung berechnet. Auf selbe Weise wird 
 
 \begin{equation}
-    \textcolor{red}{\Delta \nu_{Linienbreite} = (13,3 \pm 1,5)\,\mathrm{MHz}}
+    \textcolor{red}{\Delta \nu_{multi} = (13,3 \pm 1,5)\,\mathrm{MHz}}
 \end{equation}
 
-auch die Linienbreite aus Abbildung \ref{bild:Lininebreite} bestimmt.
+auch die Linienbreite (FWHM) aus Abbildung \ref{bild:Lininebreite} bestimmt. Gleiches tun wir auch für die einzelne Mode
+aus Abbildung \ref{bild:LininebreiteSingle}. Damit erhalten wir die Werte, welche in Tabelle \ref{tab:Linienbreite} dargestellt sind.
 
-\begin{figure}[ht]
+\begin{table}
     \centering
-    \includegraphics[width = \linewidth]{Bilder/Auswertung/FabryPerotModenAbstand.png}
-    \caption{Longitudinale Lasermoden mit dem Fabry-Pérot aufgenommen. Mit den x-Markern wird der Abstand zweiter Lasermoden $\Delta \nu_{Modenabstand}$ bestimmt. Dieser muss aber noch in Hz umgerechnet werden.}
-    \label{bild:AxialModenAbstand}
+ 
+    \begin{tabular}{lcr}
+        \toprule
+        Messgröße & Symbol & Wert in MHz\\
+        \midrule
+        Freier spektraler Bereich& $\Delta \nu_{FSB}$ & 2000\\
+        Modenabstand& $\delta\nu$& $252 \pm 17$\\
+        FWHM (multi-mode)& $\Delta\nu_{multi}$&$13,3 \pm 1,5$\\
+        FWHM (single)& $\Delta\nu_{multi}$&$16,7 \pm 2,6$\\
+        \bottomrule        
+    \end{tabular}
+  
+    \caption{Freier spektraler Bereich, Modenabstand, Halbwertsbreite des He-Ne-Laser und dem dazugehörendem 
+    konfokalem Fabry-Pérot-Interferometer}
+    \label{tab:Linienbreite}
+\end{table}
+
+
+\subsection*{Verstärkungsprofil}
+
+Um das Verstärkungsprofil zu bestimmen haben wir das Oszilloskop auf einen Modus gestellt, bei dem es alle Spuren 
+überlagert. Dies haben wir getan und haben den Tisch mit leichten Erschütterungen zum vibrieren gebracht.
+Dies führte zu dem benötigten Längenänderungen im Resonator, sodass die Peaks der Moden gewackelt haben.
+Somit kann man, wenn man mit den Linien wackelt, ein ungefähres Bild bekommen, wie das Verstärkungsprofil
+des Verstärkers aussieht. Das Ergebnis ist in Abbildung \ref{bild:Verstaerkung} sichtbar.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{Bilder/Auswertung/FabryPerotVerst.png}
+    \caption{Longitudinale Lasermoden mit dem Fabry-Pérot aufgenommen. Durch Erschütterung wurde das Verstärkungsprofil sichtbar gemacht.}
+    \label{bild:Verstaerkung}
 \end{figure}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width = \linewidth]{Bilder/Auswertung/FabryPerotLinienbreite.png}
-    \caption{Longitudinale Lasermoden mit dem Fabry-Pérot aufgenommen. Mit den x-Markern wird die Lininebreite $\Delta \nu_{Linienbreite}$ bestimmt. Dieser muss aber noch in Hz umgerechnet werden.}
-    \label{bild:Lininebreite}
-\end{figure}
+Von diesem schätzen wir die Halbwertsbreite ab, soweit das geht. Die Halbwertsbreite 
+
+\begin{equation}
+    \textcolor{red}{\Delta \nu_{Verstärkungsprofil} = 532\pm80\;\mathrm{MHz}}
+\end{equation}
+
+hat einen relativ großen Fehler, da man die Spitze des Verstärkungsprofils nicht genau sehen kann und daher abschätzen muss.
+Dies ist auch sinnvoll, da die Breite des Verstärkungsprofils mehrmals den Modenabstand beinhalten sollte.
+
+
+\subsection*{Finesse und Auflösungsvermögen}
+
+Die Finesse und das Auflösungsvermögen sind zwei Größen, die zur Charakterisierung des Resonators nützlich sind. Die Finesse ist dabei
+definiert über das Verhältnis 
+\begin{align}
+    p_{1} = p_{1mess}+p_{offset}  \qquad p_{2} = p_{2mess}+p_{offset}
+\end{align}
+ des freien Spektralbereichs zur Linienbreite
