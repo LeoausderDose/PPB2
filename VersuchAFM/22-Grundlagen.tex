@@ -4,6 +4,9 @@
 
 \chapter{Grundlagen}
 \section{Aufbau und Funktionsweise}
+Optische Mikroskope sind durch die Wellenlänge des verwendeten Lichts begrenzt. Die Auflösung kann durch die halbe Wellenlänge angenähert werden und beträgt im Regelfalll 
+folglich ein paaar hundert Nanometer. Das Rasterelektronenmikroskop kann im Vergleich dazu eine deutlich höhere Auflösung erzielen. Diese ist aber durch 
+den Durchmesser des verwendeten Elektronenstrahls auch auf wenige Nanometer begrenzt.
 Im Gegensatz zu optischen Mikroskopen basiert die Rasterkraftmikroskopie (atomic force microscopy, kurz AFM) auf der Detektion von Kräften. 
 Hauptbestandteil sind eine Feder (Cantilever) und eine sehr feine, im Idealfall einatomige, Spitze. Mit dieser wird die Probe abgerastert 
 (wie genau, siehe \ref{sec:Modi}). Dabei existieren eine Fülle an anziehenden und abstoßenden Kräften zwischen Probe und Spitze, beispielsweise 
@@ -35,11 +38,16 @@ Winkel abgelenkt, was ausgewertet werden kann (\cite{Haugstad2012}, S.5). Ein sc
 \end{figure}
 \footnotetext{\cite{easyScan2003}, S.6}
 
-Duch das Funktionsprinzip über die Detektion von wechselwirkungen sind bei der AFM auch keine besonderen Anforderungen an die Probe 
+Duch das Funktionsprinzip über die Detektion von Wechselwirkungen sind bei der AFM auch keine besonderen Anforderungen an die Probe 
 gestellt. Sie müssen insbesondere nicht leitfähig oder im Vakuum sein. \footnotemark \, Dennoch sollten sie frei vor Verunreinigungen sein 
-und vor Feuchte geschützt werden; zudem sollte die Probe zu der verwendeten Spitze passen. \\
+und vor Feuchte geschützt werden; zudem sollte die Probe zu der verwendeten Spitze passen. 
 \footnotetext{Eine AFM im Vakuum liefert dennoch bessere Ergebnisse; für die meisten Zwecke ist eine Untersuchung an der Luft aber 
 vollkommen ausreichend}
+Die Auflösung wird durch den Krümmungsradius der Spitze und die 
+Oberflächenbeschaffenheit der Probe bestimmt und beträgt in der Regel 0.1-10\,nm. Die AFM erreicht also wessentlich höhere Auflösungen als optische Mikroskope. 
+Die Spitzenform kann bestimmt werden, indem eine abriebsfeste, scharfkantige Oberfläche bekannten Profils abgerastert wird. In der Praxis werden dazu meist so genannte 
+Tipchecks verwendet. \footnotemark \, Alternativ kann die Spitze auch im REM untersucht werden.\\
+\footnotetext{\url{https://www.microtonano.com/de/AFM-Tip-Check-und-Test-Probe.php}}
 
 
 \newpage
@@ -64,7 +72,12 @@ Im Non-Contact- oder Tapping-Mode (je nachdem ob die Spitze die Probe nie berüh
 konstanten Frequenz nahe seiner Resonanzfrequenz zum Schwingen angeregt. Diese wird wieder über einen PID-Regler gehalten. 
 Die Wechselwirkungen zwischen Probe und Spitze bewirken zum einen eine Änderung der Schwingungsamplitude, über die topographische 
 Erkenntnisse gewonnen werden können. (\cite{Vesely2017}, S.26). Zum anderen ergibt sich auch eine Phasenverschiebung, die dazu genutzt 
-werden kann, Eigenschaften der Probe zu bestimmen (Dichte etc.). \footnotemark
+werden kann, Eigenschaften der Probe zu bestimmen (Dichte etc.). \footnotemark \, Der Cantilever kann im Non-Contact Mode als harmonischer Oszillator beschrieben werden. 
+Seine Amplitude ergibt sich also nach 
+\begin{equation*}
+    A(\omega) = \frac{A_0 k}{\sqrt{m^2(\omega_0^2 - \omega^2) + \omega^2 \gamma^2}},
+\end{equation*}
+mit Federkonstante $k$, Masse $m$, Resonanzfrequenz $\omega_0$ und Dämpfungskoeffizient $\gamma$.
 \footnotetext{\url{https://www.nanosurf.com/en/support/afm-modes-overview/dynamic-modes}, Stand: 23.09.21}
  
 \section{Regler}
