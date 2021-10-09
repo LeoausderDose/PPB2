@@ -95,7 +95,7 @@ des Verstärkers aussieht. Das Ergebnis ist in Abbildung \ref{bild:Verstaerkung}
 Von diesem schätzen wir die Halbwertsbreite ab, soweit das geht. Die Halbwertsbreite 
 
 \begin{equation}
-    \textcolor{red}{\Delta \nu_{Verstärkungsprofil} = 532\pm80\;\mathrm{MHz}}
+    \textcolor{red}{\Delta\nu_{Verstaerkungsprofil} = 532 \pm 80 \, \mathrm{MHz}}
 \end{equation}
 
 hat einen relativ großen Fehler, da man die Spitze des Verstärkungsprofils nicht genau sehen kann und daher abschätzen muss.
@@ -126,4 +126,55 @@ definiert über das Verhältnis
 
  \subsection*{Mischfrequenzen}
 
- Anhand eibner P
+ Mit Hilfe einer Photodiode wollen wir versuchen die Mischfrequenz der Moden zu bestimmen. Dies tun wir, um den Frequenzabstand zu verifizieren. 
+ Dabei können wir leider nicht das elektrische Feld anhand seine Intensität direkt messen, da dieses zu Hochfrequent ist. Was wir aber messen können, sind 
+ die niederfrequenten Anteile, welche sich aus den Mischtermen ergeben. Dabei erwarten wir in etwa den Modenabstand zu erhalten. 
+ Bei der Aufnahme ist es relativ schwierig einen Wert abzulesen, da wir zwei kleine Peaks nebeneinander sehen. Die Mischfrequenz 
+ \begin{equation*}
+     \textcolor{red}{\Delta \nu_{Misch1} = (281,93\pm0,40)\,\mathrm{MHz} }
+ \end{equation*}
+
+ hat trotzdem noch deutlich weniger Unsicherheit als der vorher bestimmte Wert. Dabei ist der Wert nahe an dem Wert des 
+ Modenabstandes aus Tabelle \ref{tab:Linienbreite}, aber nicht ganz. Die Messunsicherheiten der beiden Messungen überlappen leider nicht. Das ist ein Hinweis darauf, dass es noch Fehlerquellen im Hintergrund gibt, welche wir nicht
+ berücksichtigt haben.
+
+ \subsection*{Laser als Längenmessgerät}
+
+ Durch das Einbringen eines Glasplättchen verlängern wir den optischen Weg im Resonator. Dabei müssen wir 
+ festhalten, dass es sich bei unserem Resonator um einen konfokalen Resonator handelt. Es sieht im Spektrum so aus, 
+ als hätten wir den Resonator verlängert. Diese Verlängerung 
+
+ \begin{equation*}
+     \Delta L = d*n - d
+ \end{equation*}
+
+ berechnet sich aus der Dicke $d$ des Plättchens und dem Brechungsindex $n$ des Glasplättchens. Allgemein ist der 
+ Modenabstand 
+ 
+ \begin{equation*}
+     \Delta\nu = \frac{c}{2L\cdot n}
+ \end{equation*}
+
+ abhängig von der Länge des Resonators. Bei einem konfokalem Laser ist er sogar abhängig von 
+
+ \begin{equation*}
+    \Delta\nu = \frac{c}{4L\cdot n},
+\end{equation*}
+
+da der Laserstrahl vier Mal L zurücklegen muss um mit sich selbst zu interagieren\footnote{\url{https://www.uni-muenster.de/Physik.AP/Denz/Studieren/Lehrveranstaltungen/photonik_ws1213_laser.html}, Eingesehen: 07.10.2021}
+Damit ergibt sich bei für die Dicke 
+
+\begin{equation}
+    d = \frac{c}{4(n-1)}\cdot \biggl( \frac{1}{\Delta\nu_{Misch2}}-\frac{1}{\Delta\nu_{Misch2}} \biggl)
+\end{equation}
+
+
+des Plättchens, wobei Mischfrequenz 2 $\Delta \nu_{Misch2} = (281,90\pm0,40)\,\mathrm{MHz}$ die Frequenz des verlängerten Resonators ist. \\
+Mit dem Brechungsindex von 1,54 \cite[S.1358]{Chemie1949} erhält man 
+
+\begin{equation}
+    \textcolor{red}{d = (0,05 \pm 0,90)\,\mathrm{mm,}}
+\end{equation}
+
+was aber ein unrealistischer Wert ist. Man sieht daran, dass es sich die Methode mäßig zum bestimmen von Längen eignet. Das liegt unter anderem daran, dass die
+Abstände der Mischfrequenzen viel kleiner als ihre Fehler sind. Bei größeren Unterschieden sollte die Methode jedoch funktionieren. 
