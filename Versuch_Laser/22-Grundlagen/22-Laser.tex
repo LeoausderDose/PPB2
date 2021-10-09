@@ -83,6 +83,37 @@ Das Licht bildet in dem Resonator eine stehende Welle. Wie bei jeder stehenden W
 auch beim Laser Moden, hier transverale und axiale Moden.
 
 \subsubsection{Transverale Moden}
+
 Die Moden, welche einfach zu beobachten sind, sind die transversalen Moden. Diese sind durch eine Veränderung des
 Strahlenprofils im Ausgang beobachtbar. Da die Symmetrie des Resonators durch die 
-Ausrichtung der Brewsterfenster verschwindet, sieht man in x- und y-Richtung aufgespaltene Moden. Diese werden anhand der 
+Ausrichtung der Brewsterfenster verschwindet, sieht man in x- und y-Richtung aufgespaltene Moden. Diese werden anhand der Notation $TEM_{nm}$ benannt.
+Dabei ist $n$ die Anzahl der Mullstellen in x-Richtung und $m$ die Anzahl der Nullstellen in y-Richtung. Man kann die Moden auch
+absichtlich erzwingen, indem man wie wir in dem Versuchsteil \ref{section:transvM} eine Drahtblende einsetzten.
+
+
+\subsubsection{Axiale Moden}
+
+Axiale Moden kommen aus der Wechselwirkung des Strahles mit sich selbst.
+Dabei existieren im Resonator nur stehende Wellen, aber diese können unterschiedlich viele Knotenpunkte haben.
+Die Welle insgesamt wieder an ihrem Ursprungspunkt, beispielsweise einem Knotenpunkt an einem Spiegel in gleicher Phase ankommen. Da wir es mit einem konfokalen Resonator (siehe Abb. ref) zu tun haben,
+ergibt sich also die Länge 
+\begin{equation}
+    L \overset{!}{=} k \cdot \frac{\lambda}{4n} 
+\end{equation}
+wobei $k$ ein frei wählbarer Parameter ist und $n$ der Brechungsindex des Resonatormediums.
+Betrachtet man nun zwei benachtbarte $k$ so stellt man fest das der Frequenzabstand 
+
+\begin{equation}
+    \Delta \nu = \frac{c}{4L\cdot n}
+    \label{eq:FSR}
+\end{equation}
+
+ist dabei bei alle benachtbarten $k$ gleich.\\
+Dieser Frequenz -/Modenabstand dem bloßen Auge nicht zu erkennen. Daher verwendet man ein Fabry-Pérot-Interferometer, was in Abschnitt \ref{section:Fabry} genauer behandelt wird.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width = 8cm]{Bilder/Auswertung/KonfokalSpiegel.png}
+    \caption{Konfokale Spiegel und der damit Verbundene Strahlengang. Man sieht schön, dass der Stahl viel Mal die Länge $L$ überwinden muss um am Ausgangspunkt wieder anzukommen}
+    \label{bild:Konfokal}
+\end{figure}
