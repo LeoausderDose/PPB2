@@ -4,6 +4,10 @@
 \label{sec:gauss}
 
 \subsection{Strahlausbreitungsparameter $M^2$}
+Um den Strahlausbreitungsparameter eines Gaußstrahls zu berechnen, werden nacheinander der Experimentierlaser und der Hilfslaser auf eine Linse (feste Position) gelenkt. Nach 
+Durchquerung dieser wird mittels einer CCD-Kamera ein Profil der einfallenden Intensität aufgenommen. Dies geschieht anhand eines vertikalen und eines horizontalen Schnitts 
+durch das Strahlprofil mithilfe der Software 'Laserscan', wodurch sich in Näherung zwei Gaußkurven ergeben. Um den Chip in der Kamera nicht zu übersteuern wurden Graufilter in verschiedenen Stärken verwendet.
+
 \subsubsection*{ohne Fernfeldnäherung}
 
 Für die Breite eines idealen Gaußstrahls gilt laut Skript 
@@ -38,8 +42,147 @@ eine Funktion der Form
 \end{equation*}
 
 an die Datensätze gefittet. Der Parameter $I_{off}$ ist durch den Offset in den gemessenen Intensitäten der Kamera bedingt. Aus diesen Fits ergeben sich die Breiten und Fehler der 
-Strahlen $w$. In Tab.\ref{tab:M} sind deren doppelte Werte, also die Strahldurchmesser $d$ mit Fehlern $s_d$ zu sehen, die in den folgenden Berechnungen benötigt werden.
+Strahlen $w$, die in Tab.\ref{tab:M} bis \ref{tab:M3} zu sehen sind. Für Berechnungen, die die Strahldurchmesser $d$ benötigen, müssen die Werte von $w$ und $s_w$ einfach verdoppelt werden.
 %TABELLE
+
+\begin{table}
+    \centering
+    \begin{tabular}{rrrrrr}
+        \toprule
+        $L$ / mm &  $s_L$ / mm &    $w$ / mm &  $s_w$ / mm&     $M^2$ &        $s_M^2$ \\
+        \midrule
+        770 &  10 &  0,05928 &  0,00042 &        &        \\
+        780 &  10 &  0,06022 &  0,00028 &  0,312 &  0,449 \\
+        760 &  10 &  0,07365 &  0,00070 &  1,286 &  1,819 \\
+        790 &  10 &  0,08248 &  0,00043 &  0,844 &  0,596 \\
+        750 &  10 &  0,09498 &  0,00084 &  1,092 &  0,772 \\
+        800 &  10 &  0,11303 &  0,00047 &  0,944 &  0,445 \\
+        740 &  10 &  0,12093 &  0,00045 &  1,034 &  0,487 \\
+        730 &  10 &  0,14284 &  0,00062 &  0,956 &  0,338 \\
+        810 &  10 &  0,15814 &  0,00067 &  1,078 &  0,381 \\
+        720 &  10 &  0,17334 &  0,00058 &  0,958 &  0,271 \\
+        820 &  10 &  0,19323 &  0,00112 &  1,082 &  0,306 \\
+        700 &  10 &  0,22388 &  0,00110 &  0,907 &  0,183 \\
+        840 &  10 &  0,25699 &  0,00111 &  1,051 &  0,212 \\
+        680 &  10 &  0,31518 &  0,00152 &  1,012 &  0,159 \\
+        860 &  10 &  0,33974 &  0,00162 &  1,093 &  0,172\\
+        660 &  10 &  0,36696 &  0,00205 &  0,968 &  0,124 \\
+        880 &  10 &  0,38290 &  0,00232 &  1,012 &  0,130 \\
+        600 &  10 &  0,55240 &  0,00250 &  0,950 &  0,079 \\
+        960 &  10 &  0,61462 &  0,00377 &  0,947 &  0,071 \\
+        500 &  10 &  0,91721 &  0,01036 &  0,997 &  0,053 \\
+        \bottomrule
+    \end{tabular}
+    \captionof{table}{Werte der verschiedenen Strahlbreiten $w$, Strahlausbreitungsparameter $M^2$ und zugehörige Fehler für verschiedene Positionen $L$ 
+    des horizontalen Schnitts durch den Strahl des Experimentierlasers. Die Werte sind aufsteigend nach $w$ sortiert. Der Wert für $L$ = 770\,mm wurde als Strahltaille benutzt; deshalb existieren 
+    hier keine Werte für $M^2$ und dessen Fehler.}
+    \label{tab:M}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{rrrrrr}
+        \toprule
+        $L$ / mm&  $s_L$ / mm &      $w$ / mm&    $s_w$ / mm&         $M^2$ &        $s_M^2$ \\
+        \midrule
+        780 &  10 &  0,0609 &  0,0002 &       &       \\
+        770 &  10 &  0,0614 &  0,0004 &  0,22 &  0,33 \\
+        760 &  10 &  0,0775 &  0,0007 &  0,72 &  0,51 \\
+        790 &  10 &  0,0800 &  0,0004 &  1,57 &  2,22 \\
+        750 &  10 &  0,0992 &  0,0008 &  0,79 &  0,37 \\
+        800 &  10 &  0,1076 &  0,0004 &  1,34 &  0,94 \\
+        740 &  10 &  0,1288 &  0,0004 &  0,85 &  0,30 \\
+        730 &  10 &  0,1524 &  0,0006 &  0,84 &  0,23 \\
+        810 &  10 &  0,1548 &  0,0005 &  1,43 &  0,67 \\
+        720 &  10 &  0,1825 &  0,0006 &  0,86 &  0,20 \\
+        820 &  10 &  0,1885 &  0,0009 &  1,35 &  0,47 \\
+        700 &  10 &  0,2301 &  0,0012 &  0,83 &  0,14 \\
+        840 &  10 &  0,2503 &  0,0010 &  1,22 &  0,28 \\
+        860 &  10 &  0,3015 &  0,0013 &  1,11 &  0,19 \\
+        680 &  10 &  0,3178 &  0,0013 &  0,94 &  0,13 \\
+        880 &  10 &  0,3737 &  0,0019 &  1,11 &  0,15 \\
+        660 &  10 &  0,3869 &  0,0025 &  0,96 &  0,11 \\
+        600 &  10 &  0,5885 &  0,0040 &  0,98 &  0,07 \\
+        960 &  10 &  0,6066 &  0,0049 &  1,01 &  0,08 \\
+        500 &  10 &  0,9058 &  0,0105 &  0,97 &  0,05 \\
+        \bottomrule
+    \end{tabular}
+    \captionof{table}{Werte der verschiedenen Strahlbreiten $w$, Strahlausbreitungsparameter $M^2$ und zugehörige Fehler für verschiedene Positionen $L$ 
+    des vertikalen Schnitts durch den Strahl des Experimentierlasers. Die Werte sind aufsteigend nach $w$ sortiert. Der Wert für $L$ = 780\,mm wurde als Strahltaille benutzt; deshalb existieren 
+    hier keine Werte für $M^2$ und dessen Fehler.}
+    \label{tab:M1}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{rrrrrr}
+        \toprule
+        $L$ / mm &  $s_L$ / mm &    $w$ / mm &  $s_w$ / mm&     $M^2$ &        $s_M^2$ \\
+        \midrule
+        830 &  10 &  0,0583 &  0,0006 &       &      \\
+        820 &  10 &  0,0619 &  0,0005 &  0,60 &  0,85 \\
+        810 &  10 &  0,0710 &  0,0006 &  0,58 &  0,41 \\
+        840 &  10 &  0,1022 &  0,0010 &  2,43 &  3,43 \\
+        800 &  10 &  0,1047 &  0,0010 &  0,83 &  0,39 \\
+        850 &  10 &  0,1320 &  0,0012 &  1,71 &  1,21 \\
+        790 &  10 &  0,1428 &  0,0011 &  0,94 &  0,33 \\
+        780 &  10 &  0,1747 &  0,0010 &  0,95 &  0,26 \\
+        860 &  10 &  0,1780 &  0,0015 &  1,62 &  0,76 \\
+        870 &  10 &  0,2169 &  0,0016 &  1,51 &  0,53 \\
+        770 &  10 &  0,2235 &  0,0015 &  1,04 &  0,24 \\
+        760 &  10 &  0,2646 &  0,0015 &  1,06 &  0,21 \\
+        890 &  10 &  0,3102 &  0,0025 &  1,47 &  0,34 \\
+        740 &  10 &  0,3410 &  0,0028 &  1,08 &  0,17 \\
+        910 &  10 &  0,3875 &  0,0030 &  1,38 &  0,24 \\
+        720 &  10 &  0,4217 &  0,0025 &  1,09 &  0,14 \\
+        930 &  10 &  0,4578 &  0,0034 &  1,31 &  0,18 \\
+        700 &  10 &  0,5104 &  0,0038 &  1,12 &  0,12 \\
+        950 &  10 &  0,5229 &  0,0056 &  1,25 &  0,14 \\
+        650 &  10 &  0,6915 &  0,0074 &  1,10 &  0,08 \\
+        550 &  10 &  1,1528 &  0,0174 &  1,19 &  0,06 \\
+        \bottomrule
+    \end{tabular}
+    \captionof{table}{Werte der verschiedenen Strahlbreiten $w$, Strahlausbreitungsparameter $M^2$ und zugehörige Fehler für verschiedene Positionen $L$ 
+    des horizontalen Schnitts durch den Strahl des Hilfslasers. Die Werte sind aufsteigend nach $w$ sortiert. Der Wert für $L$ = 770\,mm wurde als Strahltaille benutzt; deshalb existieren 
+    hier keine Werte für $M^2$ und dessen Fehler.}
+    \label{tab:M2}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{rrrrrr}
+        \toprule
+        $L$ / mm &  $s_L$ / mm &    $w$ / mm &  $s_w$ / mm&     $M^2$ &        $s_M^2$ \\
+        \midrule
+        820 &  10 &  0,0622 &  0,00047 &       &       \\
+        810 &  10 &  0,0663 &  0,0003 &  0,70 &  1,00 \\
+        830 &  10 &  0,0686 &  0,0006 &  0,89 &  1,26 \\
+        800 &  10 &  0,0816 &  0,0008 &  0,81 &  0,57 \\
+        840 &  10 &  0,0982 &  0,0008 &  1,17 &  0,83 \\
+        790 &  10 &  0,1106 &  0,0008 &  0,94 &  0,44 \\
+        850 &  10 &  0,1301 &  0,0009 &  1,17 &  0,55 \\
+        780 &  10 &  0,1494 &  0,0008 &  1,04 &  0,37 \\
+        860 &  10 &  0,1699 &  0,0008 &  1,22 &  0,43 \\
+        770 &  10 &  0,1771 &  0,0011 &  1,02 &  0,29 \\
+        870 &  10 &  0,2021 &  0,0009 &  1,18 &  0,33 \\
+        760 &  10 &  0,2078 &  0,0010 &  1,02 &  0,24 \\
+        740 &  10 &  0,2639 &  0,0009 &  0,99 &  0,17 \\
+        890 &  10 &  0,2657 &  0,0010 &  1,14 &  0,23 \\
+        720 &  10 &  0,3357 &  0,0016 &  1,01 &  0,14 \\
+        910 &  10 &  0,3361 &  0,0015 &  1,13 &  0,17 \\
+        700 &  10 &  0,4155 &  0,0027 &  1,05 &  0,12 \\
+        930 &  10 &  0,4250 &  0,0024 &  1,18 &  0,15 \\
+        950 &  10 &  0,4556 &  0,0022 &  1,07 &  0,11 \\
+        650 &  10 &  0,5865 &  0,0037 &  1,06 &  0,08 \\
+        550 &  10 &  0,9381 &  0,0128 &  1,07 &  0,05 \\
+        \bottomrule
+    \end{tabular}
+    \captionof{table}{Werte der verschiedenen Strahlbreiten $w$, Strahlausbreitungsparameter $M^2$ und zugehörige Fehler für verschiedene Positionen $L$ 
+    des vertikalen Schnitts durch den Strahl des Hilfslasers. Die Werte sind aufsteigend nach $w$ sortiert. Der Wert für $L$ = 770\,mm wurde als Strahltaille benutzt; deshalb existieren 
+    hier keine Werte für $M^2$ und dessen Fehler.}
+    \label{tab:M3}
+\end{table}
+
 Zur Berechnung des Strahlausbreitungsparameters wird Gl.\ref{eq:M} umgeschrieben zu
 \begin{equation*}
     M^2 = \frac{\pi d_0^2}{2 \lambda 2|L_0-L_1| } \sqrt{\biggl(\frac{d_1}{d_0}\biggl)^2-1},
@@ -52,12 +195,19 @@ $d_1$ ($L_1$) berechnet. Der Fehler für $M^2$ ergibt sich aus der klassischen F
     \partial_{d_1}M^2 &= \frac{M^2}{d_1 - \frac{d_0^2}{d_1}} \\
     \partial_{L_{0/1}}M^2 &= \pm \frac{M^2}{L_0-L_1} \\
 \end{align*}
-Dabei wurde für die Längen ein Fehler von 10mm angenommen, da die Position der Kamera auf ihrem Schlitten nicht eindeutig festzustellen war. 
-Die berechneten $M^2$ mit zugehörigen Fehlern $s_{M^2}$ finden sich ebenfalls in Tab.\ref{tab:M}.
+Dabei wurde für die Längen ein Fehler von 10\,mm angenommen, da die Position der Kamera auf ihrem Schlitten nicht eindeutig festzustellen war. 
+Die berechneten $M^2$ mit zugehörigen Fehlern $s_{M^2}$ finden sich ebenfalls in Tab.\ref{tab:M} bis \ref{tab:M3}.
 Es ist zu sehen, dass nicht alle Werte von $M^2$ sinnvoll sind. Generell sollten keine Werte kleiner als 1 zu finden sein; davon gibt es unseren Berechnungen nach aber einige. 
 Gerade an den Punkten nah an der angenommenen Stahltaille, vor allem beim Experimentierlaser, ist die Abweichung enorm. Dies könnte auch daran liegen, dass die Taille nicht genau getroffen wurde. Um eine Übersicht 
 über den Strahlausbreitungsparameter zu erhalten, wird für jede Messreihe der Mittelwert und der dazugehörige Fehler gebildet, wobei die grob abweichenden Werte nah der Taille für den 
-Experimentierlaser verworfen werden. Die Ergebnisse finden sich in Tab.\ref{tab:Mnah}. Alle Mittelwerte sind immerhin größer als 1, wenn auch wohl betragsmäßig deutlich zu nah. 
+Experimentierlaser verworfen werden. Die Ergebnisse sind 
+\begin{equation*}
+    \textcolor{red}{M^2_{v,exp} = (1,05 \pm 0,15)\,\mathrm{mm}} , \,\, \textcolor{red}{ M^2_{h,exp} = (1,01 \pm 0,14)\,\mathrm{mm}},\\
+\end{equation*}
+\begin{equation*}
+    \textcolor{red}{M^2_{v,hilf} = (1,05 \pm 0,14)\,\mathrm{mm}}\,\,\mathrm{und}\,\,\textcolor{red}{ M^2_{h,hilf} = (1,22 \pm 0,16)\,\mathrm{mm}}.\\    
+\end{equation*}
+Alle Mittelwerte sind immerhin größer als 1, wenn auch wohl betragsmäßig deutlich zu nah. 
 Die Fehler würden zwar geringfügig höhere Werte zulassen; dennoch sind die Werte unseres Erachtens aufgrund methodischer Mängel mit Vorischt zu genießen. Zumindest die 
 Größenordnung ist allerdings sinnvoll.
 
@@ -68,8 +218,11 @@ Die Bereiche, ab denen die Fernfeldnäherung zulässig ist, $5z_R$ ergeben sich 
 \begin{equation*}
     5z_R = 5 \frac{\pi w_0^2}{\lambda}.
 \end{equation*}
-Für $w_0$ wurden die selben Taillen wie in der Berechnung ohne Fernfeldnäherung benutzt (halbe Werte von $d_0$, vgl. Tab.\ref{tab:M}). Die berechneten Bereiche finden sich 
-in Tab.\ref{tab:ray}. In den entsprechenden Bereichen werden nun Geraden gefittet, wie in Abb.\ref{pic:geradenfit} zu sehen. Aus der Steigung der Geraden ergibt sich $theta_0$ 
+Für $w_0$ wurden die selben Taillen wie in der Berechnung ohne Fernfeldnäherung benutzt (vgl. Tab.\ref{tab:M} bis \ref{tab:M3}). Die berechneten Bereiche sind  
+\begin{equation*}
+    5z_{R,v} = 93,59\,\mathrm{mm} \quad \mathrm{ und } \quad 5z_{R,h} = 87,24\,\mathrm{mm}.
+\end{equation*}
+In den entsprechenden Bereichen werden nun Geraden gefittet, wie in den Abb.\ref{pic:gerfitve} bis \ref{pic:gerfithh} zu sehen. Aus der Steigung der Geraden ergibt sich $\theta_0$ 
 aus 
 \begin{equation*}
     \theta_0 = |\arctan(m)|,
@@ -85,11 +238,65 @@ Der Strahlausbreitungsparameter ergibt sich dann aus
 \end{equation*}
 Der zughörige Fehler ergibt sich aus der Fehlerfortpflanzung. Die berechneten Werte für $M^2$ und seine Fehler finden sich in Tab.\ref{tab:Mfern}, wobei für jede Messreihe 
 zwei Werte berechnet wurden, da die Öffnungswinkel links und rechts der Strahltaille gesondert betrachtet wurden. %tabelle
+\begin{table}
+    \centering
+    \begin{tabular}{rll}
+        \toprule
+        Wertebereich & Laser & $M^2$ / mm \\
+        \midrule
+        vertikaler Schnitt, links von Strahltaille & Exp & 0,99 $\pm$ 0,02 \\
+        vertikaler Schnitt, rechts von Strahltaille & Exp & 0,887 $\pm$ 0,006 \\
+        horizontaler Schnitt, links von Strahltaille & Exp & 0,99 $\pm$ 0,04 \\
+        horizontaler Schnitt, rechts von Strahltaille & Exp & 0,82 $\pm$ 0,04 \\
+        vertikaler Schnitt, links von Strahltaille & Hilf & 1,088 $\pm$ 0,019 \\
+        vertikaler Schnitt, rechts von Strahltaille & Hilf & 0,473 $\pm$ 0,003 \\
+        horizontaler Schnitt, links von Strahltaille & Hilf & 1,31 $\pm$ 0,06 \\
+        horizontaler Schnitt, rechts von Strahltaille & Hilf & 1,04 $\pm$ 0,03 \\
+        \bottomrule
+    \end{tabular}
+    \captionof{table}{Berechnete Werte für $M^2$ nach der Fernfeldmethode. 'Exp' steht für den Experimentierlaser, 'Hilf' für den Hilfslaser. Dabei sind für den Experimentierlaser sämtliche Werte kleiner als 1, was nicht sein sollte. Der Fehler für den Wert des 
+    vertikalen Schnitts rechts von der Strahltaille ist bei beiden Lasern sehr klein; dies liegt daran, dass die Regression selber keinen Fehler hat, da nur zwei Punkte verwendet wurden. Das Ergebnis für den Hilfslaser weicht zudem stark ab, 
+    ist deshalb nicht ganz aussagekräftig und wird im weiteren Verlauf auch ausgesondert werden.}
+    \label{tab:Mfern}
+\end{table}
 Dabei ist auch hier festzustellen, dass die Werte zwar in der richtigen Größenordnung liegen. Jedoch sind die Werte, vor allem die des Experimentierlasers deutlich zu klein. 
 Die Werte für den Hilfslaser sind etwas besser, abgesehen von dem Wert für den vertikalen Schnitt, rechts von der Taille; dieser wurde allerdings nur über zwei Punkte berechnet, 
-die auch anhand der Abb.\ref{pic:geradenfit} als nicht repräsentativ eingeschätzt werden und der Wert für $M^2$ somit übergangen werden kann. Die übrigen Werte scheinen auch 
+die auch anhand der Abb.\ref{pic:gerfitve} bis \ref{pic:gerfithh} als nicht repräsentativ eingeschätzt werden und der Wert für $M^2$ somit übergangen werden kann. Die übrigen Werte scheinen auch 
 etwas niedrig, da sie aber größer als 1 sind, sind sie zumindest nicht eindeuig als falsch zu identifizeren. 
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.75]{Bilder/Auswertung/gerfitv.png}
+    \caption{Strahldurchmesser $w$ aufgetragen in blauen Punkten gegen die Position $L$ für den vertikalen Schnitt durch den Strahl. Dabei ist der lineare Verlauf für Werte weit entgernt von der Strahltaille 
+    gut zu erkennen; die zugehörige lineare Regression ist in Rot eingetragen. Die Regression zur Rechten basiert nur auf zwei Punkten, passt aber dem Augenschein nach trotzdem in etwa zum Verlauf und wird deshalb nicht verworfen.}
+    \label{pic:gerfitve}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.75]{Bilder/Auswertung/gerfith.png}
+    \caption{Strahldurchmesser $w$ aufgetragen in blauen Punkten gegen die Position $L$ für den vertikalen Schnitt durch den Strahl. Dabei ist der lineare Verlauf für Werte weit entgernt von der Strahltaille 
+    gut zu erkennen; die zugehörige lineare Regression ist in Rot eingetragen.}
+    \label{pic:gerfithe}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.75]{Bilder/Auswertung/gerfitvh.png}
+    \caption{Strahldurchmesser $w$ aufgetragen in blauen Punkten gegen die Position $L$ für den vertikalen Schnitt durch den Strahl. Dabei ist der lineare Verlauf für Werte weit entgernt von der Strahltaille 
+    gut zu erkennen; die zugehörige lineare Regression ist in Rot eingetragen. Die Regression zur Rechten basiert nur auf zwei Punkten und ist deshalb von großer Unsicherheit. Da sie zudem augenscheinlich auch 
+    nicht die Weiterführung des Graphen ist, kann der aus dieser Geraden resultierende Strahlausbreitungsparameter verworfen werden.}
+    \label{pic:gerfitvh}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.75]{Bilder/Auswertung/gerfithh.png}
+    \caption{Strahldurchmesser $w$ aufgetragen in blauen Punkten gegen die Position $L$ für den vertikalen Schnitt durch den Strahl. Dabei ist der lineare Verlauf für Werte weit entgernt von der Strahltaille 
+    gut zu erkennen; die zugehörige lineare Regression ist in Rot eingetragen.}
+    \label{pic:gerfithh}
+\end{figure}
+\clearpage
 \subsection{Effektive Brennweite der Linse}
 \label{subs:f}
 Für Gaußsche Strahlen gelten zwar die Gesetze der geometrischen Optik nicht, es kann aber trotzdem eine effektive Brennweite $f_{eff}$ nach 
@@ -104,7 +311,7 @@ Linse $s$
 \end{align*}
 Die verwendeten Längen wurden dem Protokoll entnommen. Bei einem Fehler von 5\,mm pro Länge ergibt dies nach Fehlerfortpflanzung einen Fehler von $s_m = 28$\,mm. 
 Die Länge $s'$ ist abhängig von der Position der Strahltaille nach der Linse und variiert zwischen senkrechtem und waagerechtem Schnitt durch den Strahl. Für die 
-Positionen und Fehler wurden die Werte aus Tab.\ref{tab:M} genommen. Damit ergeben sich
+Positionen und Fehler wurden die Werte aus Tab.\ref{tab:M} bis \ref{tab:M3} genommen. Damit ergeben sich
 \begin{equation*}
     s'_v = (410 \pm 14)\mathrm{mm} \qquad s'_h = (400 \pm 14)\mathrm{mm}.
 \end{equation*}
@@ -114,11 +321,11 @@ Aus diesen Werten lassen sich die Werte für $f_{eff}$ berechnen; die dazugehör
 \end{equation*}
 Die effektiven Brennweiten sind
 \begin{equation*}
-    f_{eff,v} = (303 \pm 13)\mathrm{mm}\qquad\mathrm{und }f_{eff,h}=(298 \pm 13)\mathrm{mm}
+    f_{eff,v} = (303 \pm 13)\,\mathrm{mm}\qquad\mathrm{und }f_{eff,h}=(298 \pm 13)\,\mathrm{mm}
 \end{equation*}
 Bildet man den Mittelwert, so hat die Linse unseren Berechnungen nach eine effektive Brennweite von
 \begin{equation*}
-    \textcolor{red}{f_{eff} = (301 \pm 9) \mathrm{mm}}
+    \textcolor{red}{f_{eff} = (301 \pm 9)\, \mathrm{mm}}
 \end{equation*}
 Dieses Ergebnis stimmt auch gut mit der Angabe auf der Linse selbst überein; deshalb kann es als sinnvoll angesehen werden.
 
@@ -126,7 +333,7 @@ Dieses Ergebnis stimmt auch gut mit der Angabe auf der Linse selbst überein; de
 \subsubsection*{Im Resonator}
 Die Stahltaille im Resonator ergibt sich nach 
 \begin{equation*}
-    w_{00} = \sqrt{\frac{\lambda L}{\pi}} \cdot (\frac{(1-g^2)}{4(1-g)^2})^{0,25},
+    w_{00} = \sqrt{\frac{\lambda L}{\pi}} \cdot \biggl(\frac{(1-g^2)}{4(1-g)^2}\biggl)^{0,25},
 \end{equation*}
 wobei $L$ die Resonatorlänge und $g = 1 - \frac{L}{R}$ der Spiegelparameter mit Spiegelkrümmungsradius $R$ ist. Ferner wurde benutzt, dass $R$ und somit $g$ für beide Spiegel 
 gleich sind(\cite{TUB2018}, S.8). 
@@ -155,7 +362,7 @@ Damit ergeben sich für die berechneten Strahltaillen für den vertikalen bzw. h
 \begin{equation*}
     \textcolor{red}{w_{0,v} = (78 \pm 7)\,\mu\mathrm{m} \qquad w_{0,h} = (77 \pm 7)\,\mu\mathrm{m}}.
 \end{equation*}
-Vergleicht man diese mit dem gemessenen Werten für $w_0$ in Tab.\ref{tab:M} ($w_{0,v}$ = (60,9  $\pm$ 2)\,$\mu$m, $w_{0,h}$ = (59,3  $\pm$ 4)\,$\mu$m), so ist festzustellen, 
+Vergleicht man diese mit dem gemessenen Werten für $w_0$ in Tab.\ref{tab:M} und \ref{tab:M1} ($w_{0,v}$ = (60,9  $\pm$ 2)\,$\mu$m, $w_{0,h}$ = (59,3  $\pm$ 4)\,$\mu$m), so ist festzustellen, 
 dass die Werte in der selben Größenordnung liegen. Allerdings sind die berechneten Werte um etwa den Faktor 1,3 zu groß und die Abweichung lässt sich auch nicht alleine durch 
 die berechneten Fehler erklären. Möglicherweise liegt der Fehler in dem nicht idealen Versuchsaufbau oder es wurden in der Berechnung weitere Faktoren vernachlässigt (z.B. 
 könnte die Strahltaille nicht exakt in der Mitte des Resonators liegen oder noch wahrscheinlicher die Strahltaille wurde nicht an der exakten Position hinter der Linse 
