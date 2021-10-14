@@ -235,11 +235,14 @@ Damit ergeben sich für die Zellen die mittleren Abstände, die in Tab. 4.6 zu s
 Anstelle die Berechnung von $SE$ und $E$ mit den Intensitätsmittelwerten auf der Membran durchzuführen kann diese auch pixelweise 
 mit den gesamten Bildern erfolgen. Die Bilder finden sich in Abb. \ref{bild:E2} - \ref{bild:E13} wieder. In diesen ist deutlich abgesetzt 
 und heller die Membran der Zellen zu erkennen. Dies ist nicht verwunderlich, da das verwendete Protein, an das die CFP und YFP binden, selbst 
-an der Membran gebunden ist.
+an der Membran gebunden ist. Trotzdem sind auch vereinzelte Werte größer als 1 oder kleiner als 0 erkennbar, die es in der Theorie nicht geben sollte. Diese könnten 
+durch Rechenfehler entstanden sein oder durch die Tatsache, dass die einzelnen Pixel nur sehr kleine Bereiche darstellen, deren Intensitäten bisweilen zeitlich zu sehr schwanken, um 
+sinnvolle Ergebnisse zu liefern.\\
 Wählt man nun in der Darstellung von $E$ nun die gleiche 
 Membranregion aus, über die auch die Intensität gemittelt wurde, ergeben sich die Mittelwerte $E_{pixelweise}$, die in Tab. \ref{tab:VerglE} 
 zu finden sind.
 
+\begin{comment}
 \begin{figure}[h]
     \centering
     \includegraphics[scale = 0.45]{Bilder/E2.png}
@@ -259,6 +262,58 @@ zu finden sind.
     \includegraphics[scale = 0.45]{Bilder/E13.png}
     \caption{2D-Plot der Förstereffizienz $E$ von Zelle 13, pixelweise berechnet.}
     \label{bild:E13}
+\end{figure}
+
+
+\begin{subfigures}
+    \label{bild:E2}
+
+    \begin{figure}
+        \centering
+        \includegraphics[scale = 0.45]{Bilder/E-2oT.png}
+        \caption{ohne Threshold}
+        \label{bild:E2oT}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[scale = 0.45]{Bilder/E2.png}
+        \caption{mit Threshold}
+        \label{bild:E2mT}
+    \end{figure}
+    \captionof{figure}{2D-Plot der Förstereffizienz $E$ von Zelle 2, pixelweise berechnet.}
+
+\end{subfigures}
+\end{comment}
+
+\begin{figure}[ht]
+    \centering
+    \subfloat[ohne Threshold]{\label{bild:E2oT}%
+    \includegraphics[scale=0.6]{Bilder/E-2oT.png}} \quad
+    \subfloat[mit Threshold]{\label{bild:E2mT}%
+    \includegraphics[scale=0.4]{Bilder/E2.png}}
+      \caption{2D-Plot der Förstereffizienz $E$ von Zelle 2, pixelweise berechnet.}
+      \label{bild:E2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \subfloat[ohne Threshold]{\label{bild:E10oT}%
+    \includegraphics[scale=0.6]{Bilder/E-10oT.png}} \quad
+    \subfloat[mit Threshold]{\label{bild:E10mT}%
+    \includegraphics[scale=0.4]{Bilder/E10.png}}
+      \caption{2D-Plot der Förstereffizienz $E$ von Zelle 10, pixelweise berechnet.}
+      \label{bild:E10}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \subfloat[ohne Threshold]{\label{bild:E13oT}%
+    \includegraphics[scale=0.6]{Bilder/E-13oT.png}} \quad
+    \subfloat[mit Threshold]{\label{bild:E13mT}%
+    \includegraphics[scale=0.4]{Bilder/E13.png}}
+      \caption{2D-Plot der Förstereffizienz $E$ von Zelle 13, pixelweise berechnet.}
+      \label{bild:E13}
 \end{figure}
 
 \begin{center}
