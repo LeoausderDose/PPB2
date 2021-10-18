@@ -2,6 +2,7 @@
 
 \subsection{Lebenszeit von CFP und YFP}
 
+\subsubsection{Methode 1: Fit}
 In diesem Versuchsteil geht es um die Bestimmung der Lebensdauer des Donors und des Akzeptors. Dies tut man am 
 besten indem man eine einfache Exponentialfunktion an die Daten anpasst. Dabei passt man zwei Parameter an, die Amplitude $A_0$ und 
 Lebensdauer $\tau$.
@@ -42,6 +43,27 @@ Aus den Anpassungen erhält man folgende Werte:\\
 Man sieht also einen Unterschied in der Lebenszeit der beiden Proteine. Der eigentlich spannende Teil 
 ist jedoch die Lebensdauer des Donators mit und ohne FRET zu vergleichen.
 
+\subsubsection{Methode 2: Maximum-Likelihood-Methode}
+
+Die Maximum-Likelihood-Schätzung \cite[S.176]{Stahel2000} ist eine Methode bei der man einen maximal wahrscheinlichen Parameter schätzt.
+Dieser ist dann anhand der Daten der plausibelste Parameter. Nun ergibt sich für die Lebensdauer nach der
+ML-Methode, dass der beste Schätzer der arithmetischem Mittelwert der Zerfälle ist.
+Wendet man diese an erhält man nach der Formel
+
+\begin{equation}
+    \tau = \frac{1}{N} \sum_i^N t_i
+\end{equation}
+
+wobei $N$ die Anzahl der verwendeten Datenpunkte und $t$ die Zerfallszwit sind. Leider hat diese Methode hier auf Grund 
+eines Umsetzungsfehlers nicht funktioniert, da der erhaltene Wert unsinnig ist. Wir haben für 
+
+\begin{equation*}
+    \tau_{YFP} = 179,31\,ns
+\end{equation*}
+erhalten. 
+
+
+
 \subsection{Lebensdauer mit FRET}
 
 Um die FRET-Effizienz $E$ zu erhalten, betrachtet man Lebensdauerunterschiede des Donor mit und ohne FRET. 
@@ -51,9 +73,7 @@ ein Fit mit 4 Parametern ist jedoch sehr störungsanfällig.\\
 
 Deswegen verwenden wir eine Methode, bei der wir jeweils zwei Parameter anpassen und die anderen gleich lassen. Danach passt man die anderen zwei 
 Parameter schrittweise an. Dieses Vorgehen führt zu einer schrittweisen Approximation, da sich beide Parameter ihrem Maximum annähern. Mit dieser 
-Methode erhält man die Werte, welche in Tabelle \ref{LTFit} dargestellt werden. Dabei wird die erste Anpassung unter Voraussetzung eines geschätzten Aktivität $A_0$ 
-von YFP durchgeführt. Diese wird auf den halben Wert der Nullaktivität der YFP-Probe auf selbem Kanal gesetzt. Dann führt man eine erste Anpassung der 
-Parameter mit drei Parameter durch und verwendet nur die ausgegebenen Lebensdauerparameter.\\
+Methode erhält man die Werte, welche in Tabelle \ref{LTFit} dargestellt werden. Dabei werden die ersten zwei Werte für die Lebenszeit von den einzelnen Fits der CFP und YFP Probe genommen.\\
 
 \begin{table}[h]
     \centering
@@ -61,11 +81,11 @@ Parameter mit drei Parameter durch und verwendet nur die ausgegebenen Lebensdaue
         \toprule
         Schritt & $\tau_{YFP}$ & $A_{0_{YFP}} $&  $\tau_{CFP}$ & $A_{0_{CFP}}$\\
         \midrule
-        1 & 1,599\,ns & & 3,096\,ns& \\
-        2 & & 24052\,$s^{-1}$ & & 97490 \,$s^{-1}$\\
-        3 & 4,009\,ns & & 2,539\,ns& \\
-        4 & & 22941\,$s^{-1}$ & & 98340 \,$s^{-1}$\\
-        5 & 4,038\,ns & & 2,5526\,ns& \\  
+        1 & 3,0693\,ns & & 2,5351\,ns& \\
+        2 & & 93514,30\,$s^{-1}$ & & 15228,19 \,$s^{-1}$\\
+        3 & 2,8911\,ns & & 3,6229\,ns& \\
+        4 & & 94794,70\,$s^{-1}$ & & 14407,05 \,$s^{-1}$\\
+        5 & 2,8791\,ns & & 3,6991\,ns& \\  
         \bottomrule
     \end{tabular}
     \caption{Schrittweises Anpassen zweier Exponentialfunktionen an die Daten. Es werden immer zwei Parameter festgehalten. Die anderen zwei werden 
@@ -79,7 +99,7 @@ Aus dieser kann man dann die FRET-Effizienz berechnen indem man die Formel
 \end{equation}
 auswertet. Dabei erhält man als Ergebnis den Werte 
 \begin{equation}
-    \textcolor{red}{E = 1 - \frac{2,5526\,ns}{2,5251\,ns} = −0,010890658}, 
+    \textcolor{red}{E = 1 - \frac{3,6994\,ns}{2,5251\,ns} = −0,46}, 
 \end{equation}
 welcher offensichtlich unsinnig ist. \\
 Die Methode scheint also nicht zu funktionieren. Ein Grund dafür könnte die Anzahl der anzupassenden Parameter 
@@ -137,6 +157,16 @@ Gaußfunktion aussehen muss noch die Totzeit 2\,ns betragen muss. Daher nehmen w
     \textcolor{red}{\tau_{YFP} = (2,1\pm0,4)\,ns}
 \end{equation*}
 als realistischen Wert an. Dieser passt bei beiden Methoden, dem Gaußfit und der programmgenerierten IRF (siehe Abb. \ref{bild:IRFProg}), wie man in den optimierten Abbildungen \ref{bild:IRFconvGaussOpt} und \ref{bild:IRFconvProOpt} sieht.
+Tut man eben dies mit einer Cost-Funktion wie in Abbildung \ref{bild:Cost} zu sehen erhält man näherungsweise den selben Wert. Dabei ist der lineare Verlauf der Funktion sehr unerwartet.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = \linewidth]{Bilder/Auswertung/Cost.png}
+    \caption{Cost-Funktion zum Finden der realen Lebenszeit von YFP}
+    \label{bild:Cost}
+\end{figure}
+
+
 
 \begin{figure}[h]
     \centering
